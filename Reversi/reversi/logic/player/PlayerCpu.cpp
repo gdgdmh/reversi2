@@ -3,7 +3,7 @@
 #include "MoveThinkingCpu2.h"
 #include "MoveThinkingCpu3.h"
 #include "MoveThinkingCpu4.h"
-#include "../../util/IOutputConsole.h"
+#include "../../../mhl/util/output/IOutputConsole.hpp"
 #include "../../util/Assert.h"
 
 /**

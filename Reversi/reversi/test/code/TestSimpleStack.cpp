@@ -6,7 +6,7 @@
 /**
  * コンストラクタ
  */
-reversi::TestSimpleStack::TestSimpleStack(reversi::IOutputConsole* outputConsole) : UnitTestBase(outputConsole) {
+reversi::TestSimpleStack::TestSimpleStack(mhl::IOutputConsole* outputConsole) : UnitTestBase(outputConsole) {
 }
 
 /**

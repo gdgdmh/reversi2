@@ -6,7 +6,7 @@
 /**
  * コンストラクタ
  */
-reversi::TestStdRandomInt::TestStdRandomInt(reversi::IOutputConsole* outputConsole) : UnitTestBase(outputConsole) {
+reversi::TestStdRandomInt::TestStdRandomInt(mhl::IOutputConsole* outputConsole) : UnitTestBase(outputConsole) {
 }
 
 /**

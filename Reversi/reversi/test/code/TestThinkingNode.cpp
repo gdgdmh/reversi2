@@ -6,7 +6,7 @@
 /**
  * コンストラクタ
  */
-reversi::TestThinkingNode::TestThinkingNode(reversi::IOutputConsole* outputConsole) : UnitTestBase(outputConsole) {
+reversi::TestThinkingNode::TestThinkingNode(mhl::IOutputConsole* outputConsole) : UnitTestBase(outputConsole) {
 }
 
 /**

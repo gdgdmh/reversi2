@@ -11,7 +11,7 @@ public:
 	/**
 	 * コンストラクタ
 	 */
-	TestThinkingNode(reversi::IOutputConsole* outputConsole);
+	TestThinkingNode(mhl::IOutputConsole* outputConsole);
 
 	/**
 	 * デストラクタ

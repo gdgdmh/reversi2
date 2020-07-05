@@ -11,7 +11,7 @@ public:
 	/**
 	 * コンストラクタ
 	 */
-	TestCalcBoardEvaluationPointByPosition(reversi::IOutputConsole* outputConsole);
+	TestCalcBoardEvaluationPointByPosition(mhl::IOutputConsole* outputConsole);
 
 	/**
 	 * デストラクタ

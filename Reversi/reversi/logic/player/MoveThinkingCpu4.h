@@ -6,7 +6,7 @@
 #include "../base/MoveInfo.h"
 #include "../base/Move.h"
 #include "../base/ThinkingNode.h"
-#include "../../util/IOutputConsole.h"
+#include "../../../mhl/util/output/IOutputConsole.hpp"
 #include "../../util/PerformanceCounter.h"
 
 // 前方宣言
@@ -95,7 +95,7 @@ private:
 	void PrintTimeDiff(std::string prefix, const reversi::PerformanceCounter& counter);
 
 private:
-	reversi::IOutputConsole* console; // コンソール出力クラス
+	mhl::IOutputConsole* console; // コンソール出力クラス
 };
 
 }

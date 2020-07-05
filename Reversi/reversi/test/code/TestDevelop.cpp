@@ -1,7 +1,6 @@
 ﻿#include "TestDevelop.h"
 // test include(テストするものはここに追加する)
-#include "../../util/IOutputConsole.h"
-#include "../../util/OutputConsole.h"
+#include "../../../mhl/util/output/OutputConsole.hpp"
 #include "../../logic/base/Board.h"
 #include "../../logic/base/Move.h"
 
@@ -20,8 +19,8 @@
 /**
  * コンストラクタ
  */
-reversi::TestDevelop::TestDevelop(reversi::IOutputConsole* outputConsole) : UnitTestBase(outputConsole), console(NULL) {
-	console = new OutputConsole();
+reversi::TestDevelop::TestDevelop(mhl::IOutputConsole* outputConsole) : UnitTestBase(outputConsole), console(NULL) {
+	console = new mhl::OutputConsole();
 }
 
 /**

@@ -1,6 +1,6 @@
 ﻿#include <iostream>
 #include "MoveThinkingCpu2.h"
-#include "../../util/IOutputConsole.h"
+#include "../../../mhl/util/output/IOutputConsole.hpp"
 #include "../../util/Assert.h"
 #include "../../util/IRandomInt.h"
 #include "../../util/StdRandomInt.h"

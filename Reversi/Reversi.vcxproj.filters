@@ -46,13 +46,31 @@
     <Filter Include="ソース ファイル\reversi\game">
       <UniqueIdentifier>{0ef7882d-6e56-456f-bf2d-926c2272d688}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\mhl">
+      <UniqueIdentifier>{9e184321-62bf-4e0f-a7bb-ee9a2edcc217}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\mhl\exception">
+      <UniqueIdentifier>{f303c144-8681-4aa6-bd18-e8e52231f5e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\mhl\test">
+      <UniqueIdentifier>{0b808e30-c89f-40ff-a502-237cfcd0a860}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\mhl\util">
+      <UniqueIdentifier>{3fc3b8a3-a636-440e-a4c7-3db133ee12ce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\mhl\util\output">
+      <UniqueIdentifier>{36d66fc1-7e82-4c6d-821f-7bf72e933142}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\mhl\util\string">
+      <UniqueIdentifier>{63067aef-b077-4c0e-a7c3-18f9f0b65e80}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\mhl\util\template">
+      <UniqueIdentifier>{7b4a9905-7ac2-4ab2-8342-aaa349bc0f35}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
       <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="reversi\util\OutputConsole.cpp">
-      <Filter>ソース ファイル\reversi\util</Filter>
     </ClCompile>
     <ClCompile Include="reversi\util\Assert.cpp">
       <Filter>ソース ファイル\reversi\util</Filter>
@@ -174,14 +192,32 @@
     <ClCompile Include="reversi\test\code\TestPerformanceCounter.cpp">
       <Filter>ソース ファイル\reversi\test\code</Filter>
     </ClCompile>
+    <ClCompile Include="mhl\exception\ArgumentException.cpp">
+      <Filter>ソース ファイル\mhl\exception</Filter>
+    </ClCompile>
+    <ClCompile Include="mhl\exception\UnitTestException.cpp">
+      <Filter>ソース ファイル\mhl\exception</Filter>
+    </ClCompile>
+    <ClCompile Include="mhl\test\TestCppNewFunctionTest.cpp">
+      <Filter>ソース ファイル\mhl\test</Filter>
+    </ClCompile>
+    <ClCompile Include="mhl\test\TestExecuteMethod.cpp">
+      <Filter>ソース ファイル\mhl\test</Filter>
+    </ClCompile>
+    <ClCompile Include="mhl\test\TestInstanceOfTest.cpp">
+      <Filter>ソース ファイル\mhl\test</Filter>
+    </ClCompile>
+    <ClCompile Include="mhl\test\TestSubject.cpp">
+      <Filter>ソース ファイル\mhl\test</Filter>
+    </ClCompile>
+    <ClCompile Include="mhl\test\UnitTestExecuteList.cpp">
+      <Filter>ソース ファイル\mhl\test</Filter>
+    </ClCompile>
+    <ClCompile Include="mhl\util\output\OutputConsole.cpp">
+      <Filter>ソース ファイル\mhl\util\output</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="reversi\util\OutputConsole.h">
-      <Filter>ソース ファイル\reversi\util</Filter>
-    </ClInclude>
-    <ClInclude Include="reversi\util\IOutputConsole.h">
-      <Filter>ソース ファイル\reversi\util</Filter>
-    </ClInclude>
     <ClInclude Include="reversi\util\Assert.h">
       <Filter>ソース ファイル\reversi\util</Filter>
     </ClInclude>
@@ -340,6 +376,48 @@
     </ClInclude>
     <ClInclude Include="reversi\test\code\TestPerformanceCounter.h">
       <Filter>ソース ファイル\reversi\test\code</Filter>
+    </ClInclude>
+    <ClInclude Include="mhl\exception\ArgumentException.hpp">
+      <Filter>ソース ファイル\mhl\exception</Filter>
+    </ClInclude>
+    <ClInclude Include="mhl\exception\UnitTestException.hpp">
+      <Filter>ソース ファイル\mhl\exception</Filter>
+    </ClInclude>
+    <ClInclude Include="mhl\test\TestCppNewFunctionTest.hpp">
+      <Filter>ソース ファイル\mhl\test</Filter>
+    </ClInclude>
+    <ClInclude Include="mhl\test\TestExecuteMethod.hpp">
+      <Filter>ソース ファイル\mhl\test</Filter>
+    </ClInclude>
+    <ClInclude Include="mhl\test\TestInstanceOfTest.hpp">
+      <Filter>ソース ファイル\mhl\test</Filter>
+    </ClInclude>
+    <ClInclude Include="mhl\test\TestSubject.hpp">
+      <Filter>ソース ファイル\mhl\test</Filter>
+    </ClInclude>
+    <ClInclude Include="mhl\test\UnitTestBase.hpp">
+      <Filter>ソース ファイル\mhl\test</Filter>
+    </ClInclude>
+    <ClInclude Include="mhl\test\UnitTestExecuteList.hpp">
+      <Filter>ソース ファイル\mhl\test</Filter>
+    </ClInclude>
+    <ClInclude Include="mhl\util\template\IExecuteMethod.hpp">
+      <Filter>ソース ファイル\mhl\util\template</Filter>
+    </ClInclude>
+    <ClInclude Include="mhl\util\template\IObservable.hpp">
+      <Filter>ソース ファイル\mhl\util\template</Filter>
+    </ClInclude>
+    <ClInclude Include="mhl\util\template\Subject.hpp">
+      <Filter>ソース ファイル\mhl\util\template</Filter>
+    </ClInclude>
+    <ClInclude Include="mhl\util\string\StdStringFormatter.hpp">
+      <Filter>ソース ファイル\mhl\util\string</Filter>
+    </ClInclude>
+    <ClInclude Include="mhl\util\output\IOutputConsole.hpp">
+      <Filter>ソース ファイル\mhl\util\output</Filter>
+    </ClInclude>
+    <ClInclude Include="mhl\util\output\OutputConsole.hpp">
+      <Filter>ソース ファイル\mhl\util\output</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

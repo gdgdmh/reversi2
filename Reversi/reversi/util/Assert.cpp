@@ -1,5 +1,6 @@
 ﻿#include "Assert.h"
-#include "OutputConsole.h"
+
+#include "../../mhl/util/output/OutputConsole.hpp"
 
 /**
  * 値の比較結果がfalseだったときにmessageを出力してプログラム停止する
@@ -52,7 +53,7 @@ void reversi::Assert::Output(std::string message) {
  * @param message 出力するメッセージ
  */
 void reversi::Assert::OutputConsole(std::string message) {
-	reversi::OutputConsole* output = new reversi::OutputConsole();
+	mhl::OutputConsole* output = new mhl::OutputConsole();
 	output->PrintLine(message);
 	if (output) {
 		delete output;

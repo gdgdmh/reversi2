@@ -6,7 +6,7 @@
 /**
  * コンストラクタ
  */
-reversi::TestPerformanceCounter::TestPerformanceCounter(reversi::IOutputConsole* outputConsole) : UnitTestBase(outputConsole) {
+reversi::TestPerformanceCounter::TestPerformanceCounter(mhl::IOutputConsole* outputConsole) : UnitTestBase(outputConsole) {
 }
 
 /**

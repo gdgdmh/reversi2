@@ -2,7 +2,7 @@
 #define REVERSI_LOGIC_RENDER_RENDERBOARDCONSOLE_H_
 
 #include "IRenderBoard.h"
-#include "../../util/IOutputConsole.h"
+#include "../../../mhl/util/output/IOutputConsole.hpp"
 #include "../base/Board.h"
 
 namespace reversi {
@@ -33,32 +33,32 @@ private:
 	 * @param board  盤
 	 * @param output コンソール出力クラス
 	 */
-	void RenderConsole(const Board& board, IOutputConsole* const output);
+	void RenderConsole(const Board& board, mhl::IOutputConsole* const output);
 
 	/**
 	 * 盤の上部の表示
 	 * @param console コンソール出力先
 	 */
-	void RenderBoardTop(IOutputConsole* const console);
+	void RenderBoardTop(mhl::IOutputConsole* const console);
 
 	/**
 	 * 盤のラインの表示
 	 * @param console コンソール出力先
 	 */
-	void RenderBoardLine(IOutputConsole* const console);
+	void RenderBoardLine(mhl::IOutputConsole* const console);
 
 	/**
 	 * 盤の横一列マスの表示
 	 * @param console コンソール出力先
 	 * @param y       何列目か(1～8)
 	 */
-	void RenderBoardHorizontalCells(IOutputConsole* const console, const Board& board, int y);
+	void RenderBoardHorizontalCells(mhl::IOutputConsole* const console, const Board& board, int y);
 
 	/**
 	 * 盤の下部の表示
 	 * @param console コンソール出力先
 	 */
-	void RenderBoardBottom(IOutputConsole* const console);
+	void RenderBoardBottom(mhl::IOutputConsole* const console);
 
 	/**
 	 * 全角数字1桁を取得する
@@ -76,7 +76,7 @@ private:
 
 
 private:
-	IOutputConsole* outputConsole; // コンソール出力
+	mhl::IOutputConsole* outputConsole; // コンソール出力
 };
 
 }

@@ -5,7 +5,7 @@
 /**
  * コンストラクタ
  */
-reversi::TestReverseInfo::TestReverseInfo(reversi::IOutputConsole* outputConsole) : UnitTestBase(outputConsole) {
+reversi::TestReverseInfo::TestReverseInfo(mhl::IOutputConsole* outputConsole) : UnitTestBase(outputConsole) {
 }
 
 /**

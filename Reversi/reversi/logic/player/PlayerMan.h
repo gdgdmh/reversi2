@@ -5,7 +5,7 @@
 #include "IMoveThinking.h"
 #include "../base/ReversiConstant.h"
 #include "../base/MoveInfo.h"
-#include "../../util/IOutputConsole.h"
+#include "../../../mhl/util/output/IOutputConsole.hpp"
 
 // 前方宣言
 namespace reversi {
@@ -59,7 +59,7 @@ public:
 
 private:
 	IMoveThinking* moveThinking;        // 思考インターフェース
-	reversi::IOutputConsole* console;   // コンソール出力
+	mhl::IOutputConsole* console;   // コンソール出力
 };
 
 }

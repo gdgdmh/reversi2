@@ -11,7 +11,7 @@ public:
 	/**
 	 * コンストラクタ
 	 */
-	TestReverseInfo(reversi::IOutputConsole* outputConsole);
+	TestReverseInfo(mhl::IOutputConsole* outputConsole);
 
 	/**
 	 * デストラクタ

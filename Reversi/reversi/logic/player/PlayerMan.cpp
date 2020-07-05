@@ -1,6 +1,6 @@
 ﻿#include "PLayerMan.h"
 #include "MoveThinkingMan.h"
-#include "../../util/OutputConsole.h"
+#include "../../../mhl/util/output/OutputConsole.hpp"
 #include "../../util/Assert.h"
 
 /**
@@ -31,7 +31,7 @@ void reversi::PlayerMan::Initialize() {
 		moveThinking = new MoveThinkingMan(true);
 	}
 	if (console == NULL) {
-		console = new OutputConsole();
+		console = new mhl::OutputConsole();
 	}
 }
 

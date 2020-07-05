@@ -11,7 +11,7 @@ public:
 	/**
 	 * コンストラクタ
 	 */
-	TestSimpleStack(reversi::IOutputConsole* outputConsole);
+	TestSimpleStack(mhl::IOutputConsole* outputConsole);
 
 	/**
 	 * デストラクタ

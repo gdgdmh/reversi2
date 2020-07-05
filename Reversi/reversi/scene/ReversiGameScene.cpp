@@ -1,5 +1,5 @@
 ﻿#include "ReversiGameScene.h"
-#include "../util/OutputConsole.h"
+#include "../../mhl/util/output/OutputConsole.hpp"
 #include "../util/Assert.h"
 #include "../game/KeyboardSelectYesNoWatching.h"
 #include "../game/KeyboardSelectCpuLevel.h"
@@ -43,7 +43,7 @@ reversi::ReversiGameScene::~ReversiGameScene() {
 void reversi::ReversiGameScene::Initialize() {
 	// 一度しか初期化しない
 	if (console == NULL) {
-		console = new OutputConsole();
+		console = new mhl::OutputConsole();
 	}
 	SetScene(reversi::ReversiGameScene::SCENE::INITIALIZE);
 }

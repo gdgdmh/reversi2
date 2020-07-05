@@ -11,7 +11,7 @@ public:
 	/**
 	 * コンストラクタ
 	 */
-	TestBoard(reversi::IOutputConsole* outputConsole);
+	TestBoard(mhl::IOutputConsole* outputConsole);
 
 	/**
 	 * デストラクタ
