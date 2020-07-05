@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <ProjectGuid>{BBE8F1EE-5554-4F84-82B8-7D66447D611E}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Reversi</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="reversi\game\KeyboardSelectCpuLevel.cpp" />
+    <ClCompile Include="reversi\game\KeyboardSelectYesNo.cpp" />
+    <ClCompile Include="reversi\game\KeyboardSelectYesNoWatching.cpp" />
+    <ClCompile Include="reversi\game\ReversiGameLoop.cpp" />
+    <ClCompile Include="reversi\logic\base\Board.cpp" />
+    <ClCompile Include="reversi\logic\base\Move.cpp" />
+    <ClCompile Include="reversi\logic\base\MoveInfo.cpp" />
+    <ClCompile Include="reversi\logic\base\ReverseInfo.cpp" />
+    <ClCompile Include="reversi\logic\base\Reversi.cpp" />
+    <ClCompile Include="reversi\logic\base\ReversiConstant.cpp" />
+    <ClCompile Include="reversi\logic\base\ThinkingNode.cpp" />
+    <ClCompile Include="reversi\logic\player\CalcBoardEvaluationPointByPosition.cpp" />
+    <ClCompile Include="reversi\logic\player\MoveThinkingCpu1.cpp" />
+    <ClCompile Include="reversi\logic\player\MoveThinkingCpu2.cpp" />
+    <ClCompile Include="reversi\logic\player\MoveThinkingCpu3.cpp" />
+    <ClCompile Include="reversi\logic\player\MoveThinkingCpu4.cpp" />
+    <ClCompile Include="reversi\logic\player\MoveThinkingMan.cpp" />
+    <ClCompile Include="reversi\logic\player\PlayerCpu.cpp" />
+    <ClCompile Include="reversi\logic\player\PlayerFactory.cpp" />
+    <ClCompile Include="reversi\logic\player\PlayerKeyboardSelectPosition.cpp" />
+    <ClCompile Include="reversi\logic\player\PlayerMan.cpp" />
+    <ClCompile Include="reversi\logic\render\RenderBoardConsole.cpp" />
+    <ClCompile Include="reversi\scene\ReversiGameScene.cpp" />
+    <ClCompile Include="reversi\test\base\UnitTestBase.cpp" />
+    <ClCompile Include="reversi\test\code\TestBoard.cpp" />
+    <ClCompile Include="reversi\test\code\TestCalcBoardEvaluationPointByPosition.cpp" />
+    <ClCompile Include="reversi\test\code\TestDevelop.cpp" />
+    <ClCompile Include="reversi\test\code\TestMove.cpp" />
+    <ClCompile Include="reversi\test\code\TestPerformanceCounter.cpp" />
+    <ClCompile Include="reversi\test\code\TestReverseInfo.cpp" />
+    <ClCompile Include="reversi\test\code\TestReversi.cpp" />
+    <ClCompile Include="reversi\test\code\TestReversiCpu.cpp" />
+    <ClCompile Include="reversi\test\code\TestSimpleArray.cpp" />
+    <ClCompile Include="reversi\test\code\TestSimpleStack.cpp" />
+    <ClCompile Include="reversi\test\code\TestStdRandomInt.cpp" />
+    <ClCompile Include="reversi\test\code\TestThinkingNode.cpp" />
+    <ClCompile Include="reversi\util\Assert.cpp" />
+    <ClCompile Include="reversi\util\ConsoleInputKeyboard.cpp" />
+    <ClCompile Include="reversi\util\OutputConsole.cpp" />
+    <ClCompile Include="reversi\util\PerformanceCounter.cpp" />
+    <ClCompile Include="reversi\util\StdRandomInt.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="reversi\game\ISelectCpuLevel.h" />
+    <ClInclude Include="reversi\game\ISelectYesNo.h" />
+    <ClInclude Include="reversi\game\ISelectYesNoWatching.h" />
+    <ClInclude Include="reversi\game\KeyboardSelectCpuLevel.h" />
+    <ClInclude Include="reversi\game\KeyboardSelectYesNo.h" />
+    <ClInclude Include="reversi\game\KeyboardSelectYesNoWatching.h" />
+    <ClInclude Include="reversi\game\ReversiGameLoop.h" />
+    <ClInclude Include="reversi\logic\base\Board.h" />
+    <ClInclude Include="reversi\logic\base\Move.h" />
+    <ClInclude Include="reversi\logic\base\MoveInfo.h" />
+    <ClInclude Include="reversi\logic\base\ReverseInfo.h" />
+    <ClInclude Include="reversi\logic\base\Reversi.h" />
+    <ClInclude Include="reversi\logic\base\ReversiConstant.h" />
+    <ClInclude Include="reversi\logic\base\ThinkingNode.h" />
+    <ClInclude Include="reversi\logic\player\CalcBoardEvaluationPointByPosition.h" />
+    <ClInclude Include="reversi\logic\player\ICalcBoardEvaluationPoint.h" />
+    <ClInclude Include="reversi\logic\player\IPlayer.h" />
+    <ClInclude Include="reversi\logic\player\IMoveThinking.h" />
+    <ClInclude Include="reversi\logic\player\IPlayerSelectPosition.h" />
+    <ClInclude Include="reversi\logic\player\MoveThinkingCpu1.h" />
+    <ClInclude Include="reversi\logic\player\MoveThinkingCpu2.h" />
+    <ClInclude Include="reversi\logic\player\MoveThinkingCpu3.h" />
+    <ClInclude Include="reversi\logic\player\MoveThinkingCpu4.h" />
+    <ClInclude Include="reversi\logic\player\MoveThinkingMan.h" />
+    <ClInclude Include="reversi\logic\player\PlayerCpu.h" />
+    <ClInclude Include="reversi\logic\player\PlayerFactory.h" />
+    <ClInclude Include="reversi\logic\player\PlayerKeyboardSelectPosition.h" />
+    <ClInclude Include="reversi\logic\player\PlayerMan.h" />
+    <ClInclude Include="reversi\logic\render\IRenderBoard.h" />
+    <ClInclude Include="reversi\logic\render\RenderBoardConsole.h" />
+    <ClInclude Include="reversi\scene\ReversiGameScene.h" />
+    <ClInclude Include="reversi\test\base\UnitTestBase.h" />
+    <ClInclude Include="reversi\test\code\TestBoard.h" />
+    <ClInclude Include="reversi\test\code\TestCalcBoardEvaluationPointByPosition.h" />
+    <ClInclude Include="reversi\test\code\TestDevelop.h" />
+    <ClInclude Include="reversi\test\code\TestMove.h" />
+    <ClInclude Include="reversi\test\code\TestPerformanceCounter.h" />
+    <ClInclude Include="reversi\test\code\TestReverseInfo.h" />
+    <ClInclude Include="reversi\test\code\TestReversi.h" />
+    <ClInclude Include="reversi\test\code\TestReversiCpu.h" />
+    <ClInclude Include="reversi\test\code\TestSimpleArray.h" />
+    <ClInclude Include="reversi\test\code\TestSimpleStack.h" />
+    <ClInclude Include="reversi\test\code\TestStdRandomInt.h" />
+    <ClInclude Include="reversi\test\code\TestThinkingNode.h" />
+    <ClInclude Include="reversi\util\Assert.h" />
+    <ClInclude Include="reversi\util\ConsoleInputKeyboard.h" />
+    <ClInclude Include="reversi\util\IInputKeyboard.h" />
+    <ClInclude Include="reversi\util\IOutputConsole.h" />
+    <ClInclude Include="reversi\util\IRandomInt.h" />
+    <ClInclude Include="reversi\util\OutputConsole.h" />
+    <ClInclude Include="reversi\util\PerformanceCounter.h" />
+    <ClInclude Include="reversi\util\SimpleStack.h" />
+    <ClInclude Include="reversi\util\SimpleArray.h" />
+    <ClInclude Include="reversi\util\StdRandomInt.h" />
+    <ClInclude Include="reversi\util\StdStringFormatter.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

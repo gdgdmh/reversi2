@@ -1,0 +1,345 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="ソース ファイル">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="ヘッダー ファイル">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="リソース ファイル">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="ソース ファイル\reversi">
+      <UniqueIdentifier>{3fbdd832-1c97-4e1d-ac7b-3c1ae829d7a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\reversi\util">
+      <UniqueIdentifier>{fe40671b-591f-4483-bb3f-1bb5584334e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\reversi\test">
+      <UniqueIdentifier>{8e87fa8a-fdfa-4343-8ba3-b474aa551f45}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\reversi\scene">
+      <UniqueIdentifier>{241a3e2f-418c-42fc-9445-7d2666c8266a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\reversi\logic">
+      <UniqueIdentifier>{10676ca4-32f5-4df1-8ddd-57dce66be360}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\reversi\logic\base">
+      <UniqueIdentifier>{c38a1007-b6b0-45df-bf9f-30ab72f6cfcb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\reversi\logic\render">
+      <UniqueIdentifier>{b023d082-bbf1-423d-a892-fd28a625ae6c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\reversi\test\base">
+      <UniqueIdentifier>{a5979944-c074-41ca-a60a-be7340347242}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\reversi\test\code">
+      <UniqueIdentifier>{d0363eb7-1ab1-4721-b012-7fbabdab8261}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\reversi\logic\player">
+      <UniqueIdentifier>{6829d4b3-1c64-4336-a3a6-12661fc10972}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\reversi\game">
+      <UniqueIdentifier>{0ef7882d-6e56-456f-bf2d-926c2272d688}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="reversi\util\OutputConsole.cpp">
+      <Filter>ソース ファイル\reversi\util</Filter>
+    </ClCompile>
+    <ClCompile Include="reversi\util\Assert.cpp">
+      <Filter>ソース ファイル\reversi\util</Filter>
+    </ClCompile>
+    <ClCompile Include="reversi\logic\base\Board.cpp">
+      <Filter>ソース ファイル\reversi\logic\base</Filter>
+    </ClCompile>
+    <ClCompile Include="reversi\logic\base\ReversiConstant.cpp">
+      <Filter>ソース ファイル\reversi\logic\base</Filter>
+    </ClCompile>
+    <ClCompile Include="reversi\logic\render\RenderBoardConsole.cpp">
+      <Filter>ソース ファイル\reversi\logic\render</Filter>
+    </ClCompile>
+    <ClCompile Include="reversi\logic\base\Move.cpp">
+      <Filter>ソース ファイル\reversi\logic\base</Filter>
+    </ClCompile>
+    <ClCompile Include="reversi\test\base\UnitTestBase.cpp">
+      <Filter>ソース ファイル\reversi\test\base</Filter>
+    </ClCompile>
+    <ClCompile Include="reversi\test\code\TestBoard.cpp">
+      <Filter>ソース ファイル\reversi\test\code</Filter>
+    </ClCompile>
+    <ClCompile Include="reversi\test\code\TestDevelop.cpp">
+      <Filter>ソース ファイル\reversi\test\code</Filter>
+    </ClCompile>
+    <ClCompile Include="reversi\test\code\TestMove.cpp">
+      <Filter>ソース ファイル\reversi\test\code</Filter>
+    </ClCompile>
+    <ClCompile Include="reversi\logic\base\ReverseInfo.cpp">
+      <Filter>ソース ファイル\reversi\logic\base</Filter>
+    </ClCompile>
+    <ClCompile Include="reversi\test\code\TestReverseInfo.cpp">
+      <Filter>ソース ファイル\reversi\test\code</Filter>
+    </ClCompile>
+    <ClCompile Include="reversi\logic\player\PlayerMan.cpp">
+      <Filter>ソース ファイル\reversi\logic\player</Filter>
+    </ClCompile>
+    <ClCompile Include="reversi\logic\player\PlayerCpu.cpp">
+      <Filter>ソース ファイル\reversi\logic\player</Filter>
+    </ClCompile>
+    <ClCompile Include="reversi\logic\base\MoveInfo.cpp">
+      <Filter>ソース ファイル\reversi\logic\base</Filter>
+    </ClCompile>
+    <ClCompile Include="reversi\logic\base\Reversi.cpp">
+      <Filter>ソース ファイル\reversi\logic\base</Filter>
+    </ClCompile>
+    <ClCompile Include="reversi\game\ReversiGameLoop.cpp">
+      <Filter>ソース ファイル\reversi\game</Filter>
+    </ClCompile>
+    <ClCompile Include="reversi\logic\player\MoveThinkingMan.cpp">
+      <Filter>ソース ファイル\reversi\logic\player</Filter>
+    </ClCompile>
+    <ClCompile Include="reversi\test\code\TestReversi.cpp">
+      <Filter>ソース ファイル\reversi\test\code</Filter>
+    </ClCompile>
+    <ClCompile Include="reversi\logic\player\MoveThinkingCpu1.cpp">
+      <Filter>ソース ファイル\reversi\logic\player</Filter>
+    </ClCompile>
+    <ClCompile Include="reversi\util\StdRandomInt.cpp">
+      <Filter>ソース ファイル\reversi\util</Filter>
+    </ClCompile>
+    <ClCompile Include="reversi\test\code\TestStdRandomInt.cpp">
+      <Filter>ソース ファイル\reversi\test\code</Filter>
+    </ClCompile>
+    <ClCompile Include="reversi\logic\player\MoveThinkingCpu2.cpp">
+      <Filter>ソース ファイル\reversi\logic\player</Filter>
+    </ClCompile>
+    <ClCompile Include="reversi\logic\player\PlayerFactory.cpp">
+      <Filter>ソース ファイル\reversi\logic\player</Filter>
+    </ClCompile>
+    <ClCompile Include="reversi\scene\ReversiGameScene.cpp">
+      <Filter>ソース ファイル\reversi\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="reversi\util\ConsoleInputKeyboard.cpp">
+      <Filter>ソース ファイル\reversi\util</Filter>
+    </ClCompile>
+    <ClCompile Include="reversi\logic\player\PlayerKeyboardSelectPosition.cpp">
+      <Filter>ソース ファイル\reversi\logic\player</Filter>
+    </ClCompile>
+    <ClCompile Include="reversi\game\KeyboardSelectYesNo.cpp">
+      <Filter>ソース ファイル\reversi\game</Filter>
+    </ClCompile>
+    <ClCompile Include="reversi\game\KeyboardSelectYesNoWatching.cpp">
+      <Filter>ソース ファイル\reversi\game</Filter>
+    </ClCompile>
+    <ClCompile Include="reversi\game\KeyboardSelectCpuLevel.cpp">
+      <Filter>ソース ファイル\reversi\game</Filter>
+    </ClCompile>
+    <ClCompile Include="reversi\logic\player\MoveThinkingCpu3.cpp">
+      <Filter>ソース ファイル\reversi\logic\player</Filter>
+    </ClCompile>
+    <ClCompile Include="reversi\test\code\TestReversiCpu.cpp">
+      <Filter>ソース ファイル\reversi\test\code</Filter>
+    </ClCompile>
+    <ClCompile Include="reversi\logic\player\CalcBoardEvaluationPointByPosition.cpp">
+      <Filter>ソース ファイル\reversi\logic\player</Filter>
+    </ClCompile>
+    <ClCompile Include="reversi\test\code\TestCalcBoardEvaluationPointByPosition.cpp">
+      <Filter>ソース ファイル\reversi\test\code</Filter>
+    </ClCompile>
+    <ClCompile Include="reversi\logic\base\ThinkingNode.cpp">
+      <Filter>ソース ファイル\reversi\logic\base</Filter>
+    </ClCompile>
+    <ClCompile Include="reversi\test\code\TestThinkingNode.cpp">
+      <Filter>ソース ファイル\reversi\test\code</Filter>
+    </ClCompile>
+    <ClCompile Include="reversi\test\code\TestSimpleStack.cpp">
+      <Filter>ソース ファイル\reversi\test\code</Filter>
+    </ClCompile>
+    <ClCompile Include="reversi\test\code\TestSimpleArray.cpp">
+      <Filter>ソース ファイル\reversi\test\code</Filter>
+    </ClCompile>
+    <ClCompile Include="reversi\logic\player\MoveThinkingCpu4.cpp">
+      <Filter>ソース ファイル\reversi\logic\player</Filter>
+    </ClCompile>
+    <ClCompile Include="reversi\util\PerformanceCounter.cpp">
+      <Filter>ソース ファイル\reversi\util</Filter>
+    </ClCompile>
+    <ClCompile Include="reversi\test\code\TestPerformanceCounter.cpp">
+      <Filter>ソース ファイル\reversi\test\code</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="reversi\util\OutputConsole.h">
+      <Filter>ソース ファイル\reversi\util</Filter>
+    </ClInclude>
+    <ClInclude Include="reversi\util\IOutputConsole.h">
+      <Filter>ソース ファイル\reversi\util</Filter>
+    </ClInclude>
+    <ClInclude Include="reversi\util\Assert.h">
+      <Filter>ソース ファイル\reversi\util</Filter>
+    </ClInclude>
+    <ClInclude Include="reversi\logic\base\Board.h">
+      <Filter>ソース ファイル\reversi\logic\base</Filter>
+    </ClInclude>
+    <ClInclude Include="reversi\logic\base\ReversiConstant.h">
+      <Filter>ソース ファイル\reversi\logic\base</Filter>
+    </ClInclude>
+    <ClInclude Include="reversi\logic\render\IRenderBoard.h">
+      <Filter>ソース ファイル\reversi\logic\render</Filter>
+    </ClInclude>
+    <ClInclude Include="reversi\logic\render\RenderBoardConsole.h">
+      <Filter>ソース ファイル\reversi\logic\render</Filter>
+    </ClInclude>
+    <ClInclude Include="reversi\logic\base\Move.h">
+      <Filter>ソース ファイル\reversi\logic\base</Filter>
+    </ClInclude>
+    <ClInclude Include="reversi\test\base\UnitTestBase.h">
+      <Filter>ソース ファイル\reversi\test\base</Filter>
+    </ClInclude>
+    <ClInclude Include="reversi\test\code\TestBoard.h">
+      <Filter>ソース ファイル\reversi\test\code</Filter>
+    </ClInclude>
+    <ClInclude Include="reversi\test\code\TestDevelop.h">
+      <Filter>ソース ファイル\reversi\test\code</Filter>
+    </ClInclude>
+    <ClInclude Include="reversi\test\code\TestMove.h">
+      <Filter>ソース ファイル\reversi\test\code</Filter>
+    </ClInclude>
+    <ClInclude Include="reversi\logic\base\ReverseInfo.h">
+      <Filter>ソース ファイル\reversi\logic\base</Filter>
+    </ClInclude>
+    <ClInclude Include="reversi\test\code\TestReverseInfo.h">
+      <Filter>ソース ファイル\reversi\test\code</Filter>
+    </ClInclude>
+    <ClInclude Include="reversi\logic\player\PlayerMan.h">
+      <Filter>ソース ファイル\reversi\logic\player</Filter>
+    </ClInclude>
+    <ClInclude Include="reversi\logic\player\PlayerCpu.h">
+      <Filter>ソース ファイル\reversi\logic\player</Filter>
+    </ClInclude>
+    <ClInclude Include="reversi\logic\base\MoveInfo.h">
+      <Filter>ソース ファイル\reversi\logic\base</Filter>
+    </ClInclude>
+    <ClInclude Include="reversi\logic\base\Reversi.h">
+      <Filter>ソース ファイル\reversi\logic\base</Filter>
+    </ClInclude>
+    <ClInclude Include="reversi\logic\player\IPlayer.h">
+      <Filter>ソース ファイル\reversi\logic\player</Filter>
+    </ClInclude>
+    <ClInclude Include="reversi\game\ReversiGameLoop.h">
+      <Filter>ソース ファイル\reversi\game</Filter>
+    </ClInclude>
+    <ClInclude Include="reversi\logic\player\IMoveThinking.h">
+      <Filter>ソース ファイル\reversi\logic\player</Filter>
+    </ClInclude>
+    <ClInclude Include="reversi\logic\player\MoveThinkingMan.h">
+      <Filter>ソース ファイル\reversi\logic\player</Filter>
+    </ClInclude>
+    <ClInclude Include="reversi\test\code\TestReversi.h">
+      <Filter>ソース ファイル\reversi\test\code</Filter>
+    </ClInclude>
+    <ClInclude Include="reversi\logic\player\MoveThinkingCpu1.h">
+      <Filter>ソース ファイル\reversi\logic\player</Filter>
+    </ClInclude>
+    <ClInclude Include="reversi\util\StdStringFormatter.h">
+      <Filter>ソース ファイル\reversi\util</Filter>
+    </ClInclude>
+    <ClInclude Include="reversi\util\IRandomInt.h">
+      <Filter>ソース ファイル\reversi\util</Filter>
+    </ClInclude>
+    <ClInclude Include="reversi\util\StdRandomInt.h">
+      <Filter>ソース ファイル\reversi\util</Filter>
+    </ClInclude>
+    <ClInclude Include="reversi\test\code\TestStdRandomInt.h">
+      <Filter>ソース ファイル\reversi\test\code</Filter>
+    </ClInclude>
+    <ClInclude Include="reversi\logic\player\MoveThinkingCpu2.h">
+      <Filter>ソース ファイル\reversi\logic\player</Filter>
+    </ClInclude>
+    <ClInclude Include="reversi\logic\player\PlayerFactory.h">
+      <Filter>ソース ファイル\reversi\logic\player</Filter>
+    </ClInclude>
+    <ClInclude Include="reversi\scene\ReversiGameScene.h">
+      <Filter>ソース ファイル\reversi\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="reversi\util\IInputKeyboard.h">
+      <Filter>ソース ファイル\reversi\util</Filter>
+    </ClInclude>
+    <ClInclude Include="reversi\util\ConsoleInputKeyboard.h">
+      <Filter>ソース ファイル\reversi\util</Filter>
+    </ClInclude>
+    <ClInclude Include="reversi\logic\player\IPlayerSelectPosition.h">
+      <Filter>ソース ファイル\reversi\logic\player</Filter>
+    </ClInclude>
+    <ClInclude Include="reversi\logic\player\PlayerKeyboardSelectPosition.h">
+      <Filter>ソース ファイル\reversi\logic\player</Filter>
+    </ClInclude>
+    <ClInclude Include="reversi\game\ISelectYesNo.h">
+      <Filter>ソース ファイル\reversi\game</Filter>
+    </ClInclude>
+    <ClInclude Include="reversi\game\KeyboardSelectYesNo.h">
+      <Filter>ソース ファイル\reversi\game</Filter>
+    </ClInclude>
+    <ClInclude Include="reversi\game\ISelectYesNoWatching.h">
+      <Filter>ソース ファイル\reversi\game</Filter>
+    </ClInclude>
+    <ClInclude Include="reversi\game\KeyboardSelectYesNoWatching.h">
+      <Filter>ソース ファイル\reversi\game</Filter>
+    </ClInclude>
+    <ClInclude Include="reversi\game\ISelectCpuLevel.h">
+      <Filter>ソース ファイル\reversi\game</Filter>
+    </ClInclude>
+    <ClInclude Include="reversi\game\KeyboardSelectCpuLevel.h">
+      <Filter>ソース ファイル\reversi\game</Filter>
+    </ClInclude>
+    <ClInclude Include="reversi\logic\player\MoveThinkingCpu3.h">
+      <Filter>ソース ファイル\reversi\logic\player</Filter>
+    </ClInclude>
+    <ClInclude Include="reversi\test\code\TestReversiCpu.h">
+      <Filter>ソース ファイル\reversi\test\code</Filter>
+    </ClInclude>
+    <ClInclude Include="reversi\logic\player\ICalcBoardEvaluationPoint.h">
+      <Filter>ソース ファイル\reversi\logic\player</Filter>
+    </ClInclude>
+    <ClInclude Include="reversi\logic\player\CalcBoardEvaluationPointByPosition.h">
+      <Filter>ソース ファイル\reversi\logic\player</Filter>
+    </ClInclude>
+    <ClInclude Include="reversi\test\code\TestCalcBoardEvaluationPointByPosition.h">
+      <Filter>ソース ファイル\reversi\test\code</Filter>
+    </ClInclude>
+    <ClInclude Include="reversi\logic\base\ThinkingNode.h">
+      <Filter>ソース ファイル\reversi\logic\base</Filter>
+    </ClInclude>
+    <ClInclude Include="reversi\test\code\TestThinkingNode.h">
+      <Filter>ソース ファイル\reversi\test\code</Filter>
+    </ClInclude>
+    <ClInclude Include="reversi\util\SimpleStack.h">
+      <Filter>ソース ファイル\reversi\util</Filter>
+    </ClInclude>
+    <ClInclude Include="reversi\test\code\TestSimpleStack.h">
+      <Filter>ソース ファイル\reversi\test\code</Filter>
+    </ClInclude>
+    <ClInclude Include="reversi\util\SimpleArray.h">
+      <Filter>ソース ファイル\reversi\util</Filter>
+    </ClInclude>
+    <ClInclude Include="reversi\test\code\TestSimpleArray.h">
+      <Filter>ソース ファイル\reversi\test\code</Filter>
+    </ClInclude>
+    <ClInclude Include="reversi\logic\player\MoveThinkingCpu4.h">
+      <Filter>ソース ファイル\reversi\logic\player</Filter>
+    </ClInclude>
+    <ClInclude Include="reversi\util\PerformanceCounter.h">
+      <Filter>ソース ファイル\reversi\util</Filter>
+    </ClInclude>
+    <ClInclude Include="reversi\test\code\TestPerformanceCounter.h">
+      <Filter>ソース ファイル\reversi\test\code</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
