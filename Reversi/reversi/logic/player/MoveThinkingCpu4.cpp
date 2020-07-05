@@ -1,6 +1,6 @@
 ﻿#include <iostream>
 #include "MoveThinkingCpu4.h"
-#include "../../util/OutputConsole.h"
+#include "../../../mhl/util/output/OutputConsole.hpp"
 #include "../../util/Assert.h"
 #include "../../util/StdStringFormatter.h"
 #include "ICalcBoardEvaluationPoint.h"
@@ -23,7 +23,7 @@ const int reversi::MoveThinkingCpu4::STATIC_EVALUATION_POINTS[reversi::ReversiCo
  * コンストラクタ
  */
 reversi::MoveThinkingCpu4::MoveThinkingCpu4() : console(NULL) {
-	console = new OutputConsole();
+	console = new mhl::OutputConsole();
 }
 
 /**

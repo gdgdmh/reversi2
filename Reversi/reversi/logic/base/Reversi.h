@@ -5,7 +5,7 @@
 #include "Board.h"
 #include "Move.h"
 #include "../player/IPlayer.h"
-#include "../../util/IOutputConsole.h"
+#include "../../../mhl/util/output/IOutputConsole.hpp"
 
 namespace reversi {
 
@@ -341,7 +341,7 @@ private:
 	reversi::Reversi::PLAYER_DATA playerData;   // プレイヤーデータ
 	reversi::Reversi::SCENE scene;              // シーン
 	reversi::Move moveCache;                    // 着手キャッシュ
-	reversi::IOutputConsole* console;           // コンソール出力クラス
+	mhl::IOutputConsole* console;           // コンソール出力クラス
 	reversi::Reversi::PASS_CHECK passCheck;     // パス確認用(どっちもパスしかできなかったら終局)
 	reversi::Reversi::RESULT_DATA resultData;   // 結果データ
 	reversi::MoveInfo simulationMove;           // シミュレーション着手情報(思考用)

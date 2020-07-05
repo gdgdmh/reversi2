@@ -11,7 +11,7 @@ public:
 	/**
 	 * コンストラクタ
 	 */
-	TestSimpleArray(reversi::IOutputConsole* outputConsole);
+	TestSimpleArray(mhl::IOutputConsole* outputConsole);
 
 	/**
 	 * デストラクタ

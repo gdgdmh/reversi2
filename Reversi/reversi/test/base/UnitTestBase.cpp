@@ -4,7 +4,7 @@
  * コンストラクタ
  * @param outputConsole コンソール出力クラス
  */
-reversi::UnitTestBase::UnitTestBase(reversi::IOutputConsole* outputConsole) :
+reversi::UnitTestBase::UnitTestBase(mhl::IOutputConsole* outputConsole) :
 	outputConsole(outputConsole) {
 }
 

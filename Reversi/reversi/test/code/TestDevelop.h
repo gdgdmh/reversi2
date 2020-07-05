@@ -2,11 +2,7 @@
 #define REVERSI_TEST_CODE_TESTDEVELOP_H_
 
 #include "../base/UnitTestBase.h"
-
-// 前方宣言
-namespace reversi {
-class IOutputConsole;
-}
+#include "../../../mhl/util/output/IOutputConsole.hpp"
 
 namespace reversi {
 
@@ -16,7 +12,7 @@ namespace reversi {
 		/**
 		 * コンストラクタ
 		 */
-		TestDevelop(reversi::IOutputConsole* outputConsole);
+		TestDevelop(mhl::IOutputConsole* outputConsole);
 
 		/**
 		 * デストラクタ
@@ -30,7 +26,7 @@ namespace reversi {
 		bool Execute();
 
 	private:
-		IOutputConsole* console;
+		mhl::IOutputConsole* console;
 	};
 }
 

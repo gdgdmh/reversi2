@@ -11,7 +11,7 @@ public:
 	/**
 	 * コンストラクタ
 	 */
-	TestStdRandomInt(reversi::IOutputConsole* outputConsole);
+	TestStdRandomInt(mhl::IOutputConsole* outputConsole);
 
 	/**
 	 * デストラクタ

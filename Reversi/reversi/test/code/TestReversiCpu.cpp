@@ -7,7 +7,7 @@
 /**
  * コンストラクタ
  */
-reversi::TestReversiCpu::TestReversiCpu(reversi::IOutputConsole* outputConsole) : UnitTestBase(outputConsole) {
+reversi::TestReversiCpu::TestReversiCpu(mhl::IOutputConsole* outputConsole) : UnitTestBase(outputConsole) {
 }
 
 /**

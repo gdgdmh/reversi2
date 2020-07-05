@@ -1,6 +1,6 @@
 ﻿#include "Reversi.h"
 #include "../../util/Assert.h"
-#include "../../util/OutputConsole.h"
+#include "../../../mhl/util/output/OutputConsole.hpp"
 #include "../../util/StdStringFormatter.h"
 #include "../../util/PerformanceCounter.h"
 #include "../player/PlayerMan.h"
@@ -33,7 +33,7 @@ void reversi::Reversi::Initialize() {
 	turn = reversi::ReversiConstant::TURN::TURN_BLACK;
 	SetScene(reversi::Reversi::SCENE::INITIALIZE);
 	if (console == NULL) {
-		console = new OutputConsole();
+		console = new mhl::OutputConsole();
 	}
 	ResetPassCheck();
 	ResetResultData();
@@ -123,7 +123,7 @@ void reversi::Reversi::CopyWithoutDynamicInstance(const reversi::Reversi& source
 	scene = source.scene;
 	moveCache = source.moveCache;
 	if (!console) {
-		console = new OutputConsole();
+		console = new mhl::OutputConsole();
 	}
 	passCheck = source.passCheck;
 	resultData = source.resultData;

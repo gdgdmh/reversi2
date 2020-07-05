@@ -2,7 +2,7 @@
 #define REVERSI_TEST_UNITTESTBASE_H_
 
 #include <string>
-#include "../../util/IOutputConsole.h"
+#include "../../../mhl/util/output/IOutputConsole.hpp"
 
 namespace reversi {
 
@@ -13,7 +13,7 @@ public:
 	 * コンストラクタ
 	 * @param outputConsole コンソール出力クラス
 	 */
-	UnitTestBase(reversi::IOutputConsole* outputConsole);
+	UnitTestBase(mhl::IOutputConsole* outputConsole);
 
 	/**
 	 * デストラクタ
@@ -38,7 +38,7 @@ protected:
 	bool AssertEqual(int expected, std::string message);
 
 protected:
-	reversi::IOutputConsole* outputConsole; // コンソール出力
+	mhl::IOutputConsole* outputConsole; // コンソール出力
 };
 
 }

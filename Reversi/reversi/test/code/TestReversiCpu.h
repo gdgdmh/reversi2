@@ -11,7 +11,7 @@ public:
 	/**
 	 * コンストラクタ
 	 */
-	TestReversiCpu(reversi::IOutputConsole* outputConsole);
+	TestReversiCpu(mhl::IOutputConsole* outputConsole);
 
 	/**
 	 * デストラクタ

@@ -1,7 +1,7 @@
 ﻿#ifndef REVERSI_SCENE_REVERSIGAMESCENE_H_
 #define REVERSI_SCENE_REVERSIGAMESCENE_H_
 
-#include "../util/IOutputConsole.h"
+#include "../../mhl/util/output/IOutputConsole.hpp"
 #include "../logic/base/Reversi.h"
 #include "../game/ISelectYesNoWatching.h"
 #include "../game/ISelectCpuLevel.h"
@@ -139,7 +139,7 @@ private:
 	void OutputPlayerDrawMessage();
 
 private:
-	reversi::IOutputConsole* console;                   // コンソール出力
+	mhl::IOutputConsole* console;                   // コンソール出力
 	SCENE scene;                                        // シーン変数
 	reversi::Reversi reversi;                           // リバーシクラス
 	reversi::ISelectYesNoWatching* selectYesNoWatching; // 黒、白、観戦の選択インターフェース

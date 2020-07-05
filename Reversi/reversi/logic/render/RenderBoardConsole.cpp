@@ -1,12 +1,12 @@
 ﻿#include "RenderBoardConsole.h"
-#include "../../util/OutputConsole.h"
+#include "../../../mhl/util/output/OutputConsole.hpp"
 #include "../../util/Assert.h"
 
 /**
  * コンストラクタ
  */
 reversi::RenderBoardConsole::RenderBoardConsole() {
-	outputConsole = new reversi::OutputConsole();
+	outputConsole = new mhl::OutputConsole();
 }
 
 /**
@@ -32,7 +32,7 @@ void reversi::RenderBoardConsole::Render(const Board& board) {
  * @param board  盤
  * @param output コンソール出力クラス
  */
-void reversi::RenderBoardConsole::RenderConsole(const Board& board, IOutputConsole* const output) {
+void reversi::RenderBoardConsole::RenderConsole(const Board& board, mhl::IOutputConsole* const output) {
 	if (output == NULL) {
 		return;
 	}
@@ -69,7 +69,7 @@ void reversi::RenderBoardConsole::RenderConsole(const Board& board, IOutputConso
  * 盤の上部の表示
  * @param console コンソール出力先
  */
-void reversi::RenderBoardConsole::RenderBoardTop(IOutputConsole* const console) {
+void reversi::RenderBoardConsole::RenderBoardTop(mhl::IOutputConsole* const console) {
 	if (console == NULL) {
 		return;
 	}
@@ -81,7 +81,7 @@ void reversi::RenderBoardConsole::RenderBoardTop(IOutputConsole* const console) 
  * 盤のラインの表示
  * @param console コンソール出力先
  */
-void reversi::RenderBoardConsole::RenderBoardLine(IOutputConsole* const console) {
+void reversi::RenderBoardConsole::RenderBoardLine(mhl::IOutputConsole* const console) {
 	if (console == NULL) {
 		return;
 	}
@@ -94,7 +94,7 @@ void reversi::RenderBoardConsole::RenderBoardLine(IOutputConsole* const console)
  * @param console コンソール出力先
  * @param y       何列目か(1～8)
  */
-void reversi::RenderBoardConsole::RenderBoardHorizontalCells(IOutputConsole* const console, const Board& board, int y) {
+void reversi::RenderBoardConsole::RenderBoardHorizontalCells(mhl::IOutputConsole* const console, const Board& board, int y) {
 	if (console == NULL) {
 		return;
 	}
@@ -126,7 +126,7 @@ void reversi::RenderBoardConsole::RenderBoardHorizontalCells(IOutputConsole* con
  * 盤の下部の表示
  * @param console コンソール出力先
  */
-void reversi::RenderBoardConsole::RenderBoardBottom(IOutputConsole* const console) {
+void reversi::RenderBoardConsole::RenderBoardBottom(mhl::IOutputConsole* const console) {
 	if (console == NULL) {
 		return;
 	}

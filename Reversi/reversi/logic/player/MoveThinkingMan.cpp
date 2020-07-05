@@ -2,7 +2,7 @@
 #include <algorithm>
 #include "MoveThinkingMan.h"
 #include "PlayerKeyboardSelectPosition.h"
-#include "../../util/OutputConsole.h"
+#include "../../../mhl/util/output/OutputConsole.hpp"
 #include "../../util/Assert.h"
 #include "../../util/IInputKeyboard.h"
 #include "../../util/ConsoleInputKeyboard.h"
@@ -12,7 +12,7 @@
  */
 reversi::MoveThinkingMan::MoveThinkingMan(bool useHint) : playerSelectPosition(NULL), console(NULL), useHint(useHint) {
 	playerSelectPosition = new reversi::PlayerKeyboardSelectPosition();
-	console = new reversi::OutputConsole();
+	console = new mhl::OutputConsole();
 }
 
 /**

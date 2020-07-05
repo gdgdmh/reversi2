@@ -7,7 +7,7 @@
 /**
  * コンストラクタ
  */
-reversi::TestMove::TestMove(reversi::IOutputConsole* outputConsole) : UnitTestBase(outputConsole) {
+reversi::TestMove::TestMove(mhl::IOutputConsole* outputConsole) : UnitTestBase(outputConsole) {
 }
 
 /**

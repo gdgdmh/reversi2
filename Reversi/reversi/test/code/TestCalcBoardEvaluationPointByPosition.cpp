@@ -8,7 +8,7 @@
 /**
  * コンストラクタ
  */
-reversi::TestCalcBoardEvaluationPointByPosition::TestCalcBoardEvaluationPointByPosition(reversi::IOutputConsole* outputConsole) : UnitTestBase(outputConsole) {
+reversi::TestCalcBoardEvaluationPointByPosition::TestCalcBoardEvaluationPointByPosition(mhl::IOutputConsole* outputConsole) : UnitTestBase(outputConsole) {
 }
 
 /**

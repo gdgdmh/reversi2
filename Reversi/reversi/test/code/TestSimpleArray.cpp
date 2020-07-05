@@ -6,7 +6,7 @@
 /**
  * コンストラクタ
  */
-reversi::TestSimpleArray::TestSimpleArray(reversi::IOutputConsole* outputConsole) : UnitTestBase(outputConsole) {
+reversi::TestSimpleArray::TestSimpleArray(mhl::IOutputConsole* outputConsole) : UnitTestBase(outputConsole) {
 }
 
 /**

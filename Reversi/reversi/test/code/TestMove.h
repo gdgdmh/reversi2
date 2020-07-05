@@ -11,7 +11,7 @@ public:
 	/**
 	 * コンストラクタ
 	 */
-	TestMove(reversi::IOutputConsole* outputConsole);
+	TestMove(mhl::IOutputConsole* outputConsole);
 
 	/**
 	 * デストラクタ

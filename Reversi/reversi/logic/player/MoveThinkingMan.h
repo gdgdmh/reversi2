@@ -6,7 +6,7 @@
 #include "../base/ReversiConstant.h"
 #include "../base/MoveInfo.h"
 #include "../base/Move.h"
-#include "../../util/IOutputConsole.h"
+#include "../../../mhl/util/output/IOutputConsole.hpp"
 
 // 前方宣言
 namespace reversi {
@@ -98,7 +98,7 @@ private:
 private:
 	reversi::Move reversiMove;                              // 着手情報
 	reversi::IPlayerSelectPosition* playerSelectPosition;   // 位置選択インターフェース
-	reversi::IOutputConsole* console;                       // コンソール出力
+	mhl::IOutputConsole* console;                       // コンソール出力
 	bool useHint;                                           // ヒントを使うか
 
 };

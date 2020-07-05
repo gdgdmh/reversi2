@@ -11,7 +11,7 @@ public:
 	/**
 	 * コンストラクタ
 	 */
-	TestPerformanceCounter(reversi::IOutputConsole* outputConsole);
+	TestPerformanceCounter(mhl::IOutputConsole* outputConsole);
 
 	/**
 	 * デストラクタ
