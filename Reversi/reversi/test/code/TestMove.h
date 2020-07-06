@@ -7,24 +7,24 @@ namespace reversi {
 
 // 着手テストクラス
 class TestMove : public UnitTestBase {
-public:
-	/**
-	 * コンストラクタ
-	 */
-	TestMove(mhl::IOutputConsole* outputConsole);
+ public:
+  /**
+   * コンストラクタ
+   */
+  TestMove(mhl::IOutputConsole* outputConsole);
 
-	/**
-	 * デストラクタ
-	 */
-	virtual ~TestMove();
+  /**
+   * デストラクタ
+   */
+  virtual ~TestMove();
 
-	/**
-	 * 実行
-	 * @return trueなら成功 falseなら失敗
-	 */
-	bool Execute();
+  /**
+   * 実行
+   * @return trueなら成功 falseなら失敗
+   */
+  bool Execute();
 };
 
-}
+}  // namespace reversi
 
 #endif  // REVERSI_TEST_CODE_TESTMOVE_H_

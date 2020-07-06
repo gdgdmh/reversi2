@@ -1,49 +1,44 @@
-#ifndef TEST_TESTSUBJECT_HPP_
+ï»¿#ifndef TEST_TESTSUBJECT_HPP_
 #define TEST_TESTSUBJECT_HPP_
 
 #include <memory>
-#include "UnitTestBase.hpp"
+
 #include "../util/template/IExecuteMethod.hpp"
 #include "../util/template/IObservable.hpp"
 #include "../util/template/Subject.hpp"
+#include "UnitTestBase.hpp"
 
 namespace test {
 
-    // ƒeƒXƒg‚Ì‚½‚ß‚ÌƒNƒ‰ƒX
-    class TestObserver : public mhl::IObservable {
-    public:
-        TestObserver() : value(0) {
-        }
+// ãƒ†ã‚¹ãƒˆã®ãŸã‚ã®ã‚¯ãƒ©ã‚¹
+class TestObserver : public mhl::IObservable {
+ public:
+  TestObserver() : value(0) {}
 
-        void Update(mhl::Subject& subject) {
-            value = 1;
-        }
+  void Update(mhl::Subject& subject) { value = 1; }
 
-        int Get() const {
-            return value;
-        }
+  int Get() const { return value; }
 
-    private:
-        int value;
-    };
+ private:
+  int value;
+};
 
+// ãƒ¡ã‚½ãƒƒãƒ‰å®Ÿè¡Œãƒ†ã‚¹ãƒˆã‚¯ãƒ©ã‚¹
+class TestSubject : public mhl::UnitTestBase {
+ public:
+  /**
+   * ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+   */
+  TestSubject(std::shared_ptr<mhl::IOutputConsole> output_console);
 
-    // ƒƒ\ƒbƒhÀsƒeƒXƒgƒNƒ‰ƒX
-    class TestSubject : public mhl::UnitTestBase {
-    public:
-        /**
-         * ƒRƒ“ƒXƒgƒ‰ƒNƒ^
-         */
-        TestSubject(std::shared_ptr<mhl::IOutputConsole> output_console);
+  /**
+   * ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+   */
+  virtual ~TestSubject();
 
-        /**
-         * ƒfƒXƒgƒ‰ƒNƒ^
-         */
-        virtual ~TestSubject();
+  void ExecuteUnitTest();
+};
 
-        void ExecuteUnitTest();
-    };
-
-}
+}  // namespace test
 
 #endif  // TEST_TESTSUBJECT_HPP_

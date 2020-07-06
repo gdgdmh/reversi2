@@ -3,15 +3,14 @@
 /**
  * コンストラクタ
  */
-test::TestCppNewFunctionTest::TestCppNewFunctionTest(std::shared_ptr<mhl::IOutputConsole> output_console)
-  : UnitTestBase(output_console) {
-}
+test::TestCppNewFunctionTest::TestCppNewFunctionTest(
+    std::shared_ptr<mhl::IOutputConsole> output_console)
+    : UnitTestBase(output_console) {}
 
 /**
  * デストラクタ
  */
-test::TestCppNewFunctionTest::~TestCppNewFunctionTest() {
-}
+test::TestCppNewFunctionTest::~TestCppNewFunctionTest() {}
 
 void test::TestCppNewFunctionTest::ExecuteUnitTest() {
   TestCpp11Nullptr();
@@ -29,7 +28,8 @@ void test::TestCppNewFunctionTest::ExecuteUnitTest() {
  */
 void test::TestCppNewFunctionTest::TestCpp11Nullptr() {
   char* p = nullptr;
-  AssertEquals(p == nullptr, "TestCppNewFunctionTest::TestCpp11Nullptr() not nullptr");
+  AssertEquals(p == nullptr,
+               "TestCppNewFunctionTest::TestCpp11Nullptr() not nullptr");
 }
 
 /**
@@ -37,8 +37,9 @@ void test::TestCppNewFunctionTest::TestCpp11Nullptr() {
  */
 void test::TestCppNewFunctionTest::TestUniformInitialization001() {
   const int VALUE = 3;
-  int x { VALUE };
-  AssertEquals(x == VALUE, "TestCppNewFunctionTest::TestUniformInitialization001 x not 3");
+  int x{VALUE};
+  AssertEquals(x == VALUE,
+               "TestCppNewFunctionTest::TestUniformInitialization001 x not 3");
 }
 
 /**
@@ -49,11 +50,19 @@ void test::TestCppNewFunctionTest::TestUniformInitialization002() {
   const int VALUE2 = 11;
   const int VALUE3 = 12;
   const int VALUE4 = 13;
-  int x[] { VALUE1, VALUE2, VALUE3, VALUE4 };
-  AssertEquals(x[0] == VALUE1, "TestCppNewFunctionTest::TestUniformInitialization002 x[0] not VALUE1");
-  AssertEquals(x[1] == VALUE2, "TestCppNewFunctionTest::TestUniformInitialization002 x[1] not VALUE2");
-  AssertEquals(x[2] == VALUE3, "TestCppNewFunctionTest::TestUniformInitialization002 x[2] not VALUE3");
-  AssertEquals(x[3] == VALUE4, "TestCppNewFunctionTest::TestUniformInitialization002 x[3] not VALUE4");
+  int x[]{VALUE1, VALUE2, VALUE3, VALUE4};
+  AssertEquals(
+      x[0] == VALUE1,
+      "TestCppNewFunctionTest::TestUniformInitialization002 x[0] not VALUE1");
+  AssertEquals(
+      x[1] == VALUE2,
+      "TestCppNewFunctionTest::TestUniformInitialization002 x[1] not VALUE2");
+  AssertEquals(
+      x[2] == VALUE3,
+      "TestCppNewFunctionTest::TestUniformInitialization002 x[2] not VALUE3");
+  AssertEquals(
+      x[3] == VALUE4,
+      "TestCppNewFunctionTest::TestUniformInitialization002 x[3] not VALUE4");
 }
 
 /**
@@ -66,9 +75,13 @@ void test::TestCppNewFunctionTest::TestUniformInitialization003() {
   };
   const int VALUE_A = 11;
   const int VALUE_B = 12;
-  Struct x { VALUE_A, VALUE_B };
-  AssertEquals(x.a == VALUE_A, "TestCppNewFunctionTest::TestUniformInitialization003 x.a not VALUE_A");
-  AssertEquals(x.b == VALUE_B, "TestCppNewFunctionTest::TestUniformInitialization003 x.b not VALUE_B");
+  Struct x{VALUE_A, VALUE_B};
+  AssertEquals(
+      x.a == VALUE_A,
+      "TestCppNewFunctionTest::TestUniformInitialization003 x.a not VALUE_A");
+  AssertEquals(
+      x.b == VALUE_B,
+      "TestCppNewFunctionTest::TestUniformInitialization003 x.b not VALUE_B");
 }
 
 /**
@@ -77,9 +90,13 @@ void test::TestCppNewFunctionTest::TestUniformInitialization003() {
 void test::TestCppNewFunctionTest::TestUniformInitialization004() {
   const int VALUE1 = 101;
   const int VALUE2 = 102;
-  std::vector<int> x = { VALUE1, VALUE2 };
-  AssertEquals(x[0] == VALUE1, "TestCppNewFunctionTest::TestUniformInitialization003 x[0] not VALUE1");
-  AssertEquals(x[1] == VALUE2, "TestCppNewFunctionTest::TestUniformInitialization003 x[1] not VALUE2");
+  std::vector<int> x = {VALUE1, VALUE2};
+  AssertEquals(
+      x[0] == VALUE1,
+      "TestCppNewFunctionTest::TestUniformInitialization003 x[0] not VALUE1");
+  AssertEquals(
+      x[1] == VALUE2,
+      "TestCppNewFunctionTest::TestUniformInitialization003 x[1] not VALUE2");
 }
 
 /**
@@ -102,15 +119,27 @@ void test::TestCppNewFunctionTest::TestEmplace() {
 void test::TestCppNewFunctionTest::TestSmartPointer() {
   const int VALUE1 = 10;
   std::shared_ptr<int> smart_pointer(new int(VALUE1));
-  AssertEquals(smart_pointer.use_count() == 1, "TestCppNewFunctionTest::TestSmartPointer smart_pointer count not 1");
-  AssertEquals((*smart_pointer) == VALUE1, "TestCppNewFunctionTest::TestSmartPointer smart_pointer not VALUE1");
+  AssertEquals(
+      smart_pointer.use_count() == 1,
+      "TestCppNewFunctionTest::TestSmartPointer smart_pointer count not 1");
+  AssertEquals(
+      (*smart_pointer) == VALUE1,
+      "TestCppNewFunctionTest::TestSmartPointer smart_pointer not VALUE1");
 
   std::shared_ptr<int> smart_pointer2 = smart_pointer;
-  AssertEquals(smart_pointer.use_count() == 2, "TestCppNewFunctionTest::TestSmartPointer smart_pointer count not 2");
-  AssertEquals(smart_pointer2.use_count() == 2, "TestCppNewFunctionTest::TestSmartPointer smart_pointer2 count not 2");
+  AssertEquals(
+      smart_pointer.use_count() == 2,
+      "TestCppNewFunctionTest::TestSmartPointer smart_pointer count not 2");
+  AssertEquals(
+      smart_pointer2.use_count() == 2,
+      "TestCppNewFunctionTest::TestSmartPointer smart_pointer2 count not 2");
 
-  AssertEquals((*smart_pointer) == VALUE1, "TestCppNewFunctionTest::TestSmartPointer smart_pointer not VALUE1");
-  AssertEquals((*smart_pointer2) == VALUE1, "TestCppNewFunctionTest::TestSmartPointer smart_pointer2 not VALUE1");
+  AssertEquals(
+      (*smart_pointer) == VALUE1,
+      "TestCppNewFunctionTest::TestSmartPointer smart_pointer not VALUE1");
+  AssertEquals(
+      (*smart_pointer2) == VALUE1,
+      "TestCppNewFunctionTest::TestSmartPointer smart_pointer2 not VALUE1");
 }
 
 /**

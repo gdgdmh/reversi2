@@ -7,13 +7,11 @@ namespace mhl {
 
 // コンソール出力のインターフェースクラス
 class IOutputConsole {
-public:
-
+ public:
   /**
    * デストラクタ
    */
-  virtual ~IOutputConsole() {
-  }
+  virtual ~IOutputConsole() {}
 
   /**
    * 文字列を出力する
@@ -26,6 +24,6 @@ public:
   virtual void PrintLine(std::string string) = 0;
 };
 
-}
+}  // namespace mhl
 
 #endif  // MH_LIBRARY_UTIL_OUTPUT_IOUTPUTCONSOLE_HPP_

@@ -7,24 +7,24 @@ namespace reversi {
 
 // 整数乱数生成テスト
 class TestStdRandomInt : public UnitTestBase {
-public:
-	/**
-	 * コンストラクタ
-	 */
-	TestStdRandomInt(mhl::IOutputConsole* outputConsole);
+ public:
+  /**
+   * コンストラクタ
+   */
+  TestStdRandomInt(mhl::IOutputConsole* outputConsole);
 
-	/**
-	 * デストラクタ
-	 */
-	virtual ~TestStdRandomInt();
+  /**
+   * デストラクタ
+   */
+  virtual ~TestStdRandomInt();
 
-	/**
-	 * 実行
-	 * @return trueなら成功 falseなら失敗
-	 */
-	bool Execute();
+  /**
+   * 実行
+   * @return trueなら成功 falseなら失敗
+   */
+  bool Execute();
 };
 
-}
+}  // namespace reversi
 
 #endif  // REVERSI_TEST_CODE_TESTSTDRANDOMINT_H_

@@ -1,92 +1,98 @@
 ﻿#include "Reversi.h"
-#include "../../util/Assert.h"
+
 #include "../../../mhl/util/output/OutputConsole.hpp"
-#include "../../util/StdStringFormatter.h"
+#include "../../util/Assert.h"
 #include "../../util/PerformanceCounter.h"
-#include "../player/PlayerMan.h"
+#include "../../util/StdStringFormatter.h"
 #include "../player/PlayerCpu.h"
 #include "../player/PlayerFactory.h"
+#include "../player/PlayerMan.h"
 #include "Move.h"
 
 /**
  * コンストラクタ
  */
-reversi::Reversi::Reversi() : turn(reversi::ReversiConstant::TURN::TURN_BLACK), scene(reversi::Reversi::SCENE::INITIALIZE), console(NULL), isSetSimulationMove(false), outputEnable(true), checkEnableMove(true) {
-	ResetPlayer();
-	ResetPassCheck();
-	ResetResultData();
-	simulationMove.Clear();
+reversi::Reversi::Reversi()
+    : turn(reversi::ReversiConstant::TURN::TURN_BLACK),
+      scene(reversi::Reversi::SCENE::INITIALIZE),
+      console(NULL),
+      isSetSimulationMove(false),
+      outputEnable(true),
+      checkEnableMove(true) {
+  ResetPlayer();
+  ResetPassCheck();
+  ResetResultData();
+  simulationMove.Clear();
 }
 
 /**
  * デストラクタ
  */
-reversi::Reversi::~Reversi() {
-	Release();
-}
+reversi::Reversi::~Reversi() { Release(); }
 
 /**
  *  初期化
  */
 void reversi::Reversi::Initialize() {
-	board.InitializeGame();
-	turn = reversi::ReversiConstant::TURN::TURN_BLACK;
-	SetScene(reversi::Reversi::SCENE::INITIALIZE);
-	if (console == NULL) {
-		console = new mhl::OutputConsole();
-	}
-	ResetPassCheck();
-	ResetResultData();
-	simulationMove.Clear();
-	isSetSimulationMove = false;
-	outputEnable = true;
-	checkEnableMove = true;
+  board.InitializeGame();
+  turn = reversi::ReversiConstant::TURN::TURN_BLACK;
+  SetScene(reversi::Reversi::SCENE::INITIALIZE);
+  if (console == NULL) {
+    console = new mhl::OutputConsole();
+  }
+  ResetPassCheck();
+  ResetResultData();
+  simulationMove.Clear();
+  isSetSimulationMove = false;
+  outputEnable = true;
+  checkEnableMove = true;
 }
 
 /**
  * ゲーム開始のための初期化
  * @param playerSetting プレイヤー設定
  */
-void reversi::Reversi::InitializeGame(const reversi::Reversi::PLAYER_SETTING& playerSetting) {
-	board.InitializeGame();
-	// プレイヤーインスタンスを開放する
-	ReleasePlayer();
-	// プレイヤー設定の取り込み
-	ApplyPlayerSetting(playerSetting);
-	// プレイヤーを作成,初期化
-	CreatePlayers();
-	for (int i = 0; i < PLAYER_COUNT; ++i) {
-		if (playerData.player[i]) {
-			playerData.player[i]->Initialize();
-		}
-	}
-	turn = reversi::ReversiConstant::TURN::TURN_BLACK;
-	SetScene(reversi::Reversi::SCENE::MOVE_SELECT_START);
-	ResetPassCheck();
-	ResetResultData();
-	simulationMove.Clear();
-	isSetSimulationMove = false;
+void reversi::Reversi::InitializeGame(
+    const reversi::Reversi::PLAYER_SETTING& playerSetting) {
+  board.InitializeGame();
+  // プレイヤーインスタンスを開放する
+  ReleasePlayer();
+  // プレイヤー設定の取り込み
+  ApplyPlayerSetting(playerSetting);
+  // プレイヤーを作成,初期化
+  CreatePlayers();
+  for (int i = 0; i < PLAYER_COUNT; ++i) {
+    if (playerData.player[i]) {
+      playerData.player[i]->Initialize();
+    }
+  }
+  turn = reversi::ReversiConstant::TURN::TURN_BLACK;
+  SetScene(reversi::Reversi::SCENE::MOVE_SELECT_START);
+  ResetPassCheck();
+  ResetResultData();
+  simulationMove.Clear();
+  isSetSimulationMove = false;
 }
 
 /**
  * 更新処理
  */
 void reversi::Reversi::Task() {
-	if (scene == reversi::Reversi::SCENE::INITIALIZE) {
-		TaskInitialize();
-	} else if (scene == reversi::Reversi::SCENE::MOVE_SELECT_START) {
-		TaskMoveSelectStart();
-	} else if (scene == reversi::Reversi::SCENE::MOVE_SELECT) {
-		TaskMoveSelect();
-	} else if (scene == reversi::Reversi::SCENE::PASS) {
-		TaskPass();
-	} else if (scene == reversi::Reversi::SCENE::MOVE_AFTER) {
-		TaskMoveAfter();
-	} else if (scene == reversi::Reversi::SCENE::RESULT) {
-		TaskResult();
-	} else if (scene == reversi::Reversi::SCENE::END) {
-		TaskEnd();
-	}
+  if (scene == reversi::Reversi::SCENE::INITIALIZE) {
+    TaskInitialize();
+  } else if (scene == reversi::Reversi::SCENE::MOVE_SELECT_START) {
+    TaskMoveSelectStart();
+  } else if (scene == reversi::Reversi::SCENE::MOVE_SELECT) {
+    TaskMoveSelect();
+  } else if (scene == reversi::Reversi::SCENE::PASS) {
+    TaskPass();
+  } else if (scene == reversi::Reversi::SCENE::MOVE_AFTER) {
+    TaskMoveAfter();
+  } else if (scene == reversi::Reversi::SCENE::RESULT) {
+    TaskResult();
+  } else if (scene == reversi::Reversi::SCENE::END) {
+    TaskEnd();
+  }
 }
 
 /**
@@ -94,9 +100,9 @@ void reversi::Reversi::Task() {
  * @param setMoveInfo シミュレーション着手情報
  */
 void reversi::Reversi::SetMoveSimulation(const reversi::MoveInfo& setMoveInfo) {
-	// シミュレーション着手フラグとデータを設定
-	isSetSimulationMove = true;
-	simulationMove.Copy(setMoveInfo);
+  // シミュレーション着手フラグとデータを設定
+  isSetSimulationMove = true;
+  simulationMove.Copy(setMoveInfo);
 }
 
 /**
@@ -104,33 +110,34 @@ void reversi::Reversi::SetMoveSimulation(const reversi::MoveInfo& setMoveInfo) {
  * @param source コピー元
  */
 void reversi::Reversi::CopyBoard(const reversi::Board& source) {
-	board.Copy(source);
+  board.Copy(source);
 }
 
 /**
  * 動的生成インスタンス以外をコピー
  * @param source コピー元
  */
-void reversi::Reversi::CopyWithoutDynamicInstance(const reversi::Reversi& source) {
-	// もしコピー先がメモリ確保していたら開放する
-	Release();
+void reversi::Reversi::CopyWithoutDynamicInstance(
+    const reversi::Reversi& source) {
+  // もしコピー先がメモリ確保していたら開放する
+  Release();
 
-	CopyBoard(source.board);
-	turn = source.turn;
-	for (int i = 0; i < PLAYER_COUNT; ++i) {
-		playerData.playerType[i] = source.playerData.playerType[i];
-	}
-	scene = source.scene;
-	moveCache = source.moveCache;
-	if (!console) {
-		console = new mhl::OutputConsole();
-	}
-	passCheck = source.passCheck;
-	resultData = source.resultData;
-	simulationMove.Copy(source.simulationMove);
-	isSetSimulationMove = source.isSetSimulationMove;
-	outputEnable = source.outputEnable;
-	checkEnableMove = source.checkEnableMove;
+  CopyBoard(source.board);
+  turn = source.turn;
+  for (int i = 0; i < PLAYER_COUNT; ++i) {
+    playerData.playerType[i] = source.playerData.playerType[i];
+  }
+  scene = source.scene;
+  moveCache = source.moveCache;
+  if (!console) {
+    console = new mhl::OutputConsole();
+  }
+  passCheck = source.passCheck;
+  resultData = source.resultData;
+  simulationMove.Copy(source.simulationMove);
+  isSetSimulationMove = source.isSetSimulationMove;
+  outputEnable = source.outputEnable;
+  checkEnableMove = source.checkEnableMove;
 }
 
 /**
@@ -138,7 +145,7 @@ void reversi::Reversi::CopyWithoutDynamicInstance(const reversi::Reversi& source
  * @param isOutputEnable trueなら出力する
  */
 void reversi::Reversi::SetOutputEnable(bool isOutputEnable) {
-	outputEnable = isOutputEnable;
+  outputEnable = isOutputEnable;
 }
 
 /**
@@ -148,9 +155,9 @@ void reversi::Reversi::SetOutputEnable(bool isOutputEnable) {
  * @param none  空白
  */
 void reversi::Reversi::GetResultStone(int& black, int& white, int& none) {
-	black = resultData.blackResultCount;
-	white = resultData.whiteResultCount;
-	none = resultData.noneResultCount;
+  black = resultData.blackResultCount;
+  white = resultData.whiteResultCount;
+  none = resultData.noneResultCount;
 }
 
 /**
@@ -158,11 +165,11 @@ void reversi::Reversi::GetResultStone(int& black, int& white, int& none) {
  * @return プレイヤー設定情報
  */
 reversi::Reversi::PLAYER_SETTING reversi::Reversi::GetPlayerSetting() const {
-	reversi::Reversi::PLAYER_SETTING setting;
-	for (int i = 0; i < PLAYER_COUNT; ++i) {
-		setting.playerType[i] = playerData.playerType[i];
-	}
-	return setting;
+  reversi::Reversi::PLAYER_SETTING setting;
+  for (int i = 0; i < PLAYER_COUNT; ++i) {
+    setting.playerType[i] = playerData.playerType[i];
+  }
+  return setting;
 }
 
 /**
@@ -170,219 +177,226 @@ reversi::Reversi::PLAYER_SETTING reversi::Reversi::GetPlayerSetting() const {
  * @param isCheckEnableMove trueならチェックする
  */
 void reversi::Reversi::SetCheckEnableMove(bool isCheckEnableMove) {
-	checkEnableMove = isCheckEnableMove;
+  checkEnableMove = isCheckEnableMove;
 }
 
 /**
  * 初期化
  */
-void reversi::Reversi::TaskInitialize() {
-}
+void reversi::Reversi::TaskInitialize() {}
 
 /**
  * 着手選択開始
  */
 void reversi::Reversi::TaskMoveSelectStart() {
-	RenderBoard();
+  RenderBoard();
 
-	if (IsEveryonePass()) {
-		// 両者パスしたので終局
-		SetScene(reversi::Reversi::SCENE::RESULT);
-		if (outputEnable) {
-			PrintLine("2人ともパスしたため、対局を終了します");
-		}
-		return;
-	}
+  if (IsEveryonePass()) {
+    // 両者パスしたので終局
+    SetScene(reversi::Reversi::SCENE::RESULT);
+    if (outputEnable) {
+      PrintLine("2人ともパスしたため、対局を終了します");
+    }
+    return;
+  }
 
-	if (CheckPass(turn)) {
-		// 打つことができないのでパス
-		SetPassCheck(turn);
-		SetScene(reversi::Reversi::SCENE::PASS);
-		if (outputEnable) {
-			if (turn == reversi::ReversiConstant::TURN::TURN_BLACK) {
-				PrintLine("黒が打つことができないのでパスします");
-			} else {
-				PrintLine("白が打つことができないのでパスします");
-			}
-		}
-		return;
-	}
-	// パスフラグリセット
-	ResetPassCheck();
+  if (CheckPass(turn)) {
+    // 打つことができないのでパス
+    SetPassCheck(turn);
+    SetScene(reversi::Reversi::SCENE::PASS);
+    if (outputEnable) {
+      if (turn == reversi::ReversiConstant::TURN::TURN_BLACK) {
+        PrintLine("黒が打つことができないのでパスします");
+      } else {
+        PrintLine("白が打つことができないのでパスします");
+      }
+    }
+    return;
+  }
+  // パスフラグリセット
+  ResetPassCheck();
 
-	// 着手キャッシュ作成
-	if (checkEnableMove) {
-		CreateMoveCache();
-	}
+  // 着手キャッシュ作成
+  if (checkEnableMove) {
+    CreateMoveCache();
+  }
 
-	int playerIndex = TurnToPlayerIndex(turn);
-	if (playerData.player[playerIndex]) {
-		// プレイヤーの手番開始イベント
-		playerData.player[playerIndex]->EventTurnStart((*this), moveCache, board, turn);
-	}
-	SetScene(reversi::Reversi::SCENE::MOVE_SELECT);
-	if (turn == reversi::ReversiConstant::TURN::TURN_BLACK) {
-		PrintLine("黒のターン");
-	} else {
-		PrintLine("白のターン");
-	}
-	if (IsCurrentPlayerTurnMan(turn)) {
-		PrintLine("石を打つ場所を入力してください(入力例 d3)");
-	}
+  int playerIndex = TurnToPlayerIndex(turn);
+  if (playerData.player[playerIndex]) {
+    // プレイヤーの手番開始イベント
+    playerData.player[playerIndex]->EventTurnStart((*this), moveCache, board,
+                                                   turn);
+  }
+  SetScene(reversi::Reversi::SCENE::MOVE_SELECT);
+  if (turn == reversi::ReversiConstant::TURN::TURN_BLACK) {
+    PrintLine("黒のターン");
+  } else {
+    PrintLine("白のターン");
+  }
+  if (IsCurrentPlayerTurnMan(turn)) {
+    PrintLine("石を打つ場所を入力してください(入力例 d3)");
+  }
 }
 
 /**
  * 着手選択
  */
 void reversi::Reversi::TaskMoveSelect() {
-	int playerIndex = TurnToPlayerIndex(turn);
-	reversi::MoveInfo move;
+  int playerIndex = TurnToPlayerIndex(turn);
+  reversi::MoveInfo move;
 
-	// プレイヤーの着手 または シミュレーションの着手があるか
-	// シミュレーションは思考のために使用
-	bool isDecide = false;
-	if (playerData.player[playerIndex]) {
-		// プレイヤーによる着手
-		isDecide = playerData.player[playerIndex]->SelectMove((*this), moveCache, board, move, turn);
-	}
+  // プレイヤーの着手 または シミュレーションの着手があるか
+  // シミュレーションは思考のために使用
+  bool isDecide = false;
+  if (playerData.player[playerIndex]) {
+    // プレイヤーによる着手
+    isDecide = playerData.player[playerIndex]->SelectMove((*this), moveCache,
+                                                          board, move, turn);
+  }
 
-	if ((isSetSimulationMove) && (!isDecide)) {
-		// シミュレーションによる着手
-		move.Copy(simulationMove);
-		isDecide = true;
-	}
-	if (isDecide) {
-		// 正常な着手かチェック
-		if (checkEnableMove) {
-			reversi::Assert::AssertEquals(CheckEnableMove(move.GetMoveInfo().position), "Reversi::TaskMoveSelect invalid move");
-		}
+  if ((isSetSimulationMove) && (!isDecide)) {
+    // シミュレーションによる着手
+    move.Copy(simulationMove);
+    isDecide = true;
+  }
+  if (isDecide) {
+    // 正常な着手かチェック
+    if (checkEnableMove) {
+      reversi::Assert::AssertEquals(
+          CheckEnableMove(move.GetMoveInfo().position),
+          "Reversi::TaskMoveSelect invalid move");
+    }
 
-		// 着手処理
-		bool isMove = board.Move(move);
-		reversi::Assert::AssertEquals(isMove, "Reversi::TaskMoveSelect move task failure");
+    // 着手処理
+    bool isMove = board.Move(move);
+    reversi::Assert::AssertEquals(isMove,
+                                  "Reversi::TaskMoveSelect move task failure");
 
-		if (isSetSimulationMove) {
-			// シミュレーション着手を使用した後は情報をクリア
-			simulationMove.Clear();
-			isSetSimulationMove = false;
-		}
+    if (isSetSimulationMove) {
+      // シミュレーション着手を使用した後は情報をクリア
+      simulationMove.Clear();
+      isSetSimulationMove = false;
+    }
 
-		if (outputEnable) {
-			if (!IsCurrentPlayerTurnMan(turn)) {
-				// CPUなら着手を出力する
-				std::string positionString;
-				if (reversi::ReversiConstant::GetPositionToString(move.GetMoveInfo().position, positionString)) {
-					PrintLine(positionString);
-				}
-			}
-		}
-		// 着手後処理へ
-		SetScene(reversi::Reversi::SCENE::MOVE_AFTER);
-	} else {
-		// 人間が着手入力失敗したとき
-		if (IsCurrentPlayerTurnMan(turn)) {
-			// 盤面表示とメッセージ表示
-			RenderBoard();
-			PrintLine("その位置には打てないのでもう一度入力してください");
-		}
-	}
+    if (outputEnable) {
+      if (!IsCurrentPlayerTurnMan(turn)) {
+        // CPUなら着手を出力する
+        std::string positionString;
+        if (reversi::ReversiConstant::GetPositionToString(
+                move.GetMoveInfo().position, positionString)) {
+          PrintLine(positionString);
+        }
+      }
+    }
+    // 着手後処理へ
+    SetScene(reversi::Reversi::SCENE::MOVE_AFTER);
+  } else {
+    // 人間が着手入力失敗したとき
+    if (IsCurrentPlayerTurnMan(turn)) {
+      // 盤面表示とメッセージ表示
+      RenderBoard();
+      PrintLine("その位置には打てないのでもう一度入力してください");
+    }
+  }
 }
 
 /**
  * パス
  */
 void reversi::Reversi::TaskPass() {
-	// ターン切り替え
-	ChangeTurn(turn);
-	SetScene(reversi::Reversi::SCENE::MOVE_SELECT_START);
+  // ターン切り替え
+  ChangeTurn(turn);
+  SetScene(reversi::Reversi::SCENE::MOVE_SELECT_START);
 }
 
 /**
  * 着手後処理
  */
 void reversi::Reversi::TaskMoveAfter() {
+  int playerIndex = TurnToPlayerIndex(turn);
+  if (playerData.player[playerIndex]) {
+    // 着手後プレイヤーイベント
+    playerData.player[playerIndex]->EventMoveAfter();
+  }
 
-	int playerIndex = TurnToPlayerIndex(turn);
-	if (playerData.player[playerIndex]) {
-		// 着手後プレイヤーイベント
-		playerData.player[playerIndex]->EventMoveAfter();
-	}
+  // ターン切り替え
+  ChangeTurn(turn);
 
-	// ターン切り替え
-	ChangeTurn(turn);
-
-	if (IsBoardFull()) {
-		// 盤面が埋まったら終局
-		// 結果へ
-		SetScene(reversi::Reversi::SCENE::RESULT);
-		return;
-	}
-	SetScene(reversi::Reversi::SCENE::MOVE_SELECT_START);
+  if (IsBoardFull()) {
+    // 盤面が埋まったら終局
+    // 結果へ
+    SetScene(reversi::Reversi::SCENE::RESULT);
+    return;
+  }
+  SetScene(reversi::Reversi::SCENE::MOVE_SELECT_START);
 }
 
 /**
  * 結果処理
  */
 void reversi::Reversi::TaskResult() {
+  PrintLine("終局しました -----------------------");
+  RenderBoard();
 
-	PrintLine("終局しました -----------------------");
-	RenderBoard();
+  // 石の数を取得
+  int black, white, none;
+  board.GetCount(black, white, none);
 
-	// 石の数を取得
-	int black, white, none;
-	board.GetCount(black, white, none);
+  // 結果
+  if (black == white) {
+    resultData.result = reversi::Reversi::RESULT::DRAW;
+  } else if (black > white) {
+    resultData.result = reversi::Reversi::RESULT::BLACK;
+  } else if (black < white) {
+    resultData.result = reversi::Reversi::RESULT::WHITE;
+  }
+  // 純粋な数
+  resultData.blackRawCount = black;
+  resultData.whiteRawCount = white;
+  resultData.noneRawCount = none;
 
-	// 結果
-	if (black == white) {
-		resultData.result = reversi::Reversi::RESULT::DRAW;
-	} else if (black > white) {
-		resultData.result = reversi::Reversi::RESULT::BLACK;
-	} else if (black < white) {
-		resultData.result = reversi::Reversi::RESULT::WHITE;
-	}
-	// 純粋な数
-	resultData.blackRawCount = black;
-	resultData.whiteRawCount = white;
-	resultData.noneRawCount = none;
+  // 最終結果
+  // 公式ルールで空白は勝者の石になる
+  resultData.blackResultCount = black;
+  resultData.whiteResultCount = white;
+  resultData.noneResultCount = none;
+  SetResultStone(resultData.blackResultCount, resultData.whiteResultCount,
+                 resultData.noneResultCount, resultData.result);
 
-	// 最終結果
-	// 公式ルールで空白は勝者の石になる
-	resultData.blackResultCount = black;
-	resultData.whiteResultCount = white;
-	resultData.noneResultCount = none;
-	SetResultStone(resultData.blackResultCount, resultData.whiteResultCount, resultData.noneResultCount, resultData.result);
+  // コンソール結果表示
+  PrintLine(reversi::StdStringFormatter::Format(
+      "黒石:%d 白石:%d 空白:%d", resultData.blackRawCount,
+      resultData.whiteRawCount, resultData.noneRawCount));
+  if (resultData.result == reversi::Reversi::RESULT::DRAW) {
+    PrintLine("結果は引き分けです");
+  } else if (resultData.result == reversi::Reversi::RESULT::BLACK) {
+    PrintLine("結果は黒の勝ちです");
+  } else if (resultData.result == reversi::Reversi::RESULT::WHITE) {
+    PrintLine("結果は白の勝ちです");
+  }
+  PrintLine(reversi::StdStringFormatter::Format("最終結果 黒石:%d 白石:%d",
+                                                resultData.blackResultCount,
+                                                resultData.whiteResultCount));
 
-	// コンソール結果表示
-	PrintLine(reversi::StdStringFormatter::Format("黒石:%d 白石:%d 空白:%d", resultData.blackRawCount, resultData.whiteRawCount, resultData.noneRawCount));
-	if (resultData.result == reversi::Reversi::RESULT::DRAW) {
-		PrintLine("結果は引き分けです");
-	} else if (resultData.result == reversi::Reversi::RESULT::BLACK) {
-		PrintLine("結果は黒の勝ちです");
-	} else if (resultData.result == reversi::Reversi::RESULT::WHITE) {
-		PrintLine("結果は白の勝ちです");
-	}
-	PrintLine(reversi::StdStringFormatter::Format("最終結果 黒石:%d 白石:%d", resultData.blackResultCount, resultData.whiteResultCount));
-
-	// 終了
-	SetScene(reversi::Reversi::SCENE::END);
+  // 終了
+  SetScene(reversi::Reversi::SCENE::END);
 }
 
 /**
  * 対局終了
  */
-void reversi::Reversi::TaskEnd() {
-}
+void reversi::Reversi::TaskEnd() {}
 
 /**
  * プレイヤーをリセットする(NULLクリア)
  */
 void reversi::Reversi::ResetPlayer() {
-	// タイプは暫定
-	playerData.playerType[PLAYER_BLACK] = reversi::Reversi::PLAYER::CPU1;
-	playerData.playerType[PLAYER_WHITE] = reversi::Reversi::PLAYER::CPU1;
-	for (int i = 0; i < PLAYER_COUNT; ++i) {
-		playerData.player[i] = NULL;
-	}
+  // タイプは暫定
+  playerData.playerType[PLAYER_BLACK] = reversi::Reversi::PLAYER::CPU1;
+  playerData.playerType[PLAYER_WHITE] = reversi::Reversi::PLAYER::CPU1;
+  for (int i = 0; i < PLAYER_COUNT; ++i) {
+    playerData.player[i] = NULL;
+  }
 }
 
 /**
@@ -391,64 +405,68 @@ void reversi::Reversi::ResetPlayer() {
  * @param  playerType  作成するプレイヤータイプ
  * @return             作成したプレイヤークラス
  */
-reversi::IPlayer* reversi::Reversi::CreatePlayer(int playerIndex, reversi::Reversi::PLAYER playerType) {
-	// ファクトリークラスを使用してプレイヤークラスを生成
-	reversi::PlayerFactory factory;
-	reversi::PlayerFactory::TYPE type = reversi::PlayerFactory::TYPE::PLAYER_MAN;
-	switch (playerType) {
-	case reversi::Reversi::PLAYER::MAN:
-		type = reversi::PlayerFactory::TYPE::PLAYER_MAN;
-		break;
-	case reversi::Reversi::PLAYER::CPU1:
-		type = reversi::PlayerFactory::TYPE::PLAYER_CPU1;
-		break;
-	case reversi::Reversi::PLAYER::CPU2:
-		type = reversi::PlayerFactory::TYPE::PLAYER_CPU2;
-		break;
-	case reversi::Reversi::PLAYER::CPU3:
-		type = reversi::PlayerFactory::TYPE::PLAYER_CPU3;
-		break;
-	case reversi::Reversi::PLAYER::CPU4:
-		type = reversi::PlayerFactory::TYPE::PLAYER_CPU4;
-		break;
-	default:
-		break;
-	}
-	return factory.Create(type);
+reversi::IPlayer* reversi::Reversi::CreatePlayer(
+    int playerIndex, reversi::Reversi::PLAYER playerType) {
+  // ファクトリークラスを使用してプレイヤークラスを生成
+  reversi::PlayerFactory factory;
+  reversi::PlayerFactory::TYPE type = reversi::PlayerFactory::TYPE::PLAYER_MAN;
+  switch (playerType) {
+    case reversi::Reversi::PLAYER::MAN:
+      type = reversi::PlayerFactory::TYPE::PLAYER_MAN;
+      break;
+    case reversi::Reversi::PLAYER::CPU1:
+      type = reversi::PlayerFactory::TYPE::PLAYER_CPU1;
+      break;
+    case reversi::Reversi::PLAYER::CPU2:
+      type = reversi::PlayerFactory::TYPE::PLAYER_CPU2;
+      break;
+    case reversi::Reversi::PLAYER::CPU3:
+      type = reversi::PlayerFactory::TYPE::PLAYER_CPU3;
+      break;
+    case reversi::Reversi::PLAYER::CPU4:
+      type = reversi::PlayerFactory::TYPE::PLAYER_CPU4;
+      break;
+    default:
+      break;
+  }
+  return factory.Create(type);
 }
 
 /**
  * プレイヤー達のインスタンスを作成する
  */
 void reversi::Reversi::CreatePlayers() {
-	// 2人のプレイヤーを生成
-	for (int i = 0; i < PLAYER_COUNT; ++i) {
-		reversi::Assert::AssertArrayRange(i, PLAYER_COUNT, "Reversi::CreatePlayers index over");
-		playerData.player[i] = CreatePlayer(i, playerData.playerType[i]);
-	}
+  // 2人のプレイヤーを生成
+  for (int i = 0; i < PLAYER_COUNT; ++i) {
+    reversi::Assert::AssertArrayRange(i, PLAYER_COUNT,
+                                      "Reversi::CreatePlayers index over");
+    playerData.player[i] = CreatePlayer(i, playerData.playerType[i]);
+  }
 }
 
 /**
  * プレイヤー設定を適用する
  * @param playerSetting プレイヤー設定
  */
-void reversi::Reversi::ApplyPlayerSetting(reversi::Reversi::PLAYER_SETTING playerSetting) {
-	for (int i = 0; i < PLAYER_COUNT; ++i) {
-		reversi::Assert::AssertArrayRange(i, PLAYER_COUNT, "Reversi::ApplyPlayerSetting index over");
-		playerData.playerType[i] = playerSetting.playerType[i];
-	}
+void reversi::Reversi::ApplyPlayerSetting(
+    reversi::Reversi::PLAYER_SETTING playerSetting) {
+  for (int i = 0; i < PLAYER_COUNT; ++i) {
+    reversi::Assert::AssertArrayRange(i, PLAYER_COUNT,
+                                      "Reversi::ApplyPlayerSetting index over");
+    playerData.playerType[i] = playerSetting.playerType[i];
+  }
 }
 
 /**
  * プレイヤーを削除する(DELETE)
  */
 void reversi::Reversi::ReleasePlayer() {
-	for (int i = 0; i < PLAYER_COUNT; ++i) {
-		if (playerData.player[i]) {
-			delete playerData.player[i];
-			playerData.player[i] = NULL;
-		}
-	}
+  for (int i = 0; i < PLAYER_COUNT; ++i) {
+    if (playerData.player[i]) {
+      delete playerData.player[i];
+      playerData.player[i] = NULL;
+    }
+  }
 }
 
 /**
@@ -456,7 +474,7 @@ void reversi::Reversi::ReleasePlayer() {
  * @param nextScene 次のシーン
  */
 void reversi::Reversi::SetScene(reversi::Reversi::SCENE nextScene) {
-	scene = nextScene;
+  scene = nextScene;
 }
 
 /**
@@ -464,12 +482,13 @@ void reversi::Reversi::SetScene(reversi::Reversi::SCENE nextScene) {
  * @param  targetTurn 手番
  * @return            プレイヤーindex
  */
-int reversi::Reversi::TurnToPlayerIndex(reversi::ReversiConstant::TURN targetTurn) {
-	if (targetTurn == reversi::ReversiConstant::TURN::TURN_BLACK) {
-		return PLAYER_BLACK;
-	} else {
-		return PLAYER_WHITE;
-	}
+int reversi::Reversi::TurnToPlayerIndex(
+    reversi::ReversiConstant::TURN targetTurn) {
+  if (targetTurn == reversi::ReversiConstant::TURN::TURN_BLACK) {
+    return PLAYER_BLACK;
+  } else {
+    return PLAYER_WHITE;
+  }
 }
 
 /**
@@ -477,12 +496,13 @@ int reversi::Reversi::TurnToPlayerIndex(reversi::ReversiConstant::TURN targetTur
  * @param  targetTurn 対象の手番
  * @return            trueなら人間の手番
  */
-bool reversi::Reversi::IsCurrentPlayerTurnMan(reversi::ReversiConstant::TURN targetTurn) {
-	int playerIndex = TurnToPlayerIndex(targetTurn);
-	if (playerData.playerType[playerIndex] == reversi::Reversi::PLAYER::MAN) {
-		return true;
-	}
-	return false;
+bool reversi::Reversi::IsCurrentPlayerTurnMan(
+    reversi::ReversiConstant::TURN targetTurn) {
+  int playerIndex = TurnToPlayerIndex(targetTurn);
+  if (playerData.playerType[playerIndex] == reversi::Reversi::PLAYER::MAN) {
+    return true;
+  }
+  return false;
 }
 
 /**
@@ -490,23 +510,23 @@ bool reversi::Reversi::IsCurrentPlayerTurnMan(reversi::ReversiConstant::TURN tar
  * @param targetTurn 現在の手番
  */
 void reversi::Reversi::ChangeTurn(reversi::ReversiConstant::TURN& targetTurn) {
-	// 手番切り替え(黒->白, 白->黒)
-	if (targetTurn == reversi::ReversiConstant::TURN::TURN_BLACK) {
-		targetTurn = reversi::ReversiConstant::TURN::TURN_WHITE;
-	} else {
-		targetTurn = reversi::ReversiConstant::TURN::TURN_BLACK;
-	}
+  // 手番切り替え(黒->白, 白->黒)
+  if (targetTurn == reversi::ReversiConstant::TURN::TURN_BLACK) {
+    targetTurn = reversi::ReversiConstant::TURN::TURN_WHITE;
+  } else {
+    targetTurn = reversi::ReversiConstant::TURN::TURN_BLACK;
+  }
 }
 
 /**
  * 着手キャッシュを作成する
  */
 void reversi::Reversi::CreateMoveCache() {
-	// 空の位置を探す
-	reversi::ReversiConstant::EMPTY_POSITION emptyPosition;
-	moveCache.FindEmptyPosition(board, emptyPosition);
-	// 打てる位置を探す
-	moveCache.FindPutEnablePosition(board, emptyPosition, turn);
+  // 空の位置を探す
+  reversi::ReversiConstant::EMPTY_POSITION emptyPosition;
+  moveCache.FindEmptyPosition(board, emptyPosition);
+  // 打てる位置を探す
+  moveCache.FindPutEnablePosition(board, emptyPosition, turn);
 }
 
 /**
@@ -514,8 +534,9 @@ void reversi::Reversi::CreateMoveCache() {
  * @param  position 着手位置
  * @return          trueなら着手できる
  */
-bool reversi::Reversi::CheckEnableMove(const reversi::ReversiConstant::POSITION& position) {
-	return moveCache.CheckEnableMoveByCache(position);
+bool reversi::Reversi::CheckEnableMove(
+    const reversi::ReversiConstant::POSITION& position) {
+  return moveCache.CheckEnableMoveByCache(position);
 }
 
 /**
@@ -523,11 +544,11 @@ bool reversi::Reversi::CheckEnableMove(const reversi::ReversiConstant::POSITION&
  * @return trueなら終局している
  */
 bool reversi::Reversi::IsBoardFull() {
-	if (board.IsFull()) {
-		// 盤面が全て埋まっている
-		return true;
-	}
-	return false;
+  if (board.IsFull()) {
+    // 盤面が全て埋まっている
+    return true;
+  }
+  return false;
 }
 
 /**
@@ -536,22 +557,21 @@ bool reversi::Reversi::IsBoardFull() {
  * @return            trueならパス(打つ場所がない)
  */
 bool reversi::Reversi::CheckPass(reversi::ReversiConstant::TURN targetTurn) {
-
-	reversi::Move move;
-	reversi::ReversiConstant::EMPTY_POSITION emptyPosition;
-	move.FindEmptyPosition(board, emptyPosition);
-	// キャッシュを作成する
-	move.FindPutEnablePosition(board, emptyPosition, targetTurn);
-	// どこかにうてるか
-	return (!move.CheckSomewherePutEnableByCache());
+  reversi::Move move;
+  reversi::ReversiConstant::EMPTY_POSITION emptyPosition;
+  move.FindEmptyPosition(board, emptyPosition);
+  // キャッシュを作成する
+  move.FindPutEnablePosition(board, emptyPosition, targetTurn);
+  // どこかにうてるか
+  return (!move.CheckSomewherePutEnableByCache());
 }
 
 /**
  * パスのチェックフラグをリセットする
  */
 void reversi::Reversi::ResetPassCheck() {
-	passCheck.passBlack = false;
-	passCheck.passWhite = false;
+  passCheck.passBlack = false;
+  passCheck.passWhite = false;
 }
 
 /**
@@ -559,11 +579,11 @@ void reversi::Reversi::ResetPassCheck() {
  * @param targetTurn 現在の手番
  */
 void reversi::Reversi::SetPassCheck(reversi::ReversiConstant::TURN targetTurn) {
-	if (targetTurn == reversi::ReversiConstant::TURN::TURN_BLACK) {
-		passCheck.passBlack = true;
-	} else {
-		passCheck.passWhite = true;
-	}
+  if (targetTurn == reversi::ReversiConstant::TURN::TURN_BLACK) {
+    passCheck.passBlack = true;
+  } else {
+    passCheck.passWhite = true;
+  }
 }
 
 /**
@@ -571,23 +591,23 @@ void reversi::Reversi::SetPassCheck(reversi::ReversiConstant::TURN targetTurn) {
  * @return trueなら2人ともパスしている
  */
 bool reversi::Reversi::IsEveryonePass() const {
-	if ((passCheck.passBlack) && (passCheck.passWhite)) {
-		return true;
-	}
-	return false;
+  if ((passCheck.passBlack) && (passCheck.passWhite)) {
+    return true;
+  }
+  return false;
 }
 
 /**
  * 結果データをリセットする
  */
 void reversi::Reversi::ResetResultData() {
-	resultData.result = reversi::Reversi::RESULT::NONE;
-	resultData.blackRawCount = 0;
-	resultData.whiteRawCount = 0;
-	resultData.noneRawCount = 0;
-	resultData.blackResultCount = 0;
-	resultData.whiteResultCount = 0;
-	resultData.noneResultCount = 0;
+  resultData.result = reversi::Reversi::RESULT::NONE;
+  resultData.blackRawCount = 0;
+  resultData.whiteRawCount = 0;
+  resultData.noneRawCount = 0;
+  resultData.blackResultCount = 0;
+  resultData.whiteResultCount = 0;
+  resultData.noneResultCount = 0;
 }
 
 /**
@@ -597,14 +617,15 @@ void reversi::Reversi::ResetResultData() {
  * @param none   現在の空白の数
  * @param result 勝敗結果
  */
-void reversi::Reversi::SetResultStone(int& black, int& white, int& none, reversi::Reversi::RESULT result) {
-	// 日本オセロ連盟競技ルール No.13
-	// 終局（対局者双方が石を置けなくなった状態）時に盤面に空きマスが発生した場合、その空きマスは勝者の獲得石に加算される。
-	if (result == reversi::Reversi::RESULT::BLACK) {
-		black += none;
-	} else if (result == reversi::Reversi::RESULT::WHITE) {
-		white += none;
-	}
+void reversi::Reversi::SetResultStone(int& black, int& white, int& none,
+                                      reversi::Reversi::RESULT result) {
+  // 日本オセロ連盟競技ルール No.13
+  // 終局（対局者双方が石を置けなくなった状態）時に盤面に空きマスが発生した場合、その空きマスは勝者の獲得石に加算される。
+  if (result == reversi::Reversi::RESULT::BLACK) {
+    black += none;
+  } else if (result == reversi::Reversi::RESULT::WHITE) {
+    white += none;
+  }
 }
 
 /**
@@ -613,9 +634,9 @@ void reversi::Reversi::SetResultStone(int& black, int& white, int& none, reversi
  * @param outputStringLine 出力をする文字列
  */
 void reversi::Reversi::PrintLine(std::string outputStringLine) {
-	if (outputEnable) {
-		console->PrintLine(outputStringLine);
-	}
+  if (outputEnable) {
+    console->PrintLine(outputStringLine);
+  }
 }
 
 /**
@@ -623,18 +644,18 @@ void reversi::Reversi::PrintLine(std::string outputStringLine) {
  * ただし、出力許可フラグがfalseのときは出力しない
  */
 void reversi::Reversi::RenderBoard() {
-	if (outputEnable) {
-		board.Render();
-	}
+  if (outputEnable) {
+    board.Render();
+  }
 }
 
 /**
  * メモリを開放する
  */
 void reversi::Reversi::Release() {
-	ReleasePlayer();
-	if (console) {
-		delete console;
-		console = NULL;
-	}
+  ReleasePlayer();
+  if (console) {
+    delete console;
+    console = NULL;
+  }
 }

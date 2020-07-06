@@ -7,24 +7,24 @@ namespace reversi {
 
 // パフォーマンスカウンタテストクラス
 class TestPerformanceCounter : public UnitTestBase {
-public:
-	/**
-	 * コンストラクタ
-	 */
-	TestPerformanceCounter(mhl::IOutputConsole* outputConsole);
+ public:
+  /**
+   * コンストラクタ
+   */
+  TestPerformanceCounter(mhl::IOutputConsole* outputConsole);
 
-	/**
-	 * デストラクタ
-	 */
-	virtual ~TestPerformanceCounter();
+  /**
+   * デストラクタ
+   */
+  virtual ~TestPerformanceCounter();
 
-	/**
-	 * 実行
-	 * @return trueなら成功 falseなら失敗
-	 */
-	bool Execute();
+  /**
+   * 実行
+   * @return trueなら成功 falseなら失敗
+   */
+  bool Execute();
 };
 
-}
+}  // namespace reversi
 
 #endif  // REVERSI_TEST_CODE_TESTPERFORMANCECOUNTER_H_

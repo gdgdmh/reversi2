@@ -7,24 +7,24 @@ namespace reversi {
 
 // リバーシテストクラス
 class TestReversi : public UnitTestBase {
-public:
-	/**
-	 * コンストラクタ
-	 */
-	TestReversi(mhl::IOutputConsole* outputConsole);
+ public:
+  /**
+   * コンストラクタ
+   */
+  TestReversi(mhl::IOutputConsole* outputConsole);
 
-	/**
-	 * デストラクタ
-	 */
-	virtual ~TestReversi();
+  /**
+   * デストラクタ
+   */
+  virtual ~TestReversi();
 
-	/**
-	 * 実行
-	 * @return trueなら成功 falseなら失敗
-	 */
-	bool Execute();
+  /**
+   * 実行
+   * @return trueなら成功 falseなら失敗
+   */
+  bool Execute();
 };
 
-}
+}  // namespace reversi
 
 #endif  // REVERSI_TEST_CODE_TESTREVERSI_H_

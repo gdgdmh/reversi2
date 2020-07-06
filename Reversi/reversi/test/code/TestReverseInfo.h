@@ -7,24 +7,24 @@ namespace reversi {
 
 // 裏返し情報テストクラス
 class TestReverseInfo : public UnitTestBase {
-public:
-	/**
-	 * コンストラクタ
-	 */
-	TestReverseInfo(mhl::IOutputConsole* outputConsole);
+ public:
+  /**
+   * コンストラクタ
+   */
+  TestReverseInfo(mhl::IOutputConsole* outputConsole);
 
-	/**
-	 * デストラクタ
-	 */
-	virtual ~TestReverseInfo();
+  /**
+   * デストラクタ
+   */
+  virtual ~TestReverseInfo();
 
-	/**
-	 * 実行
-	 * @return trueなら成功 falseなら失敗
-	 */
-	bool Execute();
+  /**
+   * 実行
+   * @return trueなら成功 falseなら失敗
+   */
+  bool Execute();
 };
 
-}
+}  // namespace reversi
 
 #endif  // REVERSI_TEST_CODE_TESTREVERSEINFO_H_
