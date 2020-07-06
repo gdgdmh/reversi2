@@ -1,5 +1,5 @@
-﻿#ifndef MH_LIBRABY_TEST_UNITTESTBASE_H_
-#define MH_LIBRABY_TEST_UNITTESTBASE_H_
+﻿#ifndef MHL_TEST_UNITTESTBASE_H_
+#define MHL_TEST_UNITTESTBASE_H_
 
 #include <memory>
 #include <string>
@@ -58,4 +58,4 @@ class UnitTestBase {
 
 }  // namespace mhl
 
-#endif  // MH_LIBRABY_TEST_UNITTESTBASE_H_
+#endif  // MHL_TEST_UNITTESTBASE_H_

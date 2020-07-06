@@ -1,5 +1,5 @@
-#ifndef MH_LIBRABY_EXCEPTION_ARGUMENTEXCEPTION_H_
-#define MH_LIBRABY_EXCEPTION_ARGUMENTEXCEPTION_H_
+﻿#ifndef MHL_EXCEPTION_ARGUMENTEXCEPTION_H_
+#define MHL_EXCEPTION_ARGUMENTEXCEPTION_H_
 
 #include <stdexcept>
 
@@ -20,4 +20,4 @@ class ArgumentException : public std::runtime_error {
 
 }  // namespace mhl
 
-#endif  // MH_LIBRABY_EXCEPTION_ARGUMENTEXCEPTION_H_
+#endif  // MHL_EXCEPTION_ARGUMENTEXCEPTION_H_

@@ -1,20 +1,23 @@
-﻿#ifndef TEST_TESTEXECUTEMETHOD_HPP_
-#define TEST_TESTEXECUTEMETHOD_HPP_
+﻿#ifndef MHL_TEST_CODE_TESTEXECUTEMETHOD_HPP_
+#define MHL_TEST_CODE_TESTEXECUTEMETHOD_HPP_
 
 #include <memory>
-
+#include "../test/UnitTestBase.hpp"
 #include "../util/template/IExecuteMethod.hpp"
-#include "UnitTestBase.hpp"
 
 namespace test {
 
 // メソッド実行テストクラス
 class TestExecuteMethod : public mhl::UnitTestBase {
- public:
+public:
   typedef mhl::IExecuteMethod<test::TestExecuteMethod> MEB;
-  enum class SCENE { kInitialize, kLoad, kMain };
+  enum class SCENE {
+    kInitialize,
+    kLoad,
+    kMain
+  };
 
- public:
+public:
   /**
    * コンストラクタ
    */
@@ -29,18 +32,21 @@ class TestExecuteMethod : public mhl::UnitTestBase {
 
   void Task();
 
-  SCENE GetScene() { return scene_; }
+  SCENE GetScene() {
+    return scene_;
+  }
 
- public:
+public:
+
   mhl::IExecuteMethod<test::TestExecuteMethod> Initialize();
   mhl::IExecuteMethod<test::TestExecuteMethod> Load();
   mhl::IExecuteMethod<test::TestExecuteMethod> Main();
 
- private:
+private:
   mhl::IExecuteMethod<test::TestExecuteMethod> on_exec_;
   SCENE scene_;
 };
 
-}  // namespace test
+}
 
 #endif  // TEST_TESTEXECUTEMETHOD_HPP_
