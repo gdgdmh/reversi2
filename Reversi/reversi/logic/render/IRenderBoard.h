@@ -10,21 +10,19 @@ namespace reversi {
 
 // 盤描画インターフェースクラス
 class IRenderBoard {
-public:
+ public:
+  /**
+   * デストラクタ
+   */
+  virtual ~IRenderBoard() {}
 
-	/**
-	 * デストラクタ
-	 */
-	virtual ~IRenderBoard() {
-	}
-
-	/**
-	 * 盤の描画
-	 * @param board 盤
-	 */
-	virtual void Render(const reversi::Board& board) = 0;
+  /**
+   * 盤の描画
+   * @param board 盤
+   */
+  virtual void Render(const reversi::Board& board) = 0;
 };
 
-}
+}  // namespace reversi
 
 #endif  // REVERSI_LOGIC_RENDER_IRENDERBOARD_H_

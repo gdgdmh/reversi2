@@ -19,7 +19,7 @@ int main(int argc, const char *argv[]) {
   mhl::IOutputConsole *console = new mhl::OutputConsole();
   console->PrintLine("--- main start -------------------");
 
-  bool isTest = false;
+  bool isTest = true;
   if (isTest) {
     // 実装テスト
     reversi::TestDevelop *testDevelop = new reversi::TestDevelop(console);

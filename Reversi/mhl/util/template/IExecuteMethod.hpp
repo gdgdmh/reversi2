@@ -8,26 +8,21 @@ namespace mhl {
 // メソッド実行インターフェースクラス
 template <typename T>
 class IExecuteMethod {
-public:
-
-  IExecuteMethod(IExecuteMethod<T>(T::* f)()) : function_(f) {};
+ public:
+  IExecuteMethod(IExecuteMethod<T> (T::*f)()) : function_(f){};
 
   /**
    * デストラクタ
    */
-  virtual ~IExecuteMethod() {
-  }
+  virtual ~IExecuteMethod() {}
 
-  IExecuteMethod<T> executeMethod(T* obj) {
-      return (obj->*function_)();
-  }
+  IExecuteMethod<T> executeMethod(T* obj) { return (obj->*function_)(); }
 
-private:
+ private:
   // 実行するT型クラスのメソッドポインタ
-  IExecuteMethod<T>(T::* function_)();
-
+  IExecuteMethod<T> (T::*function_)();
 };
 
-}
+}  // namespace mhl
 
 #endif  // MH_LIBRARY_UTIL_TEMPLATE_IEXECUTEMETHOD_HPP_

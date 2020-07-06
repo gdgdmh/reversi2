@@ -1,38 +1,38 @@
 ﻿#include "PLayerMan.h"
-#include "MoveThinkingMan.h"
+
 #include "../../../mhl/util/output/OutputConsole.hpp"
 #include "../../util/Assert.h"
+#include "MoveThinkingMan.h"
 
 /**
  * コンストラクタ
  */
-reversi::PlayerMan::PlayerMan() : moveThinking(NULL), console(NULL) {
-}
+reversi::PlayerMan::PlayerMan() : moveThinking(NULL), console(NULL) {}
 
 /**
  * デストラクタ
  */
 reversi::PlayerMan::~PlayerMan() {
-	if (moveThinking) {
-		delete moveThinking;
-		moveThinking = NULL;
-	}
-	if (console) {
-		delete console;
-		console = NULL;
-	}
+  if (moveThinking) {
+    delete moveThinking;
+    moveThinking = NULL;
+  }
+  if (console) {
+    delete console;
+    console = NULL;
+  }
 }
 
 /**
  * 初期化
  */
 void reversi::PlayerMan::Initialize() {
-	if (moveThinking == NULL) {
-		moveThinking = new MoveThinkingMan(true);
-	}
-	if (console == NULL) {
-		console = new mhl::OutputConsole();
-	}
+  if (moveThinking == NULL) {
+    moveThinking = new MoveThinkingMan(true);
+  }
+  if (console == NULL) {
+    console = new mhl::OutputConsole();
+  }
 }
 
 /**
@@ -42,8 +42,11 @@ void reversi::PlayerMan::Initialize() {
  * @param board     盤情報
  * @param turn      手番
  */
-void reversi::PlayerMan::EventTurnStart(const reversi::Reversi& reversi, const reversi::Move& moveCache, const reversi::Board& board, reversi::ReversiConstant::TURN turn) {
-	moveThinking->InitializeMoveThinking(reversi, moveCache, board, turn);
+void reversi::PlayerMan::EventTurnStart(const reversi::Reversi& reversi,
+                                        const reversi::Move& moveCache,
+                                        const reversi::Board& board,
+                                        reversi::ReversiConstant::TURN turn) {
+  moveThinking->InitializeMoveThinking(reversi, moveCache, board, turn);
 }
 
 /**
@@ -55,12 +58,15 @@ void reversi::PlayerMan::EventTurnStart(const reversi::Reversi& reversi, const r
  * @param  turn      手番
  * @return           trueなら思考が完了
  */
-bool reversi::PlayerMan::SelectMove(const reversi::Reversi& reversi, const reversi::Move& moveCache, const reversi::Board& board, reversi::MoveInfo& move, reversi::ReversiConstant::TURN turn) {
-	return moveThinking->MoveThinking(reversi, moveCache, board, move, turn);
+bool reversi::PlayerMan::SelectMove(const reversi::Reversi& reversi,
+                                    const reversi::Move& moveCache,
+                                    const reversi::Board& board,
+                                    reversi::MoveInfo& move,
+                                    reversi::ReversiConstant::TURN turn) {
+  return moveThinking->MoveThinking(reversi, moveCache, board, move, turn);
 }
 
 /**
  * 着手後に呼ばれる
  */
-void reversi::PlayerMan::EventMoveAfter() {
-}
+void reversi::PlayerMan::EventMoveAfter() {}

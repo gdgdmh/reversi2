@@ -1,24 +1,19 @@
-#ifndef MH_LIBRARY_UTIL_TEMPLATE_IOBSERVABLE_HPP_
+ï»¿#ifndef MH_LIBRARY_UTIL_TEMPLATE_IOBSERVABLE_HPP_
 #define MH_LIBRARY_UTIL_TEMPLATE_IOBSERVABLE_HPP_
-
-
 
 namespace mhl {
 
-    // ‘O•ûéŒ¾
-    class Subject;
+// å‰æ–¹å®£è¨€
+class Subject;
 
-    // ƒIƒuƒU[ƒo[ƒCƒ“ƒ^[ƒtƒF[ƒXƒNƒ‰ƒX
-    class IObservable {
-    public:
+// ã‚ªãƒ–ã‚¶ãƒ¼ãƒãƒ¼ã‚¤ãƒ³ã‚¿ãƒ¼ãƒ•ã‚§ãƒ¼ã‚¹ã‚¯ãƒ©ã‚¹
+class IObservable {
+ public:
+  virtual ~IObservable() {}
 
-        virtual ~IObservable() {
-        }
+  virtual void Update(Subject& subject) = 0;
+};
 
-        virtual void Update(Subject& subject) = 0;
-
-    };
-
-}
+}  // namespace mhl
 
 #endif  // MH_LIBRARY_UTIL_TEMPLATE_IOBSERVABLE_HPP_

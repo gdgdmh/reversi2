@@ -1,26 +1,24 @@
-#include "TestSubject.hpp"
+ï»¿#include "TestSubject.hpp"
 
 /**
- * ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+ * ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
  */
-test::TestSubject::TestSubject(std::shared_ptr<mhl::IOutputConsole> output_console)
-    : UnitTestBase(output_console) {
-}
+test::TestSubject::TestSubject(
+    std::shared_ptr<mhl::IOutputConsole> output_console)
+    : UnitTestBase(output_console) {}
 
 /**
- * ƒfƒXƒgƒ‰ƒNƒ^
+ * ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
  */
-test::TestSubject::~TestSubject() {
-}
+test::TestSubject::~TestSubject() {}
 
 void test::TestSubject::ExecuteUnitTest() {
-
-    mhl::Subject s;
-    test::TestObserver o;
-    s.Add(o);
-    AssertEquals(o.Get() == 0, "TestSubject::ExecuteUnitTest not 0");
-    // ³í‚ÉUpdate‚ªCall‚³‚ê‚Ä‚¢‚ê‚Î’l‚ª0‚©‚ç1‚ÉØ‚è‘Ö‚í‚é
-    s.NotifyObservers();
-    AssertEquals(o.Get() == 1, "TestSubject::ExecuteUnitTest not 1");
-    s.Remove(o);
+  mhl::Subject s;
+  test::TestObserver o;
+  s.Add(o);
+  AssertEquals(o.Get() == 0, "TestSubject::ExecuteUnitTest not 0");
+  // æ­£å¸¸ã«UpdateãŒCallã•ã‚Œã¦ã„ã‚Œã°å€¤ãŒ0ã‹ã‚‰1ã«åˆ‡ã‚Šæ›¿ã‚ã‚‹
+  s.NotifyObservers();
+  AssertEquals(o.Get() == 1, "TestSubject::ExecuteUnitTest not 1");
+  s.Remove(o);
 }

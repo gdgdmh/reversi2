@@ -2,22 +2,19 @@
 #define TEST_TESTEXECUTEMETHOD_HPP_
 
 #include <memory>
-#include "UnitTestBase.hpp"
+
 #include "../util/template/IExecuteMethod.hpp"
+#include "UnitTestBase.hpp"
 
 namespace test {
 
 // メソッド実行テストクラス
 class TestExecuteMethod : public mhl::UnitTestBase {
-public:
+ public:
   typedef mhl::IExecuteMethod<test::TestExecuteMethod> MEB;
-  enum class SCENE {
-    kInitialize,
-    kLoad,
-    kMain
-  };
+  enum class SCENE { kInitialize, kLoad, kMain };
 
-public:
+ public:
   /**
    * コンストラクタ
    */
@@ -32,21 +29,18 @@ public:
 
   void Task();
 
-  SCENE GetScene() {
-    return scene_;
-  }
+  SCENE GetScene() { return scene_; }
 
-public:
-
+ public:
   mhl::IExecuteMethod<test::TestExecuteMethod> Initialize();
   mhl::IExecuteMethod<test::TestExecuteMethod> Load();
   mhl::IExecuteMethod<test::TestExecuteMethod> Main();
 
-private:
+ private:
   mhl::IExecuteMethod<test::TestExecuteMethod> on_exec_;
   SCENE scene_;
 };
 
-}
+}  // namespace test
 
 #endif  // TEST_TESTEXECUTEMETHOD_HPP_

@@ -8,24 +8,24 @@ namespace reversi {
 
 // コンソールキーボード入力クラス
 class ConsoleInputKeyboard : public reversi::IInputKeyboard {
-public:
-	/**
-	 * コンストラクタ
-	 */
-	ConsoleInputKeyboard();
+ public:
+  /**
+   * コンストラクタ
+   */
+  ConsoleInputKeyboard();
 
-	/**
-	 * デストラクタ
-	 */
-	virtual ~ConsoleInputKeyboard();
+  /**
+   * デストラクタ
+   */
+  virtual ~ConsoleInputKeyboard();
 
-	/**
-	 * 1行単位での文字列入力を取る
-	 * @return 取得した文字列
-	 */
-	std::string GetStringLine();
+  /**
+   * 1行単位での文字列入力を取る
+   * @return 取得した文字列
+   */
+  std::string GetStringLine();
 };
 
-}
+}  // namespace reversi
 
 #endif  // REVERSI_UTIL_CONSOLEINPUTKEYBOARD_H_

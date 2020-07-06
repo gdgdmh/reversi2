@@ -8,10 +8,10 @@
  * @param message  出力するメッセージ
  */
 void reversi::Assert::AssertEquals(bool expected, std::string message) {
-	if (expected == false) {
-		Output(message);
-		_ASSERT(false);
-	}
+  if (expected == false) {
+    Output(message);
+    _ASSERT(false);
+  }
 }
 
 /**
@@ -20,10 +20,10 @@ void reversi::Assert::AssertEquals(bool expected, std::string message) {
  * @param message  出力するメッセージ
  */
 void reversi::Assert::AssertEquals(int expected, std::string message) {
-	if (expected == 0) {
-		Output(message);
-		_ASSERT(false);
-	}
+  if (expected == 0) {
+    Output(message);
+    _ASSERT(false);
+  }
 }
 
 /**
@@ -32,31 +32,30 @@ void reversi::Assert::AssertEquals(int expected, std::string message) {
  * @param maxSize 配列のサイズ
  * @param message 出力するメッセージ
  */
-void reversi::Assert::AssertArrayRange(int index, int maxSize, std::string message) {
-	// indexの範囲(0～maxSize-1)に入っていない
-	if ((index < 0) || (index >= maxSize)) {
-		Output(message);
-		_ASSERT(false);
-	}
+void reversi::Assert::AssertArrayRange(int index, int maxSize,
+                                       std::string message) {
+  // indexの範囲(0～maxSize-1)に入っていない
+  if ((index < 0) || (index >= maxSize)) {
+    Output(message);
+    _ASSERT(false);
+  }
 }
 
 /**
  * メッセージを出力する
  * @param message 出力するメッセージ
  */
-void reversi::Assert::Output(std::string message) {
-	OutputConsole(message);
-}
+void reversi::Assert::Output(std::string message) { OutputConsole(message); }
 
 /**
  * コンソールにメッセージを出力する
  * @param message 出力するメッセージ
  */
 void reversi::Assert::OutputConsole(std::string message) {
-	mhl::OutputConsole* output = new mhl::OutputConsole();
-	output->PrintLine(message);
-	if (output) {
-		delete output;
-		output = NULL;
-	}
+  mhl::OutputConsole* output = new mhl::OutputConsole();
+  output->PrintLine(message);
+  if (output) {
+    delete output;
+    output = NULL;
+  }
 }

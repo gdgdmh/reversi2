@@ -7,24 +7,24 @@ namespace reversi {
 
 // リバーシCPU連続対局テストクラス
 class TestReversiCpu : public UnitTestBase {
-public:
-	/**
-	 * コンストラクタ
-	 */
-	TestReversiCpu(mhl::IOutputConsole* outputConsole);
+ public:
+  /**
+   * コンストラクタ
+   */
+  TestReversiCpu(mhl::IOutputConsole* outputConsole);
 
-	/**
-	 * デストラクタ
-	 */
-	virtual ~TestReversiCpu();
+  /**
+   * デストラクタ
+   */
+  virtual ~TestReversiCpu();
 
-	/**
-	 * 実行
-	 * @return trueなら成功 falseなら失敗
-	 */
-	bool Execute();
+  /**
+   * 実行
+   * @return trueなら成功 falseなら失敗
+   */
+  bool Execute();
 };
 
-}
+}  // namespace reversi
 
 #endif  // REVERSI_TEST_CODE_TESTREVERSICPU_H_

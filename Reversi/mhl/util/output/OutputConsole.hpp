@@ -2,13 +2,14 @@
 #define MH_LIBRARY_UTIL_OUTPUT_OUTPUTCONSOLE_HPP_
 
 #include <string>
+
 #include "IOutputConsole.hpp"
 
 namespace mhl {
 
 // コンソール出力クラス
 class OutputConsole : public mhl::IOutputConsole {
-public:
+ public:
   /**
    * コンストラクタ
    */
@@ -30,6 +31,6 @@ public:
   void PrintLine(std::string string);
 };
 
-}
+}  // namespace mhl
 
 #endif  // MH_LIBRARY_UTIL_OUTPUT_OUTPUTCONSOLE_HPP_

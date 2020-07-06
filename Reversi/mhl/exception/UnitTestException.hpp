@@ -6,7 +6,8 @@
 namespace mhl {
 
 // 使い方
-// std::shared_ptr<mh_library::IOutputConsole> console(new mh_library::OutputConsole());
+// std::shared_ptr<mh_library::IOutputConsole> console(new
+// mh_library::OutputConsole());
 // // UnitTestExceptionTest
 // try {
 //   int value = 1000;
@@ -22,18 +23,17 @@ namespace mhl {
 
 // 単体テスト用の例外クラス
 class UnitTestException : public std::runtime_error {
-public:
+ public:
   UnitTestException(const std::string& message, int error_code);
 
   virtual ~UnitTestException();
 
-  int GetResult() {
-    return error_code_;
-  }
-private:
-  int error_code_; // エラーコード情報
+  int GetResult() { return error_code_; }
+
+ private:
+  int error_code_;  // エラーコード情報
 };
 
-}
+}  // namespace mhl
 
 #endif  // MH_LIBRABY_EXCEPTION_UNITTESTEXCEPTION_H_

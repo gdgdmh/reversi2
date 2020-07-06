@@ -2,6 +2,7 @@
 #define TEST_TESTINSTANCEOFTEST_HPP_
 
 #include <memory>
+
 #include "UnitTestBase.hpp"
 
 namespace test {
@@ -10,7 +11,7 @@ namespace test {
  * @brief 攻撃インターフェース
  */
 class IAttack {
-public:
+ public:
   virtual ~IAttack() {}
   virtual void Attack(std::shared_ptr<mhl::IOutputConsole> output_console) = 0;
 };
@@ -19,36 +20,35 @@ public:
  * @brief スキル攻撃インターフェース
  */
 class ISkillAttack {
-public:
+ public:
   virtual ~ISkillAttack() {}
-  virtual void SkillAttack(std::shared_ptr<mhl::IOutputConsole> output_console) = 0;
+  virtual void SkillAttack(
+      std::shared_ptr<mhl::IOutputConsole> output_console) = 0;
 };
 
 /**
  * @brief 敵基底クラス
  */
 class Enemy : public IAttack {
-public:
-  Enemy() : hp_(0) {
-  }
+ public:
+  Enemy() : hp_(0) {}
 
   virtual void Attack(std::shared_ptr<mhl::IOutputConsole> output_console) {
     output_console->PrintLine("Enemy Attack");
   }
 
-private:
-  int hp_; // HP
+ private:
+  int hp_;  // HP
 };
 
 /**
  * @brief スキルあり敵クラス
- * 
+ *
  */
 class LightEnemy : public Enemy, ISkillAttack {
-public:
-  LightEnemy() {
-  }
-  
+ public:
+  LightEnemy() {}
+
   void Attack(std::shared_ptr<mhl::IOutputConsole> output_console) {
     output_console->PrintLine("LightEnemy Attack");
   }
@@ -60,12 +60,11 @@ public:
 
 /**
  * @brief スキルなし敵クラス
- * 
+ *
  */
 class DarkEnemy : public Enemy {
-public:
-  DarkEnemy() {
-  }
+ public:
+  DarkEnemy() {}
 
   void Attack(std::shared_ptr<mhl::IOutputConsole> output_console) {
     output_console->PrintLine("dark attack");
@@ -73,14 +72,14 @@ public:
 };
 
 // テンプレート
-template<typename Base, typename T>
+template <typename Base, typename T>
 inline bool instanceOf(const T*) {
-    return std::is_base_of<Base, T>::value;
+  return std::is_base_of<Base, T>::value;
 }
 
 // JavaでいうinstanceOfのテスト
 class TestInstanceOfTest : public mhl::UnitTestBase {
-public:
+ public:
   /**
    * コンストラクタ
    */
@@ -97,6 +96,6 @@ public:
   void ExecuteUnitTest();
 };
 
-}
+}  // namespace test
 
 #endif  // TEST_TESTINSTANCEOFTEST_HPP_
