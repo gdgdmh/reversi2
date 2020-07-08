@@ -1,12 +1,12 @@
-﻿#ifndef TEST_TESTSUBJECT_HPP_
-#define TEST_TESTSUBJECT_HPP_
+﻿#ifndef MHL_TEST_CODE_TESTSUBJECT_HPP_
+#define MHL_TEST_CODE_TESTSUBJECT_HPP_
 
 #include <memory>
 
+#include "../test/UnitTestBase.hpp"
 #include "../util/template/IExecuteMethod.hpp"
 #include "../util/template/IObservable.hpp"
 #include "../util/template/Subject.hpp"
-#include "UnitTestBase.hpp"
 
 namespace test {
 

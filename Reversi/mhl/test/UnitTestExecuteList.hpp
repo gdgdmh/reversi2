@@ -1,5 +1,5 @@
-﻿#ifndef MH_LIBRABY_TEST_UNITTESTEXECUTELIST_H_
-#define MH_LIBRABY_TEST_UNITTESTEXECUTELIST_H_
+﻿#ifndef MHL_TEST_UNITTESTEXECUTELIST_HPP_
+#define MHL_TEST_UNITTESTEXECUTELIST_HPP_
 
 #include <list>
 #include <memory>
@@ -25,4 +25,4 @@ class UnitTestExecuteList {
 
 }  // namespace mhl
 
-#endif  // MH_LIBRABY_TEST_UNITTESTEXECUTELIST_H_
+#endif  // MHL_TEST_UNITTESTEXECUTELIST_HPP_

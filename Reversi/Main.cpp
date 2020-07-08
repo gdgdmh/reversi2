@@ -10,6 +10,7 @@
 #include "reversi/test/code/TestDevelop.h"
 #include "mhl/util/output/IOutputConsole.hpp"
 #include "mhl/util/output/OutputConsole.hpp"
+#include "mhl/test_code/TestMhl.hpp"
 
 // エントリーポイント;
 int main(int argc, const char *argv[]) {
@@ -17,6 +18,7 @@ int main(int argc, const char *argv[]) {
   //_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 
   mhl::IOutputConsole *console = new mhl::OutputConsole();
+  std::shared_ptr<mhl::IOutputConsole> c(new mhl::OutputConsole());
   console->PrintLine("--- main start -------------------");
 
   bool isTest = true;
@@ -36,6 +38,9 @@ int main(int argc, const char *argv[]) {
       }
       return 1;
     }
+
+    test::TestMhl mhl(c);
+    mhl.ExecuteUnitTest();
   }
 
   // リバーシゲーム

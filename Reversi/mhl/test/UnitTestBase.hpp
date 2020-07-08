@@ -1,5 +1,5 @@
-﻿#ifndef MH_LIBRABY_TEST_UNITTESTBASE_H_
-#define MH_LIBRABY_TEST_UNITTESTBASE_H_
+﻿#ifndef MHL_TEST_UNITTESTBASE_HPP_
+#define MHL_TEST_UNITTESTBASE_HPP_
 
 #include <memory>
 #include <string>
@@ -19,7 +19,7 @@ class UnitTestBase {
 #else
 /**
  * 条件のチェックの成否をチェックして失敗したときはメッセージを表示して例外をスローする
- * @param  expected 条件チェックした値(0なら失敗とする)
+ * @param  expected 条件チェックする値(0なら失敗とする)
  * @param  msg      失敗した際のメッセージ
  */
 #define AssertEquals(expected, msg)                                           \
@@ -31,6 +31,21 @@ class UnitTestBase {
         mhl::StdStringFormatter::Format("function %s ", __FUNCTION__);        \
     std::string msg4 = mhl::StdStringFormatter::Format("line %d ", __LINE__); \
     throw mhl::UnitTestException(msg1 + msg2 + msg3 + msg4, 0);               \
+  }
+#endif
+
+#ifdef NDEBUG
+#define AssertRange(index, length, msg)
+#else
+ /**
+  * 配列の範囲をチェックする
+  * @param  index    条件チェックする値(配列のindex)
+  * @param  length   配列の大きさ
+  * @param  msg      失敗した際のメッセージ
+  */
+#define AssertRange(index, length, msg) \
+  if (((index) < 0) || ((index) < (length))) { \
+    AssertEquals(0, msg); \
   }
 #endif
 
@@ -58,4 +73,4 @@ class UnitTestBase {
 
 }  // namespace mhl
 
-#endif  // MH_LIBRABY_TEST_UNITTESTBASE_H_
+#endif  // MHL_TEST_UNITTESTBASE_HPP_

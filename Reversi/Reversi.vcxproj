@@ -150,11 +150,12 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="mhl\exception\ArgumentException.cpp" />
     <ClCompile Include="mhl\exception\UnitTestException.cpp" />
-    <ClCompile Include="mhl\test\TestCppNewFunctionTest.cpp" />
-    <ClCompile Include="mhl\test\TestExecuteMethod.cpp" />
-    <ClCompile Include="mhl\test\TestInstanceOfTest.cpp" />
-    <ClCompile Include="mhl\test\TestSubject.cpp" />
     <ClCompile Include="mhl\test\UnitTestExecuteList.cpp" />
+    <ClCompile Include="mhl\test_code\TestCppNewFunctionTest.cpp" />
+    <ClCompile Include="mhl\test_code\TestExecuteMethod.cpp" />
+    <ClCompile Include="mhl\test_code\TestInstanceOfTest.cpp" />
+    <ClCompile Include="mhl\test_code\TestMhl.cpp" />
+    <ClCompile Include="mhl\test_code\TestSubject.cpp" />
     <ClCompile Include="mhl\util\output\OutputConsole.cpp" />
     <ClCompile Include="reversi\game\KeyboardSelectCpuLevel.cpp" />
     <ClCompile Include="reversi\game\KeyboardSelectYesNo.cpp" />
@@ -192,6 +193,7 @@
     <ClCompile Include="reversi\test\code\TestSimpleStack.cpp" />
     <ClCompile Include="reversi\test\code\TestStdRandomInt.cpp" />
     <ClCompile Include="reversi\test\code\TestThinkingNode.cpp" />
+    <ClCompile Include="reversi\test_code\Test2Board.cpp" />
     <ClCompile Include="reversi\util\Assert.cpp" />
     <ClCompile Include="reversi\util\ConsoleInputKeyboard.cpp" />
     <ClCompile Include="reversi\util\PerformanceCounter.cpp" />
@@ -200,12 +202,13 @@
   <ItemGroup>
     <ClInclude Include="mhl\exception\ArgumentException.hpp" />
     <ClInclude Include="mhl\exception\UnitTestException.hpp" />
-    <ClInclude Include="mhl\test\TestCppNewFunctionTest.hpp" />
-    <ClInclude Include="mhl\test\TestExecuteMethod.hpp" />
-    <ClInclude Include="mhl\test\TestInstanceOfTest.hpp" />
-    <ClInclude Include="mhl\test\TestSubject.hpp" />
     <ClInclude Include="mhl\test\UnitTestBase.hpp" />
     <ClInclude Include="mhl\test\UnitTestExecuteList.hpp" />
+    <ClInclude Include="mhl\test_code\TestCppNewFunctionTest.hpp" />
+    <ClInclude Include="mhl\test_code\TestExecuteMethod.hpp" />
+    <ClInclude Include="mhl\test_code\TestInstanceOfTest.hpp" />
+    <ClInclude Include="mhl\test_code\TestMhl.hpp" />
+    <ClInclude Include="mhl\test_code\TestSubject.hpp" />
     <ClInclude Include="mhl\util\output\IOutputConsole.hpp" />
     <ClInclude Include="mhl\util\output\OutputConsole.hpp" />
     <ClInclude Include="mhl\util\string\StdStringFormatter.hpp" />
@@ -256,6 +259,7 @@
     <ClInclude Include="reversi\test\code\TestSimpleStack.h" />
     <ClInclude Include="reversi\test\code\TestStdRandomInt.h" />
     <ClInclude Include="reversi\test\code\TestThinkingNode.h" />
+    <ClInclude Include="reversi\test_code\Test2Board.h" />
     <ClInclude Include="reversi\util\Assert.h" />
     <ClInclude Include="reversi\util\ConsoleInputKeyboard.h" />
     <ClInclude Include="reversi\util\IInputKeyboard.h" />

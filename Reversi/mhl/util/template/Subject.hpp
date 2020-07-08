@@ -1,5 +1,5 @@
-﻿#ifndef MH_LIBRARY_UTIL_TEMPLATE_SUBJECT_HPP_
-#define MH_LIBRARY_UTIL_TEMPLATE_SUBJECT_HPP_
+﻿#ifndef MHL_UTIL_TEMPLATE_SUBJECT_HPP_
+#define MHL_UTIL_TEMPLATE_SUBJECT_HPP_
 
 #include <vector>
 
@@ -14,7 +14,6 @@ class Subject {
 
   void Add(IObservable& o) {
     observers.push_back(&o);
-    // observers.push_back(o);
   }
 
   void Remove(IObservable& o) {
