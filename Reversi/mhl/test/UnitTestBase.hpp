@@ -1,5 +1,5 @@
-﻿#ifndef MHL_TEST_UNITTESTBASE_H_
-#define MHL_TEST_UNITTESTBASE_H_
+﻿#ifndef MHL_TEST_UNITTESTBASE_HPP_
+#define MHL_TEST_UNITTESTBASE_HPP_
 
 #include <memory>
 #include <string>
@@ -58,4 +58,4 @@ class UnitTestBase {
 
 }  // namespace mhl
 
-#endif  // MHL_TEST_UNITTESTBASE_H_
+#endif  // MHL_TEST_UNITTESTBASE_HPP_

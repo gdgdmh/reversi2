@@ -1,5 +1,5 @@
-﻿#ifndef MHL_EXCEPTION_ARGUMENTEXCEPTION_H_
-#define MHL_EXCEPTION_ARGUMENTEXCEPTION_H_
+﻿#ifndef MHL_EXCEPTION_ARGUMENTEXCEPTION_HPP_
+#define MHL_EXCEPTION_ARGUMENTEXCEPTION_HPP_
 
 #include <stdexcept>
 
@@ -20,4 +20,4 @@ class ArgumentException : public std::runtime_error {
 
 }  // namespace mhl
 
-#endif  // MHL_EXCEPTION_ARGUMENTEXCEPTION_H_
+#endif  // MHL_EXCEPTION_ARGUMENTEXCEPTION_HPP_

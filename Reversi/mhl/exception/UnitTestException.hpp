@@ -1,5 +1,5 @@
-﻿#ifndef MHL_EXCEPTION_UNITTESTEXCEPTION_H_
-#define MHL_EXCEPTION_UNITTESTEXCEPTION_H_
+﻿#ifndef MHL_EXCEPTION_UNITTESTEXCEPTION_HPP_
+#define MHL_EXCEPTION_UNITTESTEXCEPTION_HPP_
 
 #include <stdexcept>
 
@@ -36,4 +36,4 @@ class UnitTestException : public std::runtime_error {
 
 }  // namespace mhl
 
-#endif  // MHL_EXCEPTION_UNITTESTEXCEPTION_H_
+#endif  // MHL_EXCEPTION_UNITTESTEXCEPTION_HPP_

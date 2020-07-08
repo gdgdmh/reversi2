@@ -14,7 +14,6 @@ class Subject {
 
   void Add(IObservable& o) {
     observers.push_back(&o);
-    // observers.push_back(o);
   }
 
   void Remove(IObservable& o) {
