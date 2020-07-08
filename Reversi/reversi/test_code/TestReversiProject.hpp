@@ -20,6 +20,10 @@ class TestReversiProject : public mhl::UnitTestBase {
    */
   virtual ~TestReversiProject();
 
+  /**
+   * @brief テストの実行
+   *
+   */
   void ExecuteUnitTest();
 };
 
