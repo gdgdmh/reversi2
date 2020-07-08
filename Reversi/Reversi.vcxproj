@@ -193,6 +193,7 @@
     <ClCompile Include="reversi\test\code\TestSimpleStack.cpp" />
     <ClCompile Include="reversi\test\code\TestStdRandomInt.cpp" />
     <ClCompile Include="reversi\test\code\TestThinkingNode.cpp" />
+    <ClCompile Include="reversi\test_code\Test2Board.cpp" />
     <ClCompile Include="reversi\util\Assert.cpp" />
     <ClCompile Include="reversi\util\ConsoleInputKeyboard.cpp" />
     <ClCompile Include="reversi\util\PerformanceCounter.cpp" />
@@ -258,6 +259,7 @@
     <ClInclude Include="reversi\test\code\TestSimpleStack.h" />
     <ClInclude Include="reversi\test\code\TestStdRandomInt.h" />
     <ClInclude Include="reversi\test\code\TestThinkingNode.h" />
+    <ClInclude Include="reversi\test_code\Test2Board.h" />
     <ClInclude Include="reversi\util\Assert.h" />
     <ClInclude Include="reversi\util\ConsoleInputKeyboard.h" />
     <ClInclude Include="reversi\util\IInputKeyboard.h" />

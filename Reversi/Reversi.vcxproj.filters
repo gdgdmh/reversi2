@@ -70,6 +70,9 @@
     <Filter Include="ソース ファイル\mhl\test_code">
       <UniqueIdentifier>{f89eab01-c0ad-49d1-8122-770bd3ff163e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\reversi\test_code">
+      <UniqueIdentifier>{0741d979-6b52-4325-a1c4-28ad8edf4ad8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -221,6 +224,9 @@
     </ClCompile>
     <ClCompile Include="mhl\test_code\TestMhl.cpp">
       <Filter>ソース ファイル\mhl\test_code</Filter>
+    </ClCompile>
+    <ClCompile Include="reversi\test_code\Test2Board.cpp">
+      <Filter>ソース ファイル\reversi\test_code</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -427,6 +433,9 @@
     </ClInclude>
     <ClInclude Include="mhl\test_code\TestMhl.hpp">
       <Filter>ソース ファイル\mhl\test_code</Filter>
+    </ClInclude>
+    <ClInclude Include="reversi\test_code\Test2Board.h">
+      <Filter>ソース ファイル\reversi\test_code</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
