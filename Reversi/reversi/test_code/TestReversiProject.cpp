@@ -5,6 +5,7 @@
 #include "Test2Board.h"
 #include "Test2CalcBoardEvaluationPointByPosition.h"
 #include "Test2Move.hpp"
+#include "Test2PerformanceCounter.hpp"
 
 /**
  * コンストラクタ
@@ -27,7 +28,10 @@ void test_code::TestReversiProject::ExecuteUnitTest() {
       new test_code::Test2Board(console)));
   list.Add(std::shared_ptr<test_code::Test2CalcBoardEvaluationPointByPosition>(
       new test_code::Test2CalcBoardEvaluationPointByPosition(console)));
-  list.Add(std::shared_ptr<test_code::Test2Move>(new test_code::Test2Move(console)));
+  list.Add(
+      std::shared_ptr<test_code::Test2Move>(new test_code::Test2Move(console)));
+  list.Add(std::shared_ptr<test_code::TestPerformanceCounter>(
+      new test_code::TestPerformanceCounter(console)));
   // テスト実行
   if (!list.Execute()) {
     AssertEquals(false, "TestReversiProject::ExecuteUnitTest failure");
