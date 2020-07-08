@@ -14,7 +14,7 @@ class SimpleStack {
    * @param size スタックの最大サイズ
    */
   SimpleStack(int size) {
-    reversi::Assert::AssertEquals(size > 0,
+    reversi::Assert::AssertEqual(size > 0,
                                   "SimpleStack::SimpleStack invalid size");
     datas = new T[size];
     index = 0;

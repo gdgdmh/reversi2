@@ -90,7 +90,7 @@ bool reversi::MoveThinkingCpu1::MoveThinkingMin(
     }
   }
   // 1つでも打てる箇所があれば引っかかるはず
-  reversi::Assert::AssertEquals(
+  reversi::Assert::AssertEqual(
       isUpdate, "MoveThinkingCpu1::MoveThinkingMin ReverseInfo not hit");
 
   // 着手情報を確定
@@ -143,7 +143,7 @@ bool reversi::MoveThinkingCpu1::MoveThinkingMinRandom(
   }
 
   // 1つでも打てる箇所があれば引っかかるはず
-  reversi::Assert::AssertEquals(
+  reversi::Assert::AssertEqual(
       minCandidateIndex.size() > 0,
       "MoveThinkingCpu1::MoveThinkingMinRandom ReverseInfo not hit");
 

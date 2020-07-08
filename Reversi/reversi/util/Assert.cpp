@@ -7,7 +7,7 @@
  * @param expected 比較結果
  * @param message  出力するメッセージ
  */
-void reversi::Assert::AssertEquals(bool expected, std::string message) {
+void reversi::Assert::AssertEqual(bool expected, std::string message) {
   if (expected == false) {
     Output(message);
     _ASSERT(false);
@@ -19,7 +19,7 @@ void reversi::Assert::AssertEquals(bool expected, std::string message) {
  * @param expected 比較結果
  * @param message  出力するメッセージ
  */
-void reversi::Assert::AssertEquals(int expected, std::string message) {
+void reversi::Assert::AssertEqual(int expected, std::string message) {
   if (expected == 0) {
     Output(message);
     _ASSERT(false);

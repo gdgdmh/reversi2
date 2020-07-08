@@ -26,6 +26,6 @@ class Test2Board : public mhl::UnitTestBase {
   void ExecuteUnitTest();
 };
 
-}  // namespace test2
+}  // namespace test_code
 
 #endif  // REVERSI_TEST_CODE_TESTBOARD_H_

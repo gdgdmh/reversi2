@@ -304,7 +304,7 @@ reversi::Reversi::PLAYER reversi::ReversiGameScene::NumberToCpuLevel(
  */
 bool reversi::ReversiGameScene::IsPlayerWin() {
   // 終了していないときに呼び出してはいけない
-  reversi::Assert::AssertEquals(
+  reversi::Assert::AssertEqual(
       reversi.GetScene() == reversi::Reversi::SCENE::END,
       "ReversiGameScene::IsPlayerWin invalid scene called");
   reversi::Reversi::RESULT result = reversi.GetResult();
@@ -332,7 +332,7 @@ bool reversi::ReversiGameScene::IsPlayerWin() {
  */
 bool reversi::ReversiGameScene::IsPlayerLose() {
   // 終了していないときに呼び出してはいけない
-  reversi::Assert::AssertEquals(
+  reversi::Assert::AssertEqual(
       reversi.GetScene() == reversi::Reversi::SCENE::END,
       "ReversiGameScene::IsPlayerWin invalid scene called");
   reversi::Reversi::RESULT result = reversi.GetResult();
@@ -360,7 +360,7 @@ bool reversi::ReversiGameScene::IsPlayerLose() {
  */
 bool reversi::ReversiGameScene::IsPlayerDraw() {
   // 終了していないときに呼び出してはいけない
-  reversi::Assert::AssertEquals(
+  reversi::Assert::AssertEqual(
       reversi.GetScene() == reversi::Reversi::SCENE::END,
       "ReversiGameScene::IsPlayerWin invalid scene called");
   reversi::Reversi::RESULT result = reversi.GetResult();

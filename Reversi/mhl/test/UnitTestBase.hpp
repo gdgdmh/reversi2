@@ -44,7 +44,7 @@ class UnitTestBase {
   * @param  msg      失敗した際のメッセージ
   */
 #define AssertRange(index, length, msg) \
-  if (((index) < 0) || ((index) < (length))) { \
+  if (((index) < 0) || ((index) >= (length))) { \
     AssertEquals(0, msg); \
   }
 #endif

@@ -262,14 +262,14 @@ void reversi::Reversi::TaskMoveSelect() {
   if (isDecide) {
     // 正常な着手かチェック
     if (checkEnableMove) {
-      reversi::Assert::AssertEquals(
+      reversi::Assert::AssertEqual(
           CheckEnableMove(move.GetMoveInfo().position),
           "Reversi::TaskMoveSelect invalid move");
     }
 
     // 着手処理
     bool isMove = board.Move(move);
-    reversi::Assert::AssertEquals(isMove,
+    reversi::Assert::AssertEqual(isMove,
                                   "Reversi::TaskMoveSelect move task failure");
 
     if (isSetSimulationMove) {

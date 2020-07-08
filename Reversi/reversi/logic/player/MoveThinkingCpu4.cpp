@@ -125,7 +125,7 @@ bool reversi::MoveThinkingCpu4::MoveThinking(
         }
       }
     }
-    reversi::Assert::AssertEquals(
+    reversi::Assert::AssertEqual(
         topHighNodeIndex != -1,
         "MoveThinkingCpu4::MoveThinking topHighNodeIndex -1");
     topHighPosition = root.GetChild(topHighNodeIndex)->GetMovePosition();

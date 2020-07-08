@@ -228,6 +228,12 @@
     <ClCompile Include="reversi\test_code\Test2Board.cpp">
       <Filter>ソース ファイル\reversi\test_code</Filter>
     </ClCompile>
+    <ClCompile Include="reversi\test_code\Test2CalcBoardEvaluationPointByPosition.cpp">
+      <Filter>ソース ファイル\reversi\test_code</Filter>
+    </ClCompile>
+    <ClCompile Include="reversi\test_code\TestReversiProject.cpp">
+      <Filter>ソース ファイル\reversi\test_code</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="reversi\util\Assert.h">
@@ -435,6 +441,12 @@
       <Filter>ソース ファイル\mhl\test_code</Filter>
     </ClInclude>
     <ClInclude Include="reversi\test_code\Test2Board.h">
+      <Filter>ソース ファイル\reversi\test_code</Filter>
+    </ClInclude>
+    <ClInclude Include="reversi\test_code\Test2CalcBoardEvaluationPointByPosition.h">
+      <Filter>ソース ファイル\reversi\test_code</Filter>
+    </ClInclude>
+    <ClInclude Include="reversi\test_code\TestReversiProject.hpp">
       <Filter>ソース ファイル\reversi\test_code</Filter>
     </ClInclude>
   </ItemGroup>

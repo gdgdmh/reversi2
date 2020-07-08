@@ -41,7 +41,7 @@ void reversi::Board::InitializeGame() {
 bool reversi::Board::Move(reversi::MoveInfo moveInfo) {
   reversi::MoveInfo::MOVE_INFO info = moveInfo.GetMoveInfo();
   reversi::ReverseInfo reverseInfo = moveInfo.GetReverseInfo();
-  reversi::Assert::AssertEquals(info.position == reverseInfo.GetPosition(),
+  reversi::Assert::AssertEqual(info.position == reverseInfo.GetPosition(),
                                 "Board::Move position not same");
 
   // 着手位置のマスをチェック
@@ -212,7 +212,7 @@ bool reversi::Board::IsFull() const {
  */
 void reversi::Board::ExecuteFull(reversi::ReversiConstant::BOARD_INFO setInfo) {
   // 黒か白しか指定してはいけない
-  reversi::Assert::AssertEquals(
+  reversi::Assert::AssertEqual(
       (setInfo == reversi::ReversiConstant::BOARD_INFO::BLACK) ||
           (setInfo == reversi::ReversiConstant::BOARD_INFO::WHITE),
       "Board::ExecuteFull() info not black or white");
@@ -386,7 +386,7 @@ void reversi::Board::ReverseStone(reversi::ReversiConstant::POSITION position) {
       break;
     // 石でない場所を指定したら何もしない
     default:
-      reversi::Assert::AssertEquals(
+      reversi::Assert::AssertEqual(
           0, "Board::ReverseStone not info black or white");
       break;
   }

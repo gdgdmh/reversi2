@@ -135,7 +135,7 @@ const reversi::ReverseInfo reversi::Move::GetReverseInfo(
     }
   }
   // 見つからなかった(CheckEnableMoveByCacheでチェックしておけば起こらないはず)
-  reversi::Assert::AssertEquals(0, "Move::GetReverseInfo not found");
+  reversi::Assert::AssertEqual(0, "Move::GetReverseInfo not found");
   reversi::ReverseInfo info(reversi::ReversiConstant::POSITION::A1,
                             reversi::ReversiConstant::TURN::TURN_BLACK);
   return info;
@@ -294,7 +294,7 @@ int reversi::Move::ToDirectionOffset(reversi::Move::DIRECTION direction) {
     case DIRECTION::DOWN_RIGHT:
       return reversi::ReversiConstant::GetPositionDownRight(position);
     default:
-      reversi::Assert::AssertEquals(
+      reversi::Assert::AssertEqual(
           0, "Move::ToDirectionOffset() invalid direction");
       return 0;
   }
@@ -354,7 +354,7 @@ reversi::Move::SANDWICH_STATUS reversi::Move::GetSandwichInfo(
     }
   }
   // ここには来ないはず
-  reversi::Assert::AssertEquals(0, "Move::GetSandwichInfo() invalid status");
+  reversi::Assert::AssertEqual(0, "Move::GetSandwichInfo() invalid status");
   return reversi::Move::SANDWICH_STATUS::SANDWICH_NG_UNKNOWN;
 }
 
