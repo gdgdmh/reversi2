@@ -11,6 +11,7 @@
 #include "mhl/util/output/IOutputConsole.hpp"
 #include "mhl/util/output/OutputConsole.hpp"
 #include "mhl/test_code/TestMhl.hpp"
+#include "reversi/test_code/TestReversiProject.hpp"
 
 // エントリーポイント;
 int main(int argc, const char *argv[]) {
@@ -38,13 +39,17 @@ int main(int argc, const char *argv[]) {
       }
       return 1;
     }
-
+    // ライブラリのユニットテスト
     test::TestMhl mhl(c);
     mhl.ExecuteUnitTest();
+    // リバーシプロジェクトに対するユニットテスト
+    test_code::TestReversiProject rp(c);
+    rp.ExecuteUnitTest();
   }
 
   // リバーシゲーム
-  {
+  bool is_game_execute = false;
+  if (is_game_execute) {
     reversi::ReversiGameLoop gameLoop;
     gameLoop.Initialize();
     gameLoop.Task();

@@ -13,14 +13,14 @@ class Assert {
    * @param expected 比較結果
    * @param message  出力するメッセージ
    */
-  static void AssertEquals(bool expected, std::string message);
+  static void AssertEqual(bool expected, std::string message);
 
   /**
    * 値の比較結果が0だったときにmessageを出力してプログラム停止する
    * @param expected 比較結果
    * @param message  出力するメッセージ
    */
-  static void AssertEquals(int expected, std::string message);
+  static void AssertEqual(int expected, std::string message);
 
   /**
    * 配列の範囲をチェックして超えていたときはmessageを出力してプログラムを停止する

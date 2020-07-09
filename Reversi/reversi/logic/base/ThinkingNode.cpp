@@ -50,7 +50,7 @@ void reversi::ThinkingNode::AddChild(reversi::ThinkingNode* childNode) {
   childNode->parent = this;
 
   // size and index over check
-  reversi::Assert::AssertEquals(childrenCount < CHILDREN_SIZE,
+  reversi::Assert::AssertEqual(childrenCount < CHILDREN_SIZE,
                                 "ThinkingNode::AddChild size over");
   reversi::Assert::AssertArrayRange(childrenCount, CHILDREN_SIZE,
                                     "ThinkingNode::AddChild index over");

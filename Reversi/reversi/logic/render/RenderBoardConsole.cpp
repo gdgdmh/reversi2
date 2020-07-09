@@ -105,7 +105,7 @@ void reversi::RenderBoardConsole::RenderBoardHorizontalCells(
   if (console == NULL) {
     return;
   }
-  reversi::Assert::AssertEquals(
+  reversi::Assert::AssertEqual(
       (y > 0) && (y <= reversi::ReversiConstant::BOARD_SIZE_Y),
       "Board::RenderBoardHorizontalCells() invalid y range");
   // コンパイラ警告対応(index overする可能性があると出てしまうので)

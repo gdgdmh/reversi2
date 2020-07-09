@@ -51,7 +51,7 @@ bool reversi::MoveThinkingCpu2::MoveThinking(
     std::vector<int> candidate;
     GetMaxReverseCountCandidateIndex(candidate, reversiMove);
     // 候補0はおかしい
-    reversi::Assert::AssertEquals(
+    reversi::Assert::AssertEqual(
         candidate.size() > 0,
         "MoveThinkingCpu2::MoveThinking candidate index size 0");
 
@@ -131,7 +131,7 @@ void reversi::MoveThinkingCpu2::GetMaxReverseCountCandidateIndex(
     }
   }
   // 1つでも打てる箇所があれば引っかかるはず
-  reversi::Assert::AssertEquals(
+  reversi::Assert::AssertEqual(
       candidate.size() > 0,
       "MoveThinkingCpu2::GetMaxReverseCountCandidateIndex ReverseInfo not hit");
 }

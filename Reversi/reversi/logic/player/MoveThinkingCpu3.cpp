@@ -83,7 +83,7 @@ bool reversi::MoveThinkingCpu3::MoveThinking(
     }
   }
   // 最低でも1度は更新されるはず
-  reversi::Assert::AssertEquals(isUpdate,
+  reversi::Assert::AssertEqual(isUpdate,
                                 "MoveThinkingCpu3::MoveThinking not update");
 
   // 着手情報を作成

@@ -14,7 +14,7 @@ class SimpleArray {
    * @param size スタックの最大サイズ
    */
   SimpleArray(int size) {
-    reversi::Assert::AssertEquals(size > 0,
+    reversi::Assert::AssertEqual(size > 0,
                                   "SimpleArray::SimpleArray invalid size");
     datas = new T[size];
     index = 0;
