@@ -261,6 +261,9 @@
     <ClCompile Include="reversi\test_code\Test2StdRandomInt.cpp">
       <Filter>ソース ファイル\reversi\test_code</Filter>
     </ClCompile>
+    <ClCompile Include="reversi\test_code\Test2ThinkingNode.cpp">
+      <Filter>ソース ファイル\reversi\test_code</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="reversi\util\Assert.h">
@@ -501,6 +504,9 @@
       <Filter>ソース ファイル\reversi\test_code</Filter>
     </ClInclude>
     <ClInclude Include="reversi\test_code\Test2StdRandomInt.hpp">
+      <Filter>ソース ファイル\reversi\test_code</Filter>
+    </ClInclude>
+    <ClInclude Include="reversi\test_code\Test2ThinkingNode.hpp">
       <Filter>ソース ファイル\reversi\test_code</Filter>
     </ClInclude>
   </ItemGroup>
