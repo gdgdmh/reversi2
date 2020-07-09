@@ -249,6 +249,9 @@
     <ClCompile Include="mhl\util\output\DummyOutputConsole.cpp">
       <Filter>ソース ファイル\mhl\util\output</Filter>
     </ClCompile>
+    <ClCompile Include="reversi\test_code\Test2ReversiCpu.cpp">
+      <Filter>ソース ファイル\reversi\test_code</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="reversi\util\Assert.h">
@@ -478,6 +481,9 @@
     </ClInclude>
     <ClInclude Include="mhl\util\output\DummyOutputConsole.hpp">
       <Filter>ソース ファイル\mhl\util\output</Filter>
+    </ClInclude>
+    <ClInclude Include="reversi\test_code\Test2ReversiCpu.hpp">
+      <Filter>ソース ファイル\reversi\test_code</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
