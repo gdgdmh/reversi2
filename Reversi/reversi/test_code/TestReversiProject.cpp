@@ -2,6 +2,7 @@
 
 #include "../../mhl/test/UnitTestExecuteList.hpp"
 #include "../../mhl/util/output/OutputConsole.hpp"
+#include "../../mhl/util/output/DummyOutputConsole.hpp"
 #include "Test2Board.h"
 #include "Test2CalcBoardEvaluationPointByPosition.h"
 #include "Test2Move.hpp"
@@ -24,6 +25,7 @@ test_code::TestReversiProject::~TestReversiProject() {}
 void test_code::TestReversiProject::ExecuteUnitTest() {
   mhl::UnitTestExecuteList list;
   std::shared_ptr<mhl::IOutputConsole> console(new mhl::OutputConsole());
+  std::shared_ptr<mhl::IOutputConsole> dummy_console(new mhl::DummyOutputConsole());
 
   // テスト実行登録
   list.Add(std::shared_ptr<test_code::Test2Board>(

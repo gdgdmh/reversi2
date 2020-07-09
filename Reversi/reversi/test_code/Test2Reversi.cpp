@@ -27,6 +27,7 @@ void test_code::Test2Reversi::ExecuteUnitTest() {
       reversi::Reversi::PLAYER::CPU1;
 
   reversi.Initialize();
+  reversi.SetOutputEnable(false);
   reversi.InitializeGame(setting);
   {
     reversi::Board board;

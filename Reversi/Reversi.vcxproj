@@ -156,6 +156,7 @@
     <ClCompile Include="mhl\test_code\TestInstanceOfTest.cpp" />
     <ClCompile Include="mhl\test_code\TestMhl.cpp" />
     <ClCompile Include="mhl\test_code\TestSubject.cpp" />
+    <ClCompile Include="mhl\util\output\DummyOutputConsole.cpp" />
     <ClCompile Include="mhl\util\output\OutputConsole.cpp" />
     <ClCompile Include="reversi\game\KeyboardSelectCpuLevel.cpp" />
     <ClCompile Include="reversi\game\KeyboardSelectYesNo.cpp" />
@@ -215,6 +216,7 @@
     <ClInclude Include="mhl\test_code\TestInstanceOfTest.hpp" />
     <ClInclude Include="mhl\test_code\TestMhl.hpp" />
     <ClInclude Include="mhl\test_code\TestSubject.hpp" />
+    <ClInclude Include="mhl\util\output\DummyOutputConsole.hpp" />
     <ClInclude Include="mhl\util\output\IOutputConsole.hpp" />
     <ClInclude Include="mhl\util\output\OutputConsole.hpp" />
     <ClInclude Include="mhl\util\string\StdStringFormatter.hpp" />
