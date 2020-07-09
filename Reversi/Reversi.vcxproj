@@ -203,6 +203,7 @@
     <ClCompile Include="reversi\test_code\Test2ReversiCpu.cpp" />
     <ClCompile Include="reversi\test_code\Test2SimpleArray.cpp" />
     <ClCompile Include="reversi\test_code\Test2SimpleStack.cpp" />
+    <ClCompile Include="reversi\test_code\Test2StdRandomInt.cpp" />
     <ClCompile Include="reversi\test_code\TestReversiProject.cpp" />
     <ClCompile Include="reversi\util\Assert.cpp" />
     <ClCompile Include="reversi\util\ConsoleInputKeyboard.cpp" />
@@ -279,6 +280,7 @@
     <ClInclude Include="reversi\test_code\Test2ReversiCpu.hpp" />
     <ClInclude Include="reversi\test_code\Test2SimpleArray.hpp" />
     <ClInclude Include="reversi\test_code\Test2SimpleStack.hpp" />
+    <ClInclude Include="reversi\test_code\Test2StdRandomInt.hpp" />
     <ClInclude Include="reversi\test_code\TestReversiProject.hpp" />
     <ClInclude Include="reversi\util\Assert.h" />
     <ClInclude Include="reversi\util\ConsoleInputKeyboard.h" />

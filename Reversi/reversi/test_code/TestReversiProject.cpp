@@ -12,6 +12,7 @@
 #include "Test2ReversiCpu.hpp"
 #include "Test2SimpleArray.hpp"
 #include "Test2SimpleStack.hpp"
+#include "Test2StdRandomInt.hpp"
 
 /**
  * コンストラクタ
@@ -46,6 +47,7 @@ void test_code::TestReversiProject::ExecuteUnitTest() {
   list.Add(std::shared_ptr<test_code::Test2ReversiCpu>(new test_code::Test2ReversiCpu(console)));
   list.Add(std::shared_ptr<test_code::Test2SimpleArray>(new test_code::Test2SimpleArray(console)));
   list.Add(std::shared_ptr<test_code::Test2SimpleStack>(new test_code::Test2SimpleStack(console)));
+  list.Add(std::shared_ptr<test_code::Test2StdRandomInt>(new test_code::Test2StdRandomInt(console)));
   // テスト実行
   if (!list.Execute()) {
     AssertEquals(false, "TestReversiProject::ExecuteUnitTest failure");
