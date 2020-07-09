@@ -255,6 +255,9 @@
     <ClCompile Include="reversi\test_code\Test2SimpleArray.cpp">
       <Filter>ソース ファイル\reversi\test_code</Filter>
     </ClCompile>
+    <ClCompile Include="reversi\test_code\Test2SimpleStack.cpp">
+      <Filter>ソース ファイル\reversi\test_code</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="reversi\util\Assert.h">
@@ -489,6 +492,9 @@
       <Filter>ソース ファイル\reversi\test_code</Filter>
     </ClInclude>
     <ClInclude Include="reversi\test_code\Test2SimpleArray.hpp">
+      <Filter>ソース ファイル\reversi\test_code</Filter>
+    </ClInclude>
+    <ClInclude Include="reversi\test_code\Test2SimpleStack.hpp">
       <Filter>ソース ファイル\reversi\test_code</Filter>
     </ClInclude>
   </ItemGroup>
