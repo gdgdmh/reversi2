@@ -7,6 +7,7 @@
 #include "Test2Move.hpp"
 #include "Test2PerformanceCounter.hpp"
 #include "Test2ReverseInfo.hpp"
+#include "Test2Reversi.hpp"
 
 /**
  * コンストラクタ
@@ -35,6 +36,8 @@ void test_code::TestReversiProject::ExecuteUnitTest() {
       new test_code::TestPerformanceCounter(console)));
   list.Add(std::shared_ptr<test_code::Test2ReverseInfo>(
       new test_code::Test2ReverseInfo(console)));
+  list.Add(std::shared_ptr<test_code::Test2Reversi>(
+      new test_code::Test2Reversi(console)));
   // テスト実行
   if (!list.Execute()) {
     AssertEquals(false, "TestReversiProject::ExecuteUnitTest failure");

@@ -243,6 +243,9 @@
     <ClCompile Include="reversi\test_code\Test2ReverseInfo.cpp">
       <Filter>ソース ファイル\reversi\test_code</Filter>
     </ClCompile>
+    <ClCompile Include="reversi\test_code\Test2Reversi.cpp">
+      <Filter>ソース ファイル\reversi\test_code</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="reversi\util\Assert.h">
@@ -465,6 +468,9 @@
       <Filter>ソース ファイル\reversi\test_code</Filter>
     </ClInclude>
     <ClInclude Include="reversi\test_code\Test2ReverseInfo.hpp">
+      <Filter>ソース ファイル\reversi\test_code</Filter>
+    </ClInclude>
+    <ClInclude Include="reversi\test_code\Test2Reversi.hpp">
       <Filter>ソース ファイル\reversi\test_code</Filter>
     </ClInclude>
   </ItemGroup>
