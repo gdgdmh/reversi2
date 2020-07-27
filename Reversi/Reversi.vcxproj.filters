@@ -73,6 +73,9 @@
     <Filter Include="ソース ファイル\reversi\test_code">
       <UniqueIdentifier>{0741d979-6b52-4325-a1c4-28ad8edf4ad8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\mhl\scene">
+      <UniqueIdentifier>{0cfbc799-d0c3-45d9-b1c9-f669fa3abc38}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -263,6 +266,12 @@
     </ClCompile>
     <ClCompile Include="reversi\test_code\Test2ThinkingNode.cpp">
       <Filter>ソース ファイル\reversi\test_code</Filter>
+    </ClCompile>
+    <ClCompile Include="mhl\scene\SceneStack.cpp">
+      <Filter>ソース ファイル\mhl\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="mhl\test_code\TestSceneStack.cpp">
+      <Filter>ソース ファイル\mhl\test_code</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -508,6 +517,15 @@
     </ClInclude>
     <ClInclude Include="reversi\test_code\Test2ThinkingNode.hpp">
       <Filter>ソース ファイル\reversi\test_code</Filter>
+    </ClInclude>
+    <ClInclude Include="mhl\scene\ISceneable.hpp">
+      <Filter>ソース ファイル\mhl\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="mhl\scene\SceneStack.hpp">
+      <Filter>ソース ファイル\mhl\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="mhl\test_code\TestSceneStack.hpp">
+      <Filter>ソース ファイル\mhl\test_code</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

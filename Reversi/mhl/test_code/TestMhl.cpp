@@ -6,6 +6,7 @@
 #include "TestCppNewFunctionTest.hpp"
 #include "TestExecuteMethod.hpp"
 #include "TestInstanceOfTest.hpp"
+#include "TestSceneStack.hpp"
 #include "TestSubject.hpp"
 
 /**
@@ -29,6 +30,7 @@ void test::TestMhl::ExecuteUnitTest() {
   list.Add(std::shared_ptr<test::TestSubject>(new test::TestSubject(console)));
   list.Add(std::shared_ptr<test::TestInstanceOfTest>(
       new test::TestInstanceOfTest(console)));
+  list.Add(std::shared_ptr<test::TestSceneStack>(new test::TestSceneStack(console)));
   if (!list.Execute()) {
     AssertEquals(false, "TestMhl::ExecuteUnitTest failure");
   }

@@ -150,11 +150,13 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="mhl\exception\ArgumentException.cpp" />
     <ClCompile Include="mhl\exception\UnitTestException.cpp" />
+    <ClCompile Include="mhl\scene\SceneStack.cpp" />
     <ClCompile Include="mhl\test\UnitTestExecuteList.cpp" />
     <ClCompile Include="mhl\test_code\TestCppNewFunctionTest.cpp" />
     <ClCompile Include="mhl\test_code\TestExecuteMethod.cpp" />
     <ClCompile Include="mhl\test_code\TestInstanceOfTest.cpp" />
     <ClCompile Include="mhl\test_code\TestMhl.cpp" />
+    <ClCompile Include="mhl\test_code\TestSceneStack.cpp" />
     <ClCompile Include="mhl\test_code\TestSubject.cpp" />
     <ClCompile Include="mhl\util\output\DummyOutputConsole.cpp" />
     <ClCompile Include="mhl\util\output\OutputConsole.cpp" />
@@ -214,12 +216,15 @@
   <ItemGroup>
     <ClInclude Include="mhl\exception\ArgumentException.hpp" />
     <ClInclude Include="mhl\exception\UnitTestException.hpp" />
+    <ClInclude Include="mhl\scene\ISceneable.hpp" />
+    <ClInclude Include="mhl\scene\SceneStack.hpp" />
     <ClInclude Include="mhl\test\UnitTestBase.hpp" />
     <ClInclude Include="mhl\test\UnitTestExecuteList.hpp" />
     <ClInclude Include="mhl\test_code\TestCppNewFunctionTest.hpp" />
     <ClInclude Include="mhl\test_code\TestExecuteMethod.hpp" />
     <ClInclude Include="mhl\test_code\TestInstanceOfTest.hpp" />
     <ClInclude Include="mhl\test_code\TestMhl.hpp" />
+    <ClInclude Include="mhl\test_code\TestSceneStack.hpp" />
     <ClInclude Include="mhl\test_code\TestSubject.hpp" />
     <ClInclude Include="mhl\util\output\DummyOutputConsole.hpp" />
     <ClInclude Include="mhl\util\output\IOutputConsole.hpp" />
