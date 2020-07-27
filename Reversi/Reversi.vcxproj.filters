@@ -19,9 +19,6 @@
     <Filter Include="ソース ファイル\reversi\util">
       <UniqueIdentifier>{fe40671b-591f-4483-bb3f-1bb5584334e3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\reversi\test">
-      <UniqueIdentifier>{8e87fa8a-fdfa-4343-8ba3-b474aa551f45}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ソース ファイル\reversi\scene">
       <UniqueIdentifier>{241a3e2f-418c-42fc-9445-7d2666c8266a}</UniqueIdentifier>
     </Filter>
@@ -33,12 +30,6 @@
     </Filter>
     <Filter Include="ソース ファイル\reversi\logic\render">
       <UniqueIdentifier>{b023d082-bbf1-423d-a892-fd28a625ae6c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\reversi\test\base">
-      <UniqueIdentifier>{a5979944-c074-41ca-a60a-be7340347242}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\reversi\test\code">
-      <UniqueIdentifier>{d0363eb7-1ab1-4721-b012-7fbabdab8261}</UniqueIdentifier>
     </Filter>
     <Filter Include="ソース ファイル\reversi\logic\player">
       <UniqueIdentifier>{6829d4b3-1c64-4336-a3a6-12661fc10972}</UniqueIdentifier>
@@ -73,6 +64,9 @@
     <Filter Include="ソース ファイル\reversi\test_code">
       <UniqueIdentifier>{0741d979-6b52-4325-a1c4-28ad8edf4ad8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\mhl\scene">
+      <UniqueIdentifier>{0cfbc799-d0c3-45d9-b1c9-f669fa3abc38}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -93,23 +87,8 @@
     <ClCompile Include="reversi\logic\base\Move.cpp">
       <Filter>ソース ファイル\reversi\logic\base</Filter>
     </ClCompile>
-    <ClCompile Include="reversi\test\base\UnitTestBase.cpp">
-      <Filter>ソース ファイル\reversi\test\base</Filter>
-    </ClCompile>
-    <ClCompile Include="reversi\test\code\TestBoard.cpp">
-      <Filter>ソース ファイル\reversi\test\code</Filter>
-    </ClCompile>
-    <ClCompile Include="reversi\test\code\TestDevelop.cpp">
-      <Filter>ソース ファイル\reversi\test\code</Filter>
-    </ClCompile>
-    <ClCompile Include="reversi\test\code\TestMove.cpp">
-      <Filter>ソース ファイル\reversi\test\code</Filter>
-    </ClCompile>
     <ClCompile Include="reversi\logic\base\ReverseInfo.cpp">
       <Filter>ソース ファイル\reversi\logic\base</Filter>
-    </ClCompile>
-    <ClCompile Include="reversi\test\code\TestReverseInfo.cpp">
-      <Filter>ソース ファイル\reversi\test\code</Filter>
     </ClCompile>
     <ClCompile Include="reversi\logic\player\PlayerMan.cpp">
       <Filter>ソース ファイル\reversi\logic\player</Filter>
@@ -129,17 +108,11 @@
     <ClCompile Include="reversi\logic\player\MoveThinkingMan.cpp">
       <Filter>ソース ファイル\reversi\logic\player</Filter>
     </ClCompile>
-    <ClCompile Include="reversi\test\code\TestReversi.cpp">
-      <Filter>ソース ファイル\reversi\test\code</Filter>
-    </ClCompile>
     <ClCompile Include="reversi\logic\player\MoveThinkingCpu1.cpp">
       <Filter>ソース ファイル\reversi\logic\player</Filter>
     </ClCompile>
     <ClCompile Include="reversi\util\StdRandomInt.cpp">
       <Filter>ソース ファイル\reversi\util</Filter>
-    </ClCompile>
-    <ClCompile Include="reversi\test\code\TestStdRandomInt.cpp">
-      <Filter>ソース ファイル\reversi\test\code</Filter>
     </ClCompile>
     <ClCompile Include="reversi\logic\player\MoveThinkingCpu2.cpp">
       <Filter>ソース ファイル\reversi\logic\player</Filter>
@@ -168,35 +141,17 @@
     <ClCompile Include="reversi\logic\player\MoveThinkingCpu3.cpp">
       <Filter>ソース ファイル\reversi\logic\player</Filter>
     </ClCompile>
-    <ClCompile Include="reversi\test\code\TestReversiCpu.cpp">
-      <Filter>ソース ファイル\reversi\test\code</Filter>
-    </ClCompile>
     <ClCompile Include="reversi\logic\player\CalcBoardEvaluationPointByPosition.cpp">
       <Filter>ソース ファイル\reversi\logic\player</Filter>
     </ClCompile>
-    <ClCompile Include="reversi\test\code\TestCalcBoardEvaluationPointByPosition.cpp">
-      <Filter>ソース ファイル\reversi\test\code</Filter>
-    </ClCompile>
     <ClCompile Include="reversi\logic\base\ThinkingNode.cpp">
       <Filter>ソース ファイル\reversi\logic\base</Filter>
-    </ClCompile>
-    <ClCompile Include="reversi\test\code\TestThinkingNode.cpp">
-      <Filter>ソース ファイル\reversi\test\code</Filter>
-    </ClCompile>
-    <ClCompile Include="reversi\test\code\TestSimpleStack.cpp">
-      <Filter>ソース ファイル\reversi\test\code</Filter>
-    </ClCompile>
-    <ClCompile Include="reversi\test\code\TestSimpleArray.cpp">
-      <Filter>ソース ファイル\reversi\test\code</Filter>
     </ClCompile>
     <ClCompile Include="reversi\logic\player\MoveThinkingCpu4.cpp">
       <Filter>ソース ファイル\reversi\logic\player</Filter>
     </ClCompile>
     <ClCompile Include="reversi\util\PerformanceCounter.cpp">
       <Filter>ソース ファイル\reversi\util</Filter>
-    </ClCompile>
-    <ClCompile Include="reversi\test\code\TestPerformanceCounter.cpp">
-      <Filter>ソース ファイル\reversi\test\code</Filter>
     </ClCompile>
     <ClCompile Include="mhl\util\output\OutputConsole.cpp">
       <Filter>ソース ファイル\mhl\util\output</Filter>
@@ -264,6 +219,12 @@
     <ClCompile Include="reversi\test_code\Test2ThinkingNode.cpp">
       <Filter>ソース ファイル\reversi\test_code</Filter>
     </ClCompile>
+    <ClCompile Include="mhl\scene\SceneStack.cpp">
+      <Filter>ソース ファイル\mhl\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="mhl\test_code\TestSceneStack.cpp">
+      <Filter>ソース ファイル\mhl\test_code</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="reversi\util\Assert.h">
@@ -284,23 +245,8 @@
     <ClInclude Include="reversi\logic\base\Move.h">
       <Filter>ソース ファイル\reversi\logic\base</Filter>
     </ClInclude>
-    <ClInclude Include="reversi\test\base\UnitTestBase.h">
-      <Filter>ソース ファイル\reversi\test\base</Filter>
-    </ClInclude>
-    <ClInclude Include="reversi\test\code\TestBoard.h">
-      <Filter>ソース ファイル\reversi\test\code</Filter>
-    </ClInclude>
-    <ClInclude Include="reversi\test\code\TestDevelop.h">
-      <Filter>ソース ファイル\reversi\test\code</Filter>
-    </ClInclude>
-    <ClInclude Include="reversi\test\code\TestMove.h">
-      <Filter>ソース ファイル\reversi\test\code</Filter>
-    </ClInclude>
     <ClInclude Include="reversi\logic\base\ReverseInfo.h">
       <Filter>ソース ファイル\reversi\logic\base</Filter>
-    </ClInclude>
-    <ClInclude Include="reversi\test\code\TestReverseInfo.h">
-      <Filter>ソース ファイル\reversi\test\code</Filter>
     </ClInclude>
     <ClInclude Include="reversi\logic\player\PlayerMan.h">
       <Filter>ソース ファイル\reversi\logic\player</Filter>
@@ -326,9 +272,6 @@
     <ClInclude Include="reversi\logic\player\MoveThinkingMan.h">
       <Filter>ソース ファイル\reversi\logic\player</Filter>
     </ClInclude>
-    <ClInclude Include="reversi\test\code\TestReversi.h">
-      <Filter>ソース ファイル\reversi\test\code</Filter>
-    </ClInclude>
     <ClInclude Include="reversi\logic\player\MoveThinkingCpu1.h">
       <Filter>ソース ファイル\reversi\logic\player</Filter>
     </ClInclude>
@@ -340,9 +283,6 @@
     </ClInclude>
     <ClInclude Include="reversi\util\StdRandomInt.h">
       <Filter>ソース ファイル\reversi\util</Filter>
-    </ClInclude>
-    <ClInclude Include="reversi\test\code\TestStdRandomInt.h">
-      <Filter>ソース ファイル\reversi\test\code</Filter>
     </ClInclude>
     <ClInclude Include="reversi\logic\player\MoveThinkingCpu2.h">
       <Filter>ソース ファイル\reversi\logic\player</Filter>
@@ -386,44 +326,26 @@
     <ClInclude Include="reversi\logic\player\MoveThinkingCpu3.h">
       <Filter>ソース ファイル\reversi\logic\player</Filter>
     </ClInclude>
-    <ClInclude Include="reversi\test\code\TestReversiCpu.h">
-      <Filter>ソース ファイル\reversi\test\code</Filter>
-    </ClInclude>
     <ClInclude Include="reversi\logic\player\ICalcBoardEvaluationPoint.h">
       <Filter>ソース ファイル\reversi\logic\player</Filter>
     </ClInclude>
     <ClInclude Include="reversi\logic\player\CalcBoardEvaluationPointByPosition.h">
       <Filter>ソース ファイル\reversi\logic\player</Filter>
     </ClInclude>
-    <ClInclude Include="reversi\test\code\TestCalcBoardEvaluationPointByPosition.h">
-      <Filter>ソース ファイル\reversi\test\code</Filter>
-    </ClInclude>
     <ClInclude Include="reversi\logic\base\ThinkingNode.h">
       <Filter>ソース ファイル\reversi\logic\base</Filter>
-    </ClInclude>
-    <ClInclude Include="reversi\test\code\TestThinkingNode.h">
-      <Filter>ソース ファイル\reversi\test\code</Filter>
     </ClInclude>
     <ClInclude Include="reversi\util\SimpleStack.h">
       <Filter>ソース ファイル\reversi\util</Filter>
     </ClInclude>
-    <ClInclude Include="reversi\test\code\TestSimpleStack.h">
-      <Filter>ソース ファイル\reversi\test\code</Filter>
-    </ClInclude>
     <ClInclude Include="reversi\util\SimpleArray.h">
       <Filter>ソース ファイル\reversi\util</Filter>
-    </ClInclude>
-    <ClInclude Include="reversi\test\code\TestSimpleArray.h">
-      <Filter>ソース ファイル\reversi\test\code</Filter>
     </ClInclude>
     <ClInclude Include="reversi\logic\player\MoveThinkingCpu4.h">
       <Filter>ソース ファイル\reversi\logic\player</Filter>
     </ClInclude>
     <ClInclude Include="reversi\util\PerformanceCounter.h">
       <Filter>ソース ファイル\reversi\util</Filter>
-    </ClInclude>
-    <ClInclude Include="reversi\test\code\TestPerformanceCounter.h">
-      <Filter>ソース ファイル\reversi\test\code</Filter>
     </ClInclude>
     <ClInclude Include="mhl\util\template\IExecuteMethod.hpp">
       <Filter>ソース ファイル\mhl\util\template</Filter>
@@ -508,6 +430,15 @@
     </ClInclude>
     <ClInclude Include="reversi\test_code\Test2ThinkingNode.hpp">
       <Filter>ソース ファイル\reversi\test_code</Filter>
+    </ClInclude>
+    <ClInclude Include="mhl\scene\ISceneable.hpp">
+      <Filter>ソース ファイル\mhl\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="mhl\scene\SceneStack.hpp">
+      <Filter>ソース ファイル\mhl\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="mhl\test_code\TestSceneStack.hpp">
+      <Filter>ソース ファイル\mhl\test_code</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

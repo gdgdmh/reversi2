@@ -7,7 +7,6 @@
 #include <string>
 
 #include "reversi/game/ReversiGameLoop.h"
-#include "reversi/test/code/TestDevelop.h"
 #include "mhl/util/output/IOutputConsole.hpp"
 #include "mhl/util/output/OutputConsole.hpp"
 #include "mhl/test_code/TestMhl.hpp"
@@ -24,21 +23,6 @@ int main(int argc, const char *argv[]) {
 
   bool isTest = true;
   if (isTest) {
-    // 実装テスト
-    reversi::TestDevelop *testDevelop = new reversi::TestDevelop(console);
-    bool testResult = testDevelop->Execute();
-    if (testDevelop) {
-      delete testDevelop;
-      testDevelop = NULL;
-    }
-    if (!testResult) {
-      console->PrintLine("test failure abort!");
-      if (console) {
-        delete console;
-        console = NULL;
-      }
-      return 1;
-    }
     // ライブラリのユニットテスト
     test::TestMhl mhl(c);
     mhl.ExecuteUnitTest();
