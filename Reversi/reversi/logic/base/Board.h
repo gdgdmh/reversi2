@@ -3,6 +3,7 @@
 
 #include <string>
 #include <vector>
+#include <memory>
 
 #include "../render/IRenderBoard.h"
 #include "MoveInfo.h"
@@ -164,7 +165,7 @@ class Board {
 
  private:
   BOARD board;                // 盤情報
-  IRenderBoard* renderBoard;  // 盤表示インターフェース
+  std::shared_ptr<IRenderBoard> renderBoard;  // 盤表示インターフェース
 };
 
 }  // namespace reversi

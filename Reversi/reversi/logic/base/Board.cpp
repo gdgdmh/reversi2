@@ -11,17 +11,13 @@ reversi::Board::Board() {
   Clear();
   board.boardSizeX = reversi::ReversiConstant::BOARD_SIZE_X;
   board.boardSizeY = reversi::ReversiConstant::BOARD_SIZE_Y;
-  renderBoard = NULL;
 }
 
 /**
  * デストラクタ
  */
 reversi::Board::~Board() {
-  if (renderBoard) {
-    delete renderBoard;
-    renderBoard = NULL;
-  }
+  renderBoard.reset();
 }
 
 /**
@@ -126,8 +122,8 @@ void reversi::Board::GetCount(int& blackCount, int& whiteCount,
  * @param console コンソール出力先
  */
 void reversi::Board::Render() {
-  if (renderBoard == NULL) {
-    renderBoard = new RenderBoardConsole();
+  if (!renderBoard) {
+    renderBoard.reset(new RenderBoardConsole());
   }
   renderBoard->Render(*this);
 }
@@ -155,11 +151,7 @@ reversi::Board reversi::Board::Clone() const {
   }
   dest.board.boardSizeX = board.boardSizeX;
   dest.board.boardSizeY = board.boardSizeY;
-  if (dest.renderBoard) {
-    delete dest.renderBoard;
-    dest.renderBoard = NULL;
-  }
-  dest.renderBoard = NULL;
+  dest.renderBoard.reset();
   return dest;
 }
 

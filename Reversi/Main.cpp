@@ -32,7 +32,7 @@ int main(int argc, const char *argv[]) {
   }
 
   // リバーシゲーム
-  bool is_game_execute = false;
+  bool is_game_execute = true;
   if (is_game_execute) {
     reversi::ReversiGameLoop gameLoop;
     gameLoop.Initialize();
