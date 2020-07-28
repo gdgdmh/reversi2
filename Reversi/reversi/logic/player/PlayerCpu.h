@@ -1,6 +1,7 @@
 ﻿#ifndef REVERSI_LOGIC_PLAYER_PLAYERCPU_H_
 #define REVERSI_LOGIC_PLAYER_PLAYERCPU_H_
 
+#include <memory>
 #include "../base/MoveInfo.h"
 #include "../base/ReversiConstant.h"
 #include "IMoveThinking.h"
@@ -71,7 +72,7 @@ class PlayerCpu : public IPlayer {
   void EventMoveAfter();
 
  private:
-  IMoveThinking* moveThinking;  // 思考インターフェース
+  std::shared_ptr<IMoveThinking> moveThinking;  // 思考インターフェース
 };
 
 }  // namespace reversi
