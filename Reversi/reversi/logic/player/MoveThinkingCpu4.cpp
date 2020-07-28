@@ -172,8 +172,10 @@ void reversi::MoveThinkingCpu4::SetThinkingChildNode(
   reversi::ReversiConstant::POSITION moveEnablePositions[MOVE_ENABLE_DATA_SIZE];
   int moveEnableCount = 0;
   // かなりの大きさがあるのでヒープで確保する
-  reversi::ReverseInfo* reverseInfos =
-      new reversi::ReverseInfo[MOVE_ENABLE_DATA_SIZE];
+  std::shared_ptr<reversi::ReverseInfo[MOVE_ENABLE_DATA_SIZE]> reverseInfos { new reversi::ReverseInfo[MOVE_ENABLE_DATA_SIZE] };
+
+  //reversi::ReverseInfo* reverseInfos =
+      //new reversi::ReverseInfo[MOVE_ENABLE_DATA_SIZE];
   int reverseInfoCount = 0;
   // 初期化(reverseInfoは不要)
   for (int i = 0; i < MOVE_ENABLE_DATA_SIZE; ++i) {
@@ -187,10 +189,7 @@ void reversi::MoveThinkingCpu4::SetThinkingChildNode(
   // 終局している
   if ((reversi.GetScene() == reversi::Reversi::SCENE::END) ||
       (reversi.GetScene() == reversi::Reversi::SCENE::RESULT)) {
-    if (reverseInfos) {
-      delete[] reverseInfos;
-      reverseInfos = NULL;
-    }
+    reverseInfos.reset();
     return;
   }
 
@@ -206,10 +205,7 @@ void reversi::MoveThinkingCpu4::SetThinkingChildNode(
 
   // どこにも打てない
   if (moveEnableCount == 0) {
-    if (reverseInfos) {
-      delete[] reverseInfos;
-      reverseInfos = NULL;
-    }
+    reverseInfos.reset();
     return;
   }
 
@@ -295,10 +291,7 @@ void reversi::MoveThinkingCpu4::SetThinkingChildNode(
     // 親のノードにつなげる
     node->AddChild(child);
   }
-  if (reverseInfos) {
-    delete[] reverseInfos;
-    reverseInfos = NULL;
-  }
+  reverseInfos.reset();
 }
 
 /**
@@ -314,7 +307,7 @@ void reversi::MoveThinkingCpu4::SetThinkingChildNode(
 void reversi::MoveThinkingCpu4::GetMoveEnableData(
     reversi::ReversiConstant::POSITION* moveEnablePositions,
     int& moveEnablePositionCount, int moveEnablePositionSize,
-    reversi::ReverseInfo* reverseInfos, int& reverseInfoCount,
+    std::shared_ptr<reversi::ReverseInfo[MOVE_ENABLE_DATA_SIZE]>& reverseInfos, int& reverseInfoCount,
     const reversi::Board& board, reversi::ReversiConstant::TURN turn) {
   moveEnablePositionCount = 0;
   reverseInfoCount = 0;

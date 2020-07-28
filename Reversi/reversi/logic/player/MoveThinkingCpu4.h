@@ -100,7 +100,7 @@ class MoveThinkingCpu4 : public IMoveThinking {
   void GetMoveEnableData(
       reversi::ReversiConstant::POSITION* moveEnablePositions,
       int& moveEnablePositionCount, int moveEnablePositionSize,
-      reversi::ReverseInfo* reverseInfos, int& reverseInfoCount,
+      std::shared_ptr<reversi::ReverseInfo[MOVE_ENABLE_DATA_SIZE]>& reverseInfos, int& reverseInfoCount,
       const reversi::Board& board, reversi::ReversiConstant::TURN turn);
 
   /**
