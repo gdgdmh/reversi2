@@ -37,8 +37,8 @@ void reversi::Reversi::Initialize() {
   board.InitializeGame();
   turn = reversi::ReversiConstant::TURN::TURN_BLACK;
   SetScene(reversi::Reversi::SCENE::INITIALIZE);
-  if (console == NULL) {
-    console = new mhl::OutputConsole();
+  if (!console) {
+    console.reset(new mhl::OutputConsole());
   }
   ResetPassCheck();
   ResetResultData();
@@ -130,7 +130,7 @@ void reversi::Reversi::CopyWithoutDynamicInstance(
   scene = source.scene;
   moveCache = source.moveCache;
   if (!console) {
-    console = new mhl::OutputConsole();
+    console.reset(new mhl::OutputConsole());
   }
   passCheck = source.passCheck;
   resultData = source.resultData;
@@ -654,8 +654,5 @@ void reversi::Reversi::RenderBoard() {
  */
 void reversi::Reversi::Release() {
   ReleasePlayer();
-  if (console) {
-    delete console;
-    console = NULL;
-  }
+  console.reset();
 }
