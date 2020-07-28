@@ -1,6 +1,7 @@
 ﻿#ifndef REVERSI_LOGIC_PLAYER_PLAYERMAN_H_
 #define REVERSI_LOGIC_PLAYER_PLAYERMAN_H_
 
+#include <memory>
 #include "../../../mhl/util/output/IOutputConsole.hpp"
 #include "../base/MoveInfo.h"
 #include "../base/ReversiConstant.h"
@@ -63,8 +64,8 @@ class PlayerMan : public IPlayer {
   void EventMoveAfter();
 
  private:
-  IMoveThinking* moveThinking;   // 思考インターフェース
-  mhl::IOutputConsole* console;  // コンソール出力
+  std::shared_ptr<IMoveThinking> moveThinking;   // 思考インターフェース
+  std::shared_ptr<mhl::IOutputConsole> console;  // コンソール出力
 };
 
 }  // namespace reversi

@@ -13,25 +13,19 @@ reversi::PlayerMan::PlayerMan() : moveThinking(NULL), console(NULL) {}
  * デストラクタ
  */
 reversi::PlayerMan::~PlayerMan() {
-  if (moveThinking) {
-    delete moveThinking;
-    moveThinking = NULL;
-  }
-  if (console) {
-    delete console;
-    console = NULL;
-  }
+  moveThinking.reset();
+  console.reset();
 }
 
 /**
  * 初期化
  */
 void reversi::PlayerMan::Initialize() {
-  if (moveThinking == NULL) {
-    moveThinking = new MoveThinkingMan(true);
+  if (!moveThinking) {
+    moveThinking.reset(new MoveThinkingMan(true));
   }
-  if (console == NULL) {
-    console = new mhl::OutputConsole();
+  if (!console) {
+    console.reset(new mhl::OutputConsole());
   }
 }
 

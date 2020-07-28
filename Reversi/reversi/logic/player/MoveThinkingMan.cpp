@@ -14,22 +14,16 @@
  */
 reversi::MoveThinkingMan::MoveThinkingMan(bool useHint)
     : playerSelectPosition(NULL), console(NULL), useHint(useHint) {
-  playerSelectPosition = new reversi::PlayerKeyboardSelectPosition();
-  console = new mhl::OutputConsole();
+  playerSelectPosition.reset(new reversi::PlayerKeyboardSelectPosition());
+  console.reset(new mhl::OutputConsole());
 }
 
 /**
  * デストラクタ
  */
 reversi::MoveThinkingMan::~MoveThinkingMan() {
-  if (console) {
-    delete console;
-    console = NULL;
-  }
-  if (playerSelectPosition) {
-    delete playerSelectPosition;
-    playerSelectPosition = NULL;
-  }
+  console.reset();
+  playerSelectPosition.reset();
 }
 
 /**

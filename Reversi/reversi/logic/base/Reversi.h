@@ -1,6 +1,7 @@
 ﻿#ifndef REVERSI_LOGIC_BASE_REVERSI_H_
 #define REVERSI_LOGIC_BASE_REVERSI_H_
 
+#include <memory>
 #include "../../../mhl/util/output/IOutputConsole.hpp"
 #include "../player/IPlayer.h"
 #include "Board.h"
@@ -333,7 +334,7 @@ class Reversi {
   reversi::Reversi::PLAYER_DATA playerData;  // プレイヤーデータ
   reversi::Reversi::SCENE scene;             // シーン
   reversi::Move moveCache;                   // 着手キャッシュ
-  mhl::IOutputConsole* console;              // コンソール出力クラス
+  std::shared_ptr<mhl::IOutputConsole> console;              // コンソール出力クラス
   reversi::Reversi::PASS_CHECK
       passCheck;  // パス確認用(どっちもパスしかできなかったら終局)
   reversi::Reversi::RESULT_DATA resultData;  // 結果データ
