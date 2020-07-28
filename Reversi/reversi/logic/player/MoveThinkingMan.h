@@ -1,6 +1,7 @@
 ﻿#ifndef REVERSI_LOGIC_PLAYER_MOVETHINKINGMAN_H_
 #define REVERSI_LOGIC_PLAYER_MOVETHINKINGMAN_H_
 
+#include <memory>
 #include "../../../mhl/util/output/IOutputConsole.hpp"
 #include "../base/Move.h"
 #include "../base/MoveInfo.h"
@@ -104,9 +105,9 @@ class MoveThinkingMan : public IMoveThinking {
 
  private:
   reversi::Move reversiMove;  // 着手情報
-  reversi::IPlayerSelectPosition*
+  std::shared_ptr<reversi::IPlayerSelectPosition>
       playerSelectPosition;      // 位置選択インターフェース
-  mhl::IOutputConsole* console;  // コンソール出力
+  std::shared_ptr<mhl::IOutputConsole> console;  // コンソール出力
   bool useHint;                  // ヒントを使うか
 };
 
