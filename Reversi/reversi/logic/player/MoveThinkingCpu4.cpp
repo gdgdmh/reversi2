@@ -22,17 +22,14 @@ const int reversi::MoveThinkingCpu4::STATIC_EVALUATION_POINTS
  * コンストラクタ
  */
 reversi::MoveThinkingCpu4::MoveThinkingCpu4() : console(NULL) {
-  console = new mhl::OutputConsole();
+  console.reset(new mhl::OutputConsole());
 }
 
 /**
  * デストラクタ
  */
 reversi::MoveThinkingCpu4::~MoveThinkingCpu4() {
-  if (console) {
-    delete console;
-    console = NULL;
-  }
+  console.reset();
 }
 
 /**

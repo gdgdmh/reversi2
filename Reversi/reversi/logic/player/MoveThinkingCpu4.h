@@ -1,6 +1,7 @@
 ﻿#ifndef REVERSI_LOGIC_PLAYER_MOVETHINKINGCPU4_H_
 #define REVERSI_LOGIC_PLAYER_MOVETHINKINGCPU4_H_
 
+#include <memory>
 #include "../../../mhl/util/output/IOutputConsole.hpp"
 #include "../../util/PerformanceCounter.h"
 #include "../base/Move.h"
@@ -111,7 +112,7 @@ class MoveThinkingCpu4 : public IMoveThinking {
                      const reversi::PerformanceCounter& counter);
 
  private:
-  mhl::IOutputConsole* console;  // コンソール出力クラス
+  std::shared_ptr<mhl::IOutputConsole> console;  // コンソール出力クラス
 };
 
 }  // namespace reversi
