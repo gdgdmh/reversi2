@@ -7,9 +7,14 @@
 #include <string>
 
 #include "reversi/game/ReversiGameLoop.h"
+#include "mhl/util/output/ioutput_console.hpp"
+#include "mhl/util/output/output_console.hpp"
+#include "mhl/test_code/test_mhl.hpp"
+/*
 #include "mhl/util/output/IOutputConsole.hpp"
 #include "mhl/util/output/OutputConsole.hpp"
 #include "mhl/test_code/TestMhl.hpp"
+*/
 #include "reversi/test_code/TestReversiProject.hpp"
 
 // エントリーポイント;
@@ -24,8 +29,10 @@ int main(int argc, const char *argv[]) {
   bool isTest = true;
   if (isTest) {
     // ライブラリのユニットテスト
-    test::TestMhl mhl(c);
+    test_code::TestMhl mhl(c);
     mhl.ExecuteUnitTest();
+    //test::TestMhl mhl(c);
+    //mhl.ExecuteUnitTest();
     // リバーシプロジェクトに対するユニットテスト
     test_code::TestReversiProject rp(c);
     rp.ExecuteUnitTest();

@@ -1,8 +1,8 @@
 ﻿#include "TestReversiProject.hpp"
 
-#include "../../mhl/test/UnitTestExecuteList.hpp"
-#include "../../mhl/util/output/OutputConsole.hpp"
-#include "../../mhl/util/output/DummyOutputConsole.hpp"
+#include "../../mhl/test/unittest_execute_list.hpp"
+#include "../../mhl/util/output/output_console.hpp"
+#include "../../mhl/util/output/dummy_output_console.hpp"
 #include "Test2Board.h"
 #include "Test2CalcBoardEvaluationPointByPosition.h"
 #include "Test2Move.hpp"

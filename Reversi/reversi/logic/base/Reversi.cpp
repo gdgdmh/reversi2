@@ -1,6 +1,6 @@
 ﻿#include "Reversi.h"
 
-#include "../../../mhl/util/output/OutputConsole.hpp"
+#include "../../../mhl/util/output/output_console.hpp"
 #include "../../util/Assert.h"
 #include "../../util/PerformanceCounter.h"
 #include "../../util/StdStringFormatter.h"

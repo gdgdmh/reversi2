@@ -1,6 +1,6 @@
 ﻿#include "PLayerCpu.h"
 
-#include "../../../mhl/util/output/IOutputConsole.hpp"
+#include "../../../mhl/util/output/ioutput_console.hpp"
 #include "../../util/Assert.h"
 #include "MoveThinkingCpu1.h"
 #include "MoveThinkingCpu2.h"

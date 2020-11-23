@@ -1,6 +1,6 @@
 ﻿#include "ReversiGameScene.h"
 
-#include "../../mhl/util/output/OutputConsole.hpp"
+#include "../../mhl/util/output/output_console.hpp"
 #include "../game/KeyboardSelectCpuLevel.h"
 #include "../game/KeyboardSelectYesNo.h"
 #include "../game/KeyboardSelectYesNoWatching.h"

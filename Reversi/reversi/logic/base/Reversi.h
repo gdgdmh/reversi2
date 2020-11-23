@@ -2,7 +2,7 @@
 #define REVERSI_LOGIC_BASE_REVERSI_H_
 
 #include <memory>
-#include "../../../mhl/util/output/IOutputConsole.hpp"
+#include "../../../mhl/util/output/ioutput_console.hpp"
 #include "../player/IPlayer.h"
 #include "Board.h"
 #include "Move.h"

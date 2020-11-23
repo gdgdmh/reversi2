@@ -1,4 +1,4 @@
-﻿#include "UnitTestException.hpp"
+﻿#include "unittest_exception.hpp"
 
 mhl::UnitTestException::UnitTestException(const std::string& message,
                                           int error_code)

@@ -3,7 +3,7 @@
 
 #include <memory>
 
-#include "../../mhl/test/UnitTestBase.hpp"
+#include "../../mhl/test/unittest_base.hpp"
 
 namespace test_code {
 

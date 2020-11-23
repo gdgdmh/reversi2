@@ -1,7 +1,7 @@
 ﻿#ifndef REVERSI_SCENE_REVERSIGAMESCENE_H_
 #define REVERSI_SCENE_REVERSIGAMESCENE_H_
 
-#include "../../mhl/util/output/IOutputConsole.hpp"
+#include "../../mhl/util/output/ioutput_console.hpp"
 #include "../game/ISelectCpuLevel.h"
 #include "../game/ISelectYesNo.h"
 #include "../game/ISelectYesNoWatching.h"

@@ -3,7 +3,7 @@
 #include <algorithm>
 #include <iostream>
 
-#include "../../../mhl/util/output/IOutputConsole.hpp"
+#include "../../../mhl/util/output/ioutput_console.hpp"
 #include "../../util/Assert.h"
 #include "../../util/ConsoleInputKeyboard.h"
 #include "../../util/IInputKeyboard.h"

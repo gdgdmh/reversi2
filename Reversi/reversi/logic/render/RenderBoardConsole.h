@@ -1,7 +1,7 @@
 ﻿#ifndef REVERSI_LOGIC_RENDER_RENDERBOARDCONSOLE_H_
 #define REVERSI_LOGIC_RENDER_RENDERBOARDCONSOLE_H_
 
-#include "../../../mhl/util/output/IOutputConsole.hpp"
+#include "../../../mhl/util/output/ioutput_console.hpp"
 #include "../base/Board.h"
 #include "IRenderBoard.h"
 

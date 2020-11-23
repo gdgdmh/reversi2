@@ -1,6 +1,6 @@
 ﻿#include "Test2ReversiCpu.hpp"
 
-#include "../../mhl/util/string/StdStringFormatter.hpp"
+#include "../../mhl/util/string/std_string_formatter.hpp"
 #include "../logic/base/Reversi.h"
 
 /**

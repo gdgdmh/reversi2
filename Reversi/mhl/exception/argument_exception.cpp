@@ -1,4 +1,4 @@
-﻿#include "ArgumentException.hpp"
+﻿#include "argument_exception.hpp"
 
 mhl::ArgumentException::ArgumentException(const std::string& message,
                                           int error_code)

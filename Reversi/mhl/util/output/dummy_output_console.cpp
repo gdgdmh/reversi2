@@ -1,4 +1,4 @@
-﻿#include "DummyOutputConsole.hpp"
+﻿#include "dummy_output_console.hpp"
 
 #include <iostream>
 

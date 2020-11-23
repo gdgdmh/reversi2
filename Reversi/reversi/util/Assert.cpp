@@ -1,6 +1,8 @@
 ﻿#include "Assert.h"
 
-#include "../../mhl/util/output/OutputConsole.hpp"
+#include "../../mhl/util/output/ioutput_console.hpp"
+#include "../../mhl/util/output/output_console.hpp"
+    //#include "../../mhl/util/output/OutputConsole.hpp"
 
 /**
  * 値の比較結果がfalseだったときにmessageを出力してプログラム停止する

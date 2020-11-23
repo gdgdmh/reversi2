@@ -1,20 +1,20 @@
-﻿#include "TestSubject.hpp"
+﻿#include "test_subject.hpp"
 
 /**
  * コンストラクタ
  */
-test::TestSubject::TestSubject(
+test_code::TestSubject::TestSubject(
     std::shared_ptr<mhl::IOutputConsole> output_console)
     : UnitTestBase(output_console) {}
 
 /**
  * デストラクタ
  */
-test::TestSubject::~TestSubject() {}
+test_code::TestSubject::~TestSubject() {}
 
-void test::TestSubject::ExecuteUnitTest() {
+void test_code::TestSubject::ExecuteUnitTest() {
   mhl::Subject s;
-  test::TestObserver o;
+  test_code::TestObserver o;
   s.Add(o);
   AssertEquals(o.Get() == 0, "TestSubject::ExecuteUnitTest not 0");
   // 正常にUpdateがCallされていれば値が0から1に切り替わる

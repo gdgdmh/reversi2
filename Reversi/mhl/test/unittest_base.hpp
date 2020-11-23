@@ -4,9 +4,9 @@
 #include <memory>
 #include <string>
 
-#include "../exception/UnitTestException.hpp"
-#include "../util/output/IOutputConsole.hpp"
-#include "../util/string/StdStringFormatter.hpp"
+#include "../exception/unittest_exception.hpp"
+#include "../util/output/ioutput_console.hpp"
+#include "../util/string/std_string_formatter.hpp"
 
 namespace mhl {
 

@@ -2,29 +2,28 @@
 #define MHL_TEST_CODE_TESTCPPNEWFUNCTIONTEST_HPP_
 
 #include <memory>
-#include "../test/UnitTestBase.hpp"
 
-namespace test {
+#include "../test/unittest_base.hpp"
 
-  class TestEmplace {
-    public:
-    TestEmplace() : aaa(0), bbb(0) {
-    }
-    TestEmplace(int a, int b) : aaa(a), bbb(b) {
-    }
-    void Get(int& a, int& b) {
-      a = aaa;
-      b = bbb;
-    }
+namespace test_program {
 
-    private:
-    int aaa;
-    int bbb;
-  };
+class TestEmplace {
+ public:
+  TestEmplace() : aaa(0), bbb(0) {}
+  TestEmplace(int a, int b) : aaa(a), bbb(b) {}
+  void Get(int& a, int& b) {
+    a = aaa;
+    b = bbb;
+  }
+
+ private:
+  int aaa;
+  int bbb;
+};
 
 // C++機能テスト
 class TestCppNewFunctionTest : public mhl::UnitTestBase {
-public:
+ public:
   /**
    * コンストラクタ
    */
@@ -78,6 +77,6 @@ public:
   void TestTypeAlias();
 };
 
-}
+}  // namespace test
 
 #endif  // TEST_TESTCPPNEWFUNCTIONTEST_HPP_

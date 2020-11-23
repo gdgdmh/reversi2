@@ -2,7 +2,7 @@
 
 #include <iostream>
 
-#include "../../../mhl/util/output/IOutputConsole.hpp"
+#include "../../../mhl/util/output/ioutput_console.hpp"
 #include "../../util/Assert.h"
 #include "../../util/IRandomInt.h"
 #include "../../util/StdRandomInt.h"

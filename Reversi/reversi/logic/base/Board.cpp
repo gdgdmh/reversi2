@@ -1,6 +1,6 @@
 ﻿#include "Board.h"
 
-#include "../../../mhl/util/output/IOutputConsole.hpp"
+#include "../../../mhl/util/output/ioutput_console.hpp"
 #include "../../util/Assert.h"
 #include "../render/RenderBoardConsole.h"
 

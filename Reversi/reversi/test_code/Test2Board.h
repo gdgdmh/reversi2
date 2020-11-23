@@ -1,7 +1,7 @@
 ﻿#ifndef REVERSI_TEST2_TESTBOARD_H_
 #define REVERSI_TEST2_TESTBOARD_H_
 
-#include "../../mhl/test/UnitTestBase.hpp"
+#include "../../mhl/test/unittest_base.hpp"
 
 namespace test_code {
 class Test2Board : public mhl::UnitTestBase {

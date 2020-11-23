@@ -2,7 +2,7 @@
 
 #include <iostream>
 
-#include "../../../mhl/util/output/OutputConsole.hpp"
+#include "../../../mhl/util/output/output_console.hpp"
 #include "../../util/Assert.h"
 #include "../../util/StdStringFormatter.h"
 #include "CalcBoardEvaluationPointByPosition.h"

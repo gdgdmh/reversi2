@@ -3,7 +3,7 @@
 
 #include <string>
 
-#include "IOutputConsole.hpp"
+#include "ioutput_console.hpp"
 
 namespace mhl {
 

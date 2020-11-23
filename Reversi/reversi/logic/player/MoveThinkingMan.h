@@ -2,7 +2,7 @@
 #define REVERSI_LOGIC_PLAYER_MOVETHINKINGMAN_H_
 
 #include <memory>
-#include "../../../mhl/util/output/IOutputConsole.hpp"
+#include "../../../mhl/util/output/ioutput_console.hpp"
 #include "../base/Move.h"
 #include "../base/MoveInfo.h"
 #include "../base/ReversiConstant.h"

@@ -1,19 +1,18 @@
-﻿#include "TestCppNewFunctionTest.hpp"
+﻿#include "test_cpp_new_function_test.hpp"
 
 /**
  * コンストラクタ
  */
-test::TestCppNewFunctionTest::TestCppNewFunctionTest(std::shared_ptr<mhl::IOutputConsole> output_console)
+test_program::TestCppNewFunctionTest::TestCppNewFunctionTest(std::shared_ptr<mhl::IOutputConsole> output_console)
   : UnitTestBase(output_console) {
 }
 
 /**
  * デストラクタ
  */
-test::TestCppNewFunctionTest::~TestCppNewFunctionTest() {
-}
+test_program::TestCppNewFunctionTest::~TestCppNewFunctionTest() {}
 
-void test::TestCppNewFunctionTest::ExecuteUnitTest() {
+void test_program::TestCppNewFunctionTest::ExecuteUnitTest() {
   TestCpp11Nullptr();
   TestUniformInitialization001();
   TestUniformInitialization002();
@@ -27,7 +26,7 @@ void test::TestCppNewFunctionTest::ExecuteUnitTest() {
 /**
  * C++11のnullptrテスト
  */
-void test::TestCppNewFunctionTest::TestCpp11Nullptr() {
+void test_program::TestCppNewFunctionTest::TestCpp11Nullptr() {
   char* p = nullptr;
   AssertEquals(p == nullptr, "TestCppNewFunctionTest::TestCpp11Nullptr() not nullptr");
 }
@@ -35,7 +34,7 @@ void test::TestCppNewFunctionTest::TestCpp11Nullptr() {
 /**
  * 統一初期化記法
  */
-void test::TestCppNewFunctionTest::TestUniformInitialization001() {
+void test_program::TestCppNewFunctionTest::TestUniformInitialization001() {
   const int VALUE = 3;
   int x { VALUE };
   AssertEquals(x == VALUE, "TestCppNewFunctionTest::TestUniformInitialization001 x not 3");
@@ -44,7 +43,7 @@ void test::TestCppNewFunctionTest::TestUniformInitialization001() {
 /**
  * 統一初期化記法case002
  */
-void test::TestCppNewFunctionTest::TestUniformInitialization002() {
+void test_program::TestCppNewFunctionTest::TestUniformInitialization002() {
   const int VALUE1 = 10;
   const int VALUE2 = 11;
   const int VALUE3 = 12;
@@ -59,7 +58,7 @@ void test::TestCppNewFunctionTest::TestUniformInitialization002() {
 /**
  * 統一初期化記法case003
  */
-void test::TestCppNewFunctionTest::TestUniformInitialization003() {
+void test_program::TestCppNewFunctionTest::TestUniformInitialization003() {
   struct Struct {
     int a;
     int b;
@@ -74,7 +73,7 @@ void test::TestCppNewFunctionTest::TestUniformInitialization003() {
 /**
  * 統一初期化記法case004
  */
-void test::TestCppNewFunctionTest::TestUniformInitialization004() {
+void test_program::TestCppNewFunctionTest::TestUniformInitialization004() {
   const int VALUE1 = 101;
   const int VALUE2 = 102;
   std::vector<int> x = { VALUE1, VALUE2 };
@@ -85,11 +84,11 @@ void test::TestCppNewFunctionTest::TestUniformInitialization004() {
 /**
  * emplaceメソッドテスト
  */
-void test::TestCppNewFunctionTest::TestEmplace() {
+void test_program::TestCppNewFunctionTest::TestEmplace() {
   const int VALUE1 = 1000;
   const int VALUE2 = 2000;
-  std::vector<test::TestEmplace> vec;
-  vec.emplace_back(test::TestEmplace(VALUE1, VALUE2));
+  std::vector<test_program::TestEmplace> vec;
+  vec.emplace_back(test_program::TestEmplace(VALUE1, VALUE2));
   int a = 0, b = 0;
   vec.at(0).Get(a, b);
   AssertEquals(a == VALUE1, "TestCppNewFunctionTest::TestEmplace a not VALUE1");
@@ -99,7 +98,7 @@ void test::TestCppNewFunctionTest::TestEmplace() {
 /**
  * スマートポインタ
  */
-void test::TestCppNewFunctionTest::TestSmartPointer() {
+void test_program::TestCppNewFunctionTest::TestSmartPointer() {
   const int VALUE1 = 10;
   std::shared_ptr<int> smart_pointer(new int(VALUE1));
   AssertEquals(smart_pointer.use_count() == 1, "TestCppNewFunctionTest::TestSmartPointer smart_pointer count not 1");
@@ -116,7 +115,7 @@ void test::TestCppNewFunctionTest::TestSmartPointer() {
 /**
  * 型エイリアス
  */
-void test::TestCppNewFunctionTest::TestTypeAlias() {
+void test_program::TestCppNewFunctionTest::TestTypeAlias() {
   using SmartPointerInt = std::shared_ptr<int>;
   SmartPointerInt si(new int(0));
   AssertEquals((*si) == 0, "TestCppNewFunctionTest::TestTypeAlias si not 0");

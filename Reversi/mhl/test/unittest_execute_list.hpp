@@ -4,7 +4,7 @@
 #include <list>
 #include <memory>
 
-#include "UnitTestBase.hpp"
+#include "unittest_base.hpp"
 
 namespace mhl {
 

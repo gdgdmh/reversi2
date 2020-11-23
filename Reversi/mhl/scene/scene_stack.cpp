@@ -1,4 +1,4 @@
-﻿#include "SceneStack.hpp"
+﻿#include "scene_stack.hpp"
 
 /**
  * @brief Construct a new Scene Stack object

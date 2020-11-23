@@ -1,7 +1,7 @@
 ﻿#ifndef REVERSI_TEST_CODE_TEST_MOVE2_HPP_
 #define REVERSI_TEST_CODE_TEST_MOVE2_HPP_
 
-#include "../../mhl/test/UnitTestBase.hpp"
+#include "../../mhl/test/unittest_base.hpp"
 
 namespace test_code {
 
